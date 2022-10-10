@@ -10,70 +10,67 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
         android:orientation="vertical">
 
         <TextView
 
-            android:layout_width="143dp"
-            android:layout_height="26dp"
+            android:id="@+id/banniere"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:background="@drawable/excursion"
             android:gravity="center"
             android:text="@string/titre"
             android:textColor="@color/gold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.06" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="365dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="17dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:text="L'aventure s'offre à vous !"
+            android:textColor="@color/white"
+            android:textSize="25sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="365dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="39dp"
+            android:gravity="center"
+            android:text="@string/presentation"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="398dp"
+            android:layout_height="71dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/grau"
+            android:insetLeft="45dp"
+            android:insetRight="35dp"
+            android:text=">>> Découvrez nos excursions <<<"
+            android:textSize="13sp"
+            android:visibility="visible">
+
+        </Button>
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="-28dp"
-        android:layout_marginBottom="532dp"
-        android:gravity="center"
-        android:text="L'aventure s'offre à vous !"
-        android:textColor="@color/white"
-        android:textSize="25sp">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="321dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="220dp"
-        android:text="Basée à Sion et emmenée par une équipe de passionnés d'outdoor engagés pour la planète.\n \n Nous proposons des expéditions de 2 à 15 jours en petits groupes, pour tous les niveaux sportifs, partout en Valais.\n\n
-Notre credo, c'est chercher à vous faire vivre une reconnexion forte avec la nature, et une expérience de dépassement de soi unique, tout en préservant les environnements traversés au cours de votre programme.
-"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="71dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="207dp"
-        android:text=">>> Découvrez nos excursions <<<"
-        android:textSize="13sp"
-        android:backgroundTint="@color/grau"
-        >
-
-    </Button>
-
-
 </RelativeLayout>
