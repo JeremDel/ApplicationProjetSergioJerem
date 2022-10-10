@@ -16,7 +16,7 @@
 
             android:id="@+id/banniere"
             android:layout_width="match_parent"
-            android:layout_height="92dp"
+            android:layout_height="120dp"
             android:background="@drawable/excursion"
             android:gravity="center"
             android:text="@string/titre"
@@ -58,7 +58,7 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonExpedition"
             android:layout_width="398dp"
             android:layout_height="71dp"
             android:layout_alignParentBottom="true"
@@ -68,6 +68,7 @@
             android:insetRight="35dp"
             android:text=">>> Découvrez nos excursions <<<"
             android:textSize="13sp"
+            android:onClick="pageExcursion"
             android:visibility="visible">
 
         </Button>
