@@ -6,5 +6,19 @@
         android:id="@+id/right_icon"
         android:icon="@drawable/action"
         android:title="string/right_icon"
+        android:backgroundTint="@color/white"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_action"
+        android:icon="@drawable/action"
+        android:title="string/menu_action"
+        app:showAsAction="never" />
+
+    <item
+        android:id = "@+id/search_action"
+        android:icon = "@drawable/action"
+        android:title = "Placeholder text"
+        app:showAsAction = "never"
+    />
 </menu>
