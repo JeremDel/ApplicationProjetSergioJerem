@@ -11,6 +11,13 @@ Notre credo, c'est chercher à vous faire vivre une reconnexion forte avec la na
         • Prix: 330.-
         • Guide: Jean bonvin
     </string>
+    <string name="right_icon">
+        Nos excursions     >
+        Nos guides         >
+        Intranet           >
+        Contact            >
+        Paramètres         >
+    </string>
     <string name="wall">
         • Lieux: Conche
         • Distance: 205 km
