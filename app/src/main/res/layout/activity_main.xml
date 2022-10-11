@@ -22,7 +22,7 @@
         android:insetLeft="45dp"
         android:insetRight="35dp"
         android:onClick="pageExcursion"
-        android:text=">>> Découvrez nos excursions <<<"
+        android:text="Découvrez nos excursions"
         android:textSize="13sp"
         android:visibility="visible">
 
