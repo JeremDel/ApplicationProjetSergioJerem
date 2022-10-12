@@ -36,7 +36,7 @@
             android:textColor="#F2FFFFFF"
             android:textSize="20dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/editTextTextMultiLine"
             android:layout_width="198dp"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         android:textColor="@color/white"
         android:textSize="20dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/texteWalser"
         android:layout_width="197dp"
         android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
         android:text="@string/wall"
         android:textColor="@color/white">
 
-    </EditText>
+    </TextView>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -115,7 +115,7 @@
         android:textColor="@color/white"
         android:textSize="20dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTextMultiLine3"
         android:layout_width="200dp"
         android:layout_height="144dp"
