@@ -14,7 +14,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
 
-    Button bton_expedition;
+    private Button bton_expedition, btnGuides;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,20 @@ public class MainActivity extends AppCompatActivity {
         //bouton pour passer de la fenêtre de titre à la fenête expédition
         bton_expedition = (Button)findViewById(R.id.buttonExpedition);
 
+        btnGuides = (Button)findViewById(R.id.guides_button);
+
         bton_expedition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ExpeditionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnGuides.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, GuideDetails.class);
                 startActivity(intent);
             }
         });

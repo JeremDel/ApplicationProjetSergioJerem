@@ -54,4 +54,16 @@
 
     </TextView>
 
+    <Button
+        android:id="@+id/guides_button"
+        android:layout_width="316dp"
+        android:layout_height="67dp"
+        android:layout_alignBottom="@+id/buttonExpedition"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="173dp"
+        android:backgroundTint="@color/grau"
+        android:textSize="13sp"
+        android:text="Découvrez nos guides" />
+
 </RelativeLayout>
