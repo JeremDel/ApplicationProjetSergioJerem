@@ -33,4 +33,10 @@ Notre credo, c\'est chercher à vous faire vivre une reconnexion forte avec la n
         • 425.-
         • Guide: George Derivaz
     </string>
+    <string name="email">Email
+    </string>
+    <string name="name">Name
+    </string>
+    <string name="surname">Surname
+    </string>
 </resources>
