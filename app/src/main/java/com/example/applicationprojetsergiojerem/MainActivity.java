@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnGuides.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, GuideDetails.class);
+                Intent intent = new Intent(MainActivity.this, GuideList.class);
                 startActivity(intent);
             }
         });
