@@ -8,8 +8,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class GuideDetails extends AppCompatActivity {
     private TextView tvEmail, tvPhone;
+    private FloatingActionButton edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -19,6 +22,7 @@ public class GuideDetails extends AppCompatActivity {
 
         tvEmail = findViewById(R.id.contact_email);
         tvPhone = findViewById(R.id.contact_number);
+        edit = findViewById(R.id.edit);
 
         tvEmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +41,14 @@ public class GuideDetails extends AppCompatActivity {
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:" + tvPhone.getText().toString()));
                 startActivity(phoneIntent);
+            }
+        });
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                // TODO add edit menu
             }
         });
     }

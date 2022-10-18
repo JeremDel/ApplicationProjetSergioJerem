@@ -36,4 +36,16 @@
         android:layout_marginEnd="20dp"
         android:text="Blip blop blop blep blip. I tried to pass the captcha but it was too hard :(\nDoes that mean I'm a robot?"
         android:textSize="18sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/lightBlue"
+        android:src="@drawable/ic_baseline_add_24"
+        android:foregroundTint="@color/white"
+        />
 </RelativeLayout>
