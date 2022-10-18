@@ -19,6 +19,18 @@ Notre credo, c\'est chercher à vous faire vivre une reconnexion forte avec la n
         Contact            >
         Paramètres         >
     </string>
+
+    <string-array name="Difficulté">
+        <item>Facile</item>
+        <item>Moyen</item>
+        <item>Difficile</item>
+    </string-array>
+
+    <string-array name="Guide">
+        <item>Jean Bonvin</item>
+        <item>Michael Ritz</item>
+    </string-array>
+
     <string name="wall">
         • Lieux: Conche
         • Distance: 205 km

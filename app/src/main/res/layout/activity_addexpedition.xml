@@ -7,6 +7,8 @@
     >
     <include layout="@layout/toolbar"/>
 
+
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,13 +43,12 @@
                 android:textColor="@color/white"
                 android:layout_column="0"
                 />
-            <EditText
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout-weight="1"
-                />
 
+        <EditText
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            />
     </TableRow>
 
     <TableRow
@@ -64,13 +65,105 @@
             android:layout_column="0"
             />
         <EditText
-            android:layout_width="180dp"
+            android:layout_width="336dp"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:layout-weight="1"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:textSize="20dp"
+            android:text="Prix :"
+            android:textColor="@color/white"
+            android:layout_column="0"
+            />
+        <EditText
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_column="1"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:paddingLeft="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Difficulté :"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_column="0"
             />
 
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Difficulté"
+            android:layout_weight="1"
+            />
     </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:paddingLeft="30dp"
+        android:layout_marginTop="15dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guide :"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_column="0"
+            />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Guide"
+            android:layout_weight="1"
+            />
+    </TableRow>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        >
+        <Button
+            android:id="@+id/sauveExped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/grau"
+            android:layout_marginRight="10dp"
+            android:text="Sauvegarder"
+            />
+        <Button
+            android:id="@+id/supprimerExped"
+            android:backgroundTint="@color/grau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supprimer"
+            />
+    </LinearLayout>
 
 
 </TableLayout>

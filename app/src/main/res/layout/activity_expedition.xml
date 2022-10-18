@@ -10,6 +10,7 @@
     <include layout="@layout/toolbar"/>
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -53,6 +54,8 @@
     </RelativeLayout>
 
 
+
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="180dp"
@@ -78,13 +81,13 @@
 
     <TextView
         android:id="@+id/texteWalser"
-        android:layout_width="197dp"
-        android:layout_height="wrap_content"
+        android:layout_width="192dp"
+        android:layout_height="94dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="316dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -117,17 +120,39 @@
 
     <TextView
         android:id="@+id/editTextTextMultiLine3"
-        android:layout_width="200dp"
-        android:layout_height="144dp"
+        android:layout_width="191dp"
+        android:layout_height="143dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="14dp"
-        android:layout_marginBottom="121dp"
+        android:layout_marginBottom="122dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="@string/lacs"
         android:textColor="@color/white" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAdd"
+        android:layout_width="63dp"
+        android:layout_height="66dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="63dp"
+        android:background="@null"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/imageButtonEdit"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="80dp"
+        android:background="@null"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
 
 </RelativeLayout>
