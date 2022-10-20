@@ -15,15 +15,59 @@ import androidx.room.PrimaryKey;
 })
 public class Excursion {
     @PrimaryKey
-    public int id;
-    public int price;
+    private int id;
+    private int price;
 
-    public float distance;
+    private float distance;
 
-    public String name;
-    public String locations;
-    public String difficulty;
+    private String name;
+    private String locations;
+    private String difficulty;
+    private String picPath;
 
     @NonNull
-    public int guide;
+    private int guide;
+
+    public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, int guide){
+        this.price = price;
+        this.distance = distance;
+        this.name = name;
+        this.locations = locations;
+        this.difficulty = difficulty;
+        this.picPath = picPath;
+        this.guide = guide;
+    }
+
+    // -- Getters --
+    public int getId() {
+        return id;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public float getDistance() {
+        return distance;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocations() {
+        return locations;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public String getPicPath() {
+        return picPath;
+    }
+
+    public int getGuide() {
+        return guide;
+    }
 }
