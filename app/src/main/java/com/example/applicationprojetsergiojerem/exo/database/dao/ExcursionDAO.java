@@ -9,19 +9,21 @@ import androidx.room.Update;
 
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 
+import java.util.List;
+
 @Dao
 public abstract class ExcursionDAO {
 
     // -- Base queries --
 
     @Query("SELECT * FROM Excursion")
-    public abstract LiveData<Excursion> getAllExcursions();
+    public abstract List<Excursion> getAllExcursions();
 
     @Query("SELECT * FROM Excursion WHERE id = :id")
-    public abstract LiveData<Excursion> getExcursionById(int id);
+    public abstract List<Excursion> getExcursionById(int id);
 
     @Query("SELECT * FROM Excursion WHERE guide = :guideId")
-    public abstract LiveData<Excursion> getExcursionsByGuide(int guideId);
+    public abstract List<Excursion> getExcursionsByGuide(int guideId);
 
     // -- Insert --
 

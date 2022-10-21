@@ -7,7 +7,6 @@ import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 
 import java.util.List;
 
-import kotlin.jvm.Synchronized;
 
 public class ExcursionRepository {
 
