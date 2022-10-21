@@ -1,4 +1,4 @@
-package Entities;
+package com.example.applicationprojetsergiojerem.exo.database.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;

@@ -1,4 +1,4 @@
-package DAO;
+package com.example.applicationprojetsergiojerem.exo.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,7 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import Entities.Excursion;
+import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 
 @Dao
 public abstract class ExcursionDAO {

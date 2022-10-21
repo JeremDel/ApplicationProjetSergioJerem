@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

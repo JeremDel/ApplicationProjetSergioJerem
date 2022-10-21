@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
+
+import com.example.applicationprojetsergiojerem.R;
 
 public class MainActivity extends AppCompatActivity {
 
