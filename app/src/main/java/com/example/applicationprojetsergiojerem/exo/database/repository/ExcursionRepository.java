@@ -31,4 +31,14 @@ public class ExcursionRepository {
     public List<Excursion> getExcursion(final int id, Application application){
         return ((BaseApp) application).getDatabase().excursionDao().getExcursionById(id);
     }
+
+    public List<Excursion> getAllExcursions(Application application){
+        return ((BaseApp) application).getDatabase().excursionDao().getAllExcursions();
+    }
+
+    public List<Excursion> getExcursionsByGuide(final int guideId, Application application){
+        return ((BaseApp) application).getDatabase().excursionDao().getExcursionsByGuide(guideId);
+    }
+
+    // TODO add async methods
 }
