@@ -1,27 +1,27 @@
-package com.example.applicationprojetsergiojerem.exo.database.async.guide;
+package com.example.applicationprojetsergiojerem.exo.database.async.excursion;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
-import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
-public class CreateGuide extends AsyncTask<Guide, Void, Void> {
+public class CreateExcursion extends AsyncTask<Excursion, Void, Void> {
     private Application application;
     private OnAsyncEventListener callback;
     private Exception exception;
 
-    public CreateGuide(Application application, OnAsyncEventListener callback){
+    public CreateExcursion(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
     @Override
-    protected Void doInBackground(Guide... params){
+    protected Void doInBackground(Excursion... params){
         try{
-            for(Guide guide : params){
-                ((BaseApp) application).getDatabase().guide().insert(guide);
+            for(Excursion excursion : params){
+                ((BaseApp) application).getDatabase().excursion().insert(excursion);
             }
         }
         catch (Exception e){

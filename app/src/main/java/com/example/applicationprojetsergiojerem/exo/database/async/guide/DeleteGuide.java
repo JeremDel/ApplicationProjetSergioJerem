@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
 public class DeleteGuide extends AsyncTask<Guide, Void, Void> {
     private Application application;

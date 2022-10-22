@@ -1,27 +1,27 @@
-package com.example.applicationprojetsergiojerem.exo.database.async.guide;
+package com.example.applicationprojetsergiojerem.exo.database.async.excursion;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
-import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
-public class UpdateGuide extends AsyncTask<Guide, Void, Void> {
+public class DeleteExcursion extends AsyncTask<Excursion, Void, Void> {
     private Application application;
     private Exception exception;
     private OnAsyncEventListener callback;
 
-    public UpdateGuide(Application application, OnAsyncEventListener callback){
+    public DeleteExcursion(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
     @Override
-    protected Void doInBackground(Guide... params){
-        try{
-            for(Guide guide : params){
-                ((BaseApp) application).getDatabase().guide().update(guide);
+    protected Void doInBackground(Excursion... params){
+        try {
+            for (Excursion excursion : params) {
+                ((BaseApp) application).getDatabase().excursion().delete(excursion);
             }
         } catch (Exception e){
             exception = e;
@@ -33,10 +33,10 @@ public class UpdateGuide extends AsyncTask<Guide, Void, Void> {
 
     @Override
     protected void onPostExecute(Void aVoid){
-        if (callback != null){
+        if(callback != null){
             if (exception == null)
                 callback.onSuccess();
-        } else{
+        } else {
             callback.onFailure(exception);
         }
     }
