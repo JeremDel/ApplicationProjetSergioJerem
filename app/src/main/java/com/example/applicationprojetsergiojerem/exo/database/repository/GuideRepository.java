@@ -3,7 +3,11 @@ package com.example.applicationprojetsergiojerem.exo.database.repository;
 import android.app.Application;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
+import com.example.applicationprojetsergiojerem.exo.database.async.guide.CreateGuide;
+import com.example.applicationprojetsergiojerem.exo.database.async.guide.DeleteGuide;
+import com.example.applicationprojetsergiojerem.exo.database.async.guide.UpdateGuide;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
 import java.util.List;
 
@@ -34,5 +38,15 @@ public class GuideRepository {
         return ((BaseApp) application).getDatabase().guideDao().getGuideById(id);
     }
 
-    // TODO add async methods
+    public void insert(final Guide guide, OnAsyncEventListener callback, Application application){
+        new CreateGuide(application, callback).execute(guide);
+    }
+
+    public void update(final Guide guide, OnAsyncEventListener callback, Application application){
+        new UpdateGuide(application, callback).execute(guide);
+    }
+
+    public void delete(final Guide guide, OnAsyncEventListener callback, Application application){
+        new DeleteGuide(application, callback).execute(guide);
+    }
 }
