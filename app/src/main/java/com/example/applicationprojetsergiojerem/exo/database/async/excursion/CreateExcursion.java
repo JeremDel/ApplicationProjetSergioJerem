@@ -21,7 +21,7 @@ public class CreateExcursion extends AsyncTask<Excursion, Void, Void> {
     protected Void doInBackground(Excursion... params){
         try{
             for(Excursion excursion : params){
-                ((BaseApp) application).getDatabase().excursion().insert(excursion);
+                ((BaseApp) application).getDatabase().excursionDAO().insert(excursion);
             }
         }
         catch (Exception e){
@@ -31,12 +31,12 @@ public class CreateExcursion extends AsyncTask<Excursion, Void, Void> {
         return null;
     }
 
+
     @Override
-    protected void onPOstExecute(Void aVoid){
-        if (callback != null){
-            if (exception == null){
+    protected void onPostExecute(Void aVoid){
+        if(callback != null){
+            if (exception == null)
                 callback.onSuccess();
-            }
         } else {
             callback.onFailure(exception);
         }

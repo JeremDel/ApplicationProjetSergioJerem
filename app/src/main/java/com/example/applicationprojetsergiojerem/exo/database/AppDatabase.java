@@ -11,6 +11,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.applicationprojetsergiojerem.exo.database.dao.ExcursionDAO;
+import com.example.applicationprojetsergiojerem.exo.database.dao.GuideDAO;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 
@@ -21,8 +23,8 @@ public abstract class AppDatabase extends RoomDatabase {
     private static final String TAG = "AppDatabase";
     private static final String DATABASE_NAME = "ExcursionsDB";
 
-    public abstract Guide guide();
-    public abstract Excursion excursion();
+    public abstract GuideDAO guideDAO();
+    public abstract ExcursionDAO excursionDAO();
 
     private final MutableLiveData<Boolean> mIsDatabaseCreated = new MutableLiveData<>();
 
@@ -32,7 +34,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     }
 
-    public AppDatabase getInstance(final Context context){
+    public static AppDatabase getInstance(final Context context){
         if (instance == null){
             synchronized (AppDatabase.class){
                 if (instance == null){
@@ -68,8 +70,8 @@ public abstract class AppDatabase extends RoomDatabase {
         Executors.newSingleThreadExecutor().execute(() -> {
             database.runInTransaction(() -> {
                 Log.i(TAG, "Wipe database");
-                database.guide().deleteAll();
-                database.excursion().deleteAll();
+                database.guideDAO().deleteAll();
+                database.excursionDAO().deleteAll();
 
                 DatabaseInitializer.populateDatabase(database);
             });

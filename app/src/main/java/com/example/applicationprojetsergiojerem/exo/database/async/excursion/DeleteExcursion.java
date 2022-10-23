@@ -21,7 +21,7 @@ public class DeleteExcursion extends AsyncTask<Excursion, Void, Void> {
     protected Void doInBackground(Excursion... params){
         try {
             for (Excursion excursion : params) {
-                ((BaseApp) application).getDatabase().excursion().delete(excursion);
+                ((BaseApp) application).getDatabase().excursionDAO().delete(excursion);
             }
         } catch (Exception e){
             exception = e;

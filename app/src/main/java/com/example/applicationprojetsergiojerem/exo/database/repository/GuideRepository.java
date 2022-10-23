@@ -19,7 +19,7 @@ public class GuideRepository {
 
     }
 
-    public GuideRepository getInstance(){
+    public static GuideRepository getInstance(){
         if (instance == null){
             synchronized (GuideRepository.class){
                 if (instance == null)
@@ -31,11 +31,11 @@ public class GuideRepository {
     }
 
     public List<Guide> getAllGuides(Application application){
-        return ((BaseApp) application).getDatabase().guideDao().getAllGuides();
+        return ((BaseApp) application).getDatabase().guideDAO().getAllGuides();
     }
 
     public List<Guide> getGuideById(final int id, Application application){
-        return ((BaseApp) application).getDatabase().guideDao().getGuideById(id);
+        return ((BaseApp) application).getDatabase().guideDAO().getGuideById(id);
     }
 
     public void insert(final Guide guide, OnAsyncEventListener callback, Application application){

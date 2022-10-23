@@ -21,7 +21,7 @@ public class UpdateGuide extends AsyncTask<Guide, Void, Void> {
     protected Void doInBackground(Guide... params){
         try{
             for(Guide guide : params){
-                ((BaseApp) application).getDatabase().guide().update(guide);
+                ((BaseApp) application).getDatabase().guideDAO().update(guide);
             }
         } catch (Exception e){
             exception = e;

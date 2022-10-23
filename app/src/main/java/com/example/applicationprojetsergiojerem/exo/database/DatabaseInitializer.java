@@ -13,25 +13,25 @@ public class DatabaseInitializer {
 
     public static void populateDatabase(final AppDatabase database){
         Log.i(TAG, "Insert demo data");
-        PopulateDbAsync task = new PopulateDbAsync(db);
+        PopulateDbAsync task = new PopulateDbAsync(database);
         task.execute();
     }
 
     private static void addGuide(final AppDatabase database, final String name, final String lastName, final String description, final String address, final String email,
                                  final String picPath, final int phoneNumber, final Date birthDate){
         Guide guide = new Guide(phoneNumber, birthDate, name, lastName, description, address, email, picPath);
-        database.guide().insert(guide);
+        database.guideDAO().insert(guide);
     }
 
     private static void addExcursion(final AppDatabase database, final int price, final float distance, final String name, final String locations, final String difficulty,
                                      final String picPath, final int guideId){
         Excursion excursion = new Excursion(price, distance, name, locations, difficulty, picPath, guideId);
-        database.excursion().insert(excursion);
+        database.excursionDAO().insert(excursion);
     }
 
 
     private static void populateWithTestData(AppDatabase database){
-        database.guide().deleteAll();
+        database.guideDAO().deleteAll();
 
         addGuide(database, "Jean", "Néo-Skours", "Ma maman dit toujours que je suis très spécial :)", "Route des chromosomes 123",
                 "3pecial@gmail.com", "special.png", 761857496, new Date(2003, 12, 11));

@@ -21,7 +21,7 @@ public class CreateGuide extends AsyncTask<Guide, Void, Void> {
     protected Void doInBackground(Guide... params){
         try{
             for(Guide guide : params){
-                ((BaseApp) application).getDatabase().guide().insert(guide);
+                ((BaseApp) application).getDatabase().guideDAO().insert(guide);
             }
         }
         catch (Exception e){
@@ -31,12 +31,12 @@ public class CreateGuide extends AsyncTask<Guide, Void, Void> {
         return null;
     }
 
+
     @Override
-    protected void onPOstExecute(Void aVoid){
-        if (callback != null){
-            if (exception == null){
+    protected void onPostExecute(Void aVoid){
+        if(callback != null){
+            if (exception == null)
                 callback.onSuccess();
-            }
         } else {
             callback.onFailure(exception);
         }

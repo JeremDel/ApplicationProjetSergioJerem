@@ -21,7 +21,7 @@ public class UpdateExcursion extends AsyncTask<Excursion, Void, Void> {
     protected Void doInBackground(Excursion... params){
         try{
             for(Excursion excursion : params){
-                ((BaseApp) application).getDatabase().guide().update(excursion);
+                ((BaseApp) application).getDatabase().excursionDAO().update(excursion);
             }
         } catch (Exception e){
             exception = e;

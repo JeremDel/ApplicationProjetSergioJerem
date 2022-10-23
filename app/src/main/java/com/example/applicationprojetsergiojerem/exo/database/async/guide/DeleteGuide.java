@@ -21,7 +21,7 @@ public class DeleteGuide extends AsyncTask<Guide, Void, Void> {
     protected Void doInBackground(Guide... params){
         try {
             for (Guide guide : params) {
-                ((BaseApp) application).getDatabase().guide().delete(guide);
+                ((BaseApp) application).getDatabase().guideDAO().delete(guide);
             }
         } catch (Exception e){
             exception = e;

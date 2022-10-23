@@ -33,15 +33,15 @@ public class ExcursionRepository {
     }
 
     public List<Excursion> getExcursion(final int id, Application application){
-        return ((BaseApp) application).getDatabase().excursionDao().getExcursionById(id);
+        return ((BaseApp) application).getDatabase().excursionDAO().getExcursionById(id);
     }
 
     public List<Excursion> getAllExcursions(Application application){
-        return ((BaseApp) application).getDatabase().excursionDao().getAllExcursions();
+        return ((BaseApp) application).getDatabase().excursionDAO().getAllExcursions();
     }
 
     public List<Excursion> getExcursionsByGuide(final int guideId, Application application){
-        return ((BaseApp) application).getDatabase().excursionDao().getExcursionsByGuide(guideId);
+        return ((BaseApp) application).getDatabase().excursionDAO().getExcursionsByGuide(guideId);
     }
 
     public void insert(final Excursion excursion, OnAsyncEventListener callback, Application application){
