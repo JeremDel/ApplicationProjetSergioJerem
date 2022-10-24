@@ -7,28 +7,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class ExpeditionActivity extends AppCompatActivity {
 
-    private Button button;
+    private ImageButton button;
 
-    @SuppressLint("WrongViewCast")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expedition);
 
-        button = (Button) findViewById(R.id.imageButtonAdd);
-        button.setOnClickListener(new View.OnClickListener() {
+        button = (ImageButton)findViewById(R.id.ExpeditionAdd);
 
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addExpedition();
+                Intent intent = new Intent(ExpeditionActivity.this, activity_addexpedition.class);
+                startActivity(intent);
             }
         });
     }
-    public void addExpedition(){
-        Intent intent = new Intent(this, activity_addexpedition.class);
-        startActivity(intent);
-    }
+
 }

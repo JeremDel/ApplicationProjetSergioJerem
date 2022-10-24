@@ -133,7 +133,7 @@
         android:textColor="@color/white" />
 
     <ImageButton
-        android:id="@+id/imageButtonAdd"
+        android:id="@+id/ExpeditionAdd"
         android:layout_width="63dp"
         android:layout_height="66dp"
         android:layout_alignParentEnd="true"
