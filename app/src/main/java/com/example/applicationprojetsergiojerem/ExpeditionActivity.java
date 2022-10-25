@@ -24,7 +24,7 @@ public class ExpeditionActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, activity_addexpedition.class);
+                Intent intent = new Intent(ExpeditionActivity.this, addexpedition.class);
                 startActivity(intent);
             }
         });
