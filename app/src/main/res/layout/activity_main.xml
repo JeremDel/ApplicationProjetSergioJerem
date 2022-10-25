@@ -1,69 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#B0C4DE"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
     tools:context=".MainActivity">
     <include layout="@layout/toolbar"/>
 
-    <Button
-        android:id="@+id/buttonExpedition"
-        android:layout_width="398dp"
-        android:layout_height="71dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="248dp"
-        android:backgroundTint="@color/grau"
-        android:insetLeft="45dp"
-        android:insetRight="35dp"
-        android:onClick="pageExcursion"
-        android:text="Découvrez nos excursions"
-        android:textSize="13sp"
-        android:visibility="visible">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </Button>
+        <Button
+            android:id="@+id/buttonExpedition"
+            android:layout_width="366dp"
+            android:layout_height="67dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/grau"
+            android:insetLeft="45dp"
+            android:insetRight="35dp"
+            android:onClick="pageExcursion"
+            android:text="Découvrez nos excursions"
+            android:textSize="13sp"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="9dp"
+            tools:layout_editor_absoluteY="440dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="365dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="154dp"
-        android:gravity="center"
-        android:text="@string/presentation"
-        android:textColor="@color/white" />
+        </Button>
 
-    <TextView
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginEnd="17dp"
-        android:gravity="center"
-        android:paddingTop="100dp"
-        android:text="L'aventure s'offre à vous !"
-        android:textColor="@color/white"
-        android:textSize="25sp">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="365dp"
+            android:layout_height="205dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:text="@string/presentation"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="193dp" />
 
-    </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:text="L'aventure s'offre à vous !"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="142dp">
 
-    <Button
-        android:id="@+id/guides_button"
-        android:layout_width="316dp"
-        android:layout_height="67dp"
-        android:layout_alignBottom="@+id/buttonExpedition"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="173dp"
-        android:backgroundTint="@color/grau"
-        android:textSize="13sp"
-        android:text="Découvrez nos guides" />
+        </TextView>
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/guides_button"
+            android:layout_width="292dp"
+            android:layout_height="78dp"
+            android:layout_alignBottom="@+id/buttonExpedition"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/grau"
+            android:text="Découvrez nos guides"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="522dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationView"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu_principal"
+        android:fitsSystemWindows="true"
+        android:layout_gravity = "start">
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

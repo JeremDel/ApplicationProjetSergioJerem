@@ -2,23 +2,48 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/right_icon"
-        android:icon="@drawable/action"
-        android:title="string/right_icon"
-        android:backgroundTint="@color/white"
-        app:showAsAction="never" />
+   <group android:checkableBehavior="single">
 
-    <item
-        android:id="@+id/menu_action"
-        android:icon="@drawable/action"
-        android:title="string/menu_action"
-        app:showAsAction="never" />
+       <item
+           android:id="@+id/nav_home"
+           android:title="Home"
+           android:icon="@drawable/ic_baseline_home_24"/>
 
-    <item
-        android:id = "@+id/search_action"
-        android:icon = "@drawable/action"
-        android:title = "Placeholder text"
-        app:showAsAction = "never"
-    />
+       <item
+           android:id="@+id/nav_search"
+           android:title="Search"
+           android:icon="@drawable/ic_baseline_search_24"/>
+
+       <item
+           android:id="@+id/nav_users"
+           android:title="Users"
+           android:icon="@drawable/ic_baseline_supervised_user_circle_24"/>
+
+       <item
+           android:id="@+id/nav_setting"
+           android:title="Settings"
+           android:icon="@drawable/ic_baseline_settings_24"/>
+   </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="Direct Access">
+
+     <menu>
+         <group>
+             <item
+                 android:id="@+id/excursionFast"
+                 android:title="Excursions"
+                 android:icon="@drawable/ic_baseline_snowshoeing_24"/>
+
+             <item
+                 android:id="@+id/guideFast"
+                 android:title="Guides"
+                 android:icon="@drawable/ic_baseline_sports_martial_arts_24"/>
+
+         </group>
+     </menu>
+        </item>
+    </group>
 </menu>
