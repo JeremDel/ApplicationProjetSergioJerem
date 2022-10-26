@@ -8,10 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ExpeditionActivity extends AppCompatActivity {
 
     private ImageButton button;
+    private ImageView imageMuveran, image7lacs, imageWalser;
+    private TextView titreMuveran, textMuveran, titre7lacs, text7lacs, titreWalser, textWalser;
 
 
     @Override
@@ -19,7 +23,40 @@ public class ExpeditionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expedition);
 
-        button = (ImageButton)findViewById(R.id.ExpeditionAdd);
+        button = (ImageButton) findViewById(R.id.ExpeditionAdd);
+        imageMuveran = (ImageView) findViewById(R.id.imageMuveran);
+        image7lacs = (ImageView) findViewById(R.id.image7lacs);
+        imageWalser = (ImageView) findViewById(R.id.imageWalser);
+        titreMuveran = (TextView) findViewById(R.id.titreMuveran);
+        titre7lacs = (TextView) findViewById(R.id.titre7lacs);
+        titreWalser = (TextView) findViewById(R.id.titreWalser);
+        textMuveran = (TextView) findViewById(R.id.textMuveran);
+        text7lacs = (TextView) findViewById(R.id.text7lacs);
+        textWalser = (TextView) findViewById(R.id.textWalser);
+
+        imageMuveran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
+                startActivity(intent);
+            }
+        });
+
+        titreMuveran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
+                startActivity(intent);
+            }
+        });
+
+        textMuveran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
+                startActivity(intent);
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

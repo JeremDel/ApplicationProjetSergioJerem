@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //passer du menu principal à la page des guides
+
         btnGuides.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //mise en place du menu qui se déploit latéralement
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationView);
@@ -82,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        Log.i("MENU_DRAWER_TAG", "Home item is clicked");
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -92,22 +97,26 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_users:
-                        Log.i("MENU_DRAWER_TAG", "User item is clicked");
+                        Intent intent2 = new Intent(MainActivity.this, Login.class);
+                        startActivity(intent2);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.nav_setting:
-                        Log.i("MENU_DRAWER_TAG", "Settings item is clicked");
+                        Intent intent3 = new Intent(MainActivity.this, SettingsActivity.class);
+                        startActivity(intent3);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.excursionFast:
-                        Log.i("MENU_DRAWER_TAG", "Excursion item is clicked");
+                        Intent intent4 = new Intent(MainActivity.this, ExpeditionActivity.class);
+                        startActivity(intent4);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.guideFast:
-                        Log.i("MENU_DRAWER_TAG", "Guide item is clicked");
+                        Intent intent5 = new Intent(MainActivity.this, GuideList.class);
+                        startActivity(intent5);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
