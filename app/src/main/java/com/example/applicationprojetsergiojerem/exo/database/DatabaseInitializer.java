@@ -18,7 +18,7 @@ public class DatabaseInitializer {
     }
 
     private static void addGuide(final AppDatabase database, final String name, final String lastName, final String description, final String address, final String email,
-                                 final String picPath, final int phoneNumber, final Date birthDate){
+                                 final String picPath, final int phoneNumber, final String birthDate){
         Guide guide = new Guide(phoneNumber, birthDate, name, lastName, description, address, email, picPath);
         database.guideDAO().insert(guide);
     }
@@ -34,16 +34,16 @@ public class DatabaseInitializer {
         database.guideDAO().deleteAll();
 
         addGuide(database, "Jean", "Néo-Skours", "Ma maman dit toujours que je suis très spécial :)", "Route des chromosomes 123",
-                "3pecial@gmail.com", "special.png", 761857496, new Date(2003, 12, 11));
+                "3pecial@gmail.com", "special.png", 761857496, "11.12.2003");
 
         addGuide(database, "Barry", "Not-Allen-Si-Jamais", "Ma maman dit toujours que je suis un bon garçon :))", "Avenue des doggos 455",
-                "woofPasUnChienWoof@outlook.com", "barryLeBG.png", 768125594, new Date(1970, 2, 23));
+                "woofPasUnChienWoof@outlook.com", "barryLeBG.png", 768125594, "23.2.1970");
 
         addGuide(database, "Storm", "Front", "Il faut respecter l'opinion des autres ;)", "Route des Delphins 420",
-                "eineBierBitte@gmail.com", "meinestraSSe.png", 784825169, new Date(1905, 12, 24));
+                "eineBierBitte@gmail.com", "meinestraSSe.png", 784825169, "24.12.1905");
 
         addGuide(database, "Soldier", "Boy", "Si tu veux être heureux, ne te marie jamais à une belle femme", "Avenue de Lennil Boss 79",
-                "iEnjoyEatingCars@yahoo.com", "heroGsm.png", 792871056, new Date(1875, 4, 20));
+                "iEnjoyEatingCars@yahoo.com", "heroGsm.png", 792871056, "20.04.1875");
 
 
         try{

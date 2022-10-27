@@ -15,18 +15,18 @@ import androidx.room.PrimaryKey;
 })
 public class Excursion {
     @PrimaryKey
-    private int id;
-    private int price;
+    public int id;
+    public int price;
 
-    private float distance;
+    public float distance;
 
-    private String name;
-    private String locations;
-    private String difficulty;
-    private String picPath;
+    public String name;
+    public String locations;
+    public String difficulty;
+    public String picPath;
 
     @NonNull
-    private int guide;
+    public int guide;
 
     public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, int guide){
         this.price = price;

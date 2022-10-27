@@ -8,19 +8,19 @@ import java.util.Date;
 @Entity
 public class Guide {
     @PrimaryKey
-    private int id;
-    private int phoneNumber;
+    public int id;
+    public int phoneNumber;
 
-    private Date birthdate;
+    public String birthdate;
 
-    private String name;
-    private String lastName;
-    private String description;
-    private String address;
-    private String email;
-    private String picPath;
+    public String name;
+    public String lastName;
+    public String description;
+    public String address;
+    public String email;
+    public String picPath;
 
-    public Guide(int phoneNumber, Date birthdate, String name, String lastName, String description,
+    public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
                  String address, String email, String picPath){
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
@@ -41,7 +41,7 @@ public class Guide {
         return phoneNumber;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 

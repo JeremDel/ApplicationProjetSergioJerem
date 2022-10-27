@@ -1,5 +1,6 @@
 package com.example.applicationprojetsergiojerem.exo.database;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 
@@ -30,7 +31,8 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
 
-    private AppDatabase(){
+    @SuppressLint("NotConstructor")
+    private void AppDatabase(){
 
     }
 
