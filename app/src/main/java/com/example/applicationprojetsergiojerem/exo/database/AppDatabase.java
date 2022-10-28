@@ -35,7 +35,6 @@ public abstract class AppDatabase extends RoomDatabase {
     private void AppDatabase(){
 
     }
-    // test
 
     public static AppDatabase getInstance(final Context context){
         if (instance == null){
@@ -84,7 +83,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private void updateDatabaseCreated(final Context context){
         if (context.getDatabasePath(DATABASE_NAME).exists()){
-            Log.i(TAG, "Database inizialized");
+            Log.i(TAG, "Database initialized");
             setDatabaseCreated();
         }
     }
