@@ -7,7 +7,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-class addexpedition extends AppCompatActivity {
+import com.example.applicationprojetsergiojerem.exo.ui.ExpeditionActivity;
+
+public class addexpedition extends AppCompatActivity {
 
      private Button AsauveExped, BsupprimerExped;
 

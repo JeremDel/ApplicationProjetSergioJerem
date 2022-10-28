@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicationprojetsergiojerem.exo.ui.MainActivity;
+
 public class Login extends AppCompatActivity {
 
     private Button Aregister_button, Bsign_in_button;

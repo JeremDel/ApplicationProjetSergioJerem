@@ -1,4 +1,4 @@
-package DAO;
+package com.example.applicationprojetsergiojerem.exo.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,7 +7,9 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import Entities.Guide;
+import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+
+import java.util.List;
 
 @Dao
 public abstract class GuideDAO {
@@ -15,10 +17,10 @@ public abstract class GuideDAO {
     // -- Base queries --
 
     @Query("SELECT * FROM Guide")
-    public abstract LiveData<Guide> getAllGuides();
+    public abstract List<Guide> getAllGuides();
 
     @Query("SELECT * FROM Guide WHERE id = :id")
-    public abstract LiveData<Guide> getGuideById(int id);
+    public abstract List<Guide> getGuideById(int id);
 
 
     // -- Insert --

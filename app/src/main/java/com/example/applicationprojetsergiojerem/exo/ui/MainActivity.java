@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -14,6 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.applicationprojetsergiojerem.Login;
+import com.example.applicationprojetsergiojerem.R;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
