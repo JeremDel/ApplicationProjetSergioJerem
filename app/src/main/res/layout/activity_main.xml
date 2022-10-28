@@ -1,97 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#B0C4DE"
+<?xml version="1.0" encoding="utf-8"?><androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"    android:background="#B0C4DE"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".MainActivity">
-    <include layout="@layout/toolbar"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/buttonExpedition"
-            android:layout_width="366dp"
-            android:layout_height="67dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="bottom"
-            android:backgroundTint="@color/grau"
-            android:insetLeft="45dp"
-            android:insetRight="35dp"
-            android:onClick="pageExcursion"
-            android:text="Découvrez nos excursions"
-            android:textSize="13sp"
-            android:visibility="visible"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="9dp"
-            tools:layout_editor_absoluteY="440dp">
-
-        </Button>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="365dp"
-            android:layout_height="205dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="16dp"
-            android:gravity="center"
-            android:text="@string/presentation"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="193dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:gravity="center"
-            android:text="L'aventure s'offre à vous !"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="142dp">
-
-        </TextView>
-
-        <Button
-            android:id="@+id/guides_button"
-            android:layout_width="292dp"
-            android:layout_height="78dp"
-            android:layout_alignBottom="@+id/buttonExpedition"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:backgroundTint="@color/grau"
-            android:text="Découvrez nos guides"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="522dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/navigationView"
-        app:headerLayout="@layout/header"
-        app:menu="@menu/menu_principal"
-        android:fitsSystemWindows="true"
-        android:layout_gravity = "start">
-
-
-    </com.google.android.material.navigation.NavigationView>
-
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
+    tools:context=".exo.ui.MainActivity">    <include layout="@layout/toolbar"/>    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">        <Button
+    android:id="@+id/buttonExpedition"
+    android:layout_width="292dp"
+    android:layout_height="67dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="bottom"
+    android:layout_marginTop="35dp"
+    android:backgroundTint="@color/grau"
+    android:onClick="pageExcursion"
+    android:text="Découvrez nos excursions"
+    android:textSize="13sp"
+    android:visibility="visible"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView"
+    tools:ignore="MissingConstraints">        </Button>        <TextView
+    android:id="@+id/textView"
+    android:layout_width="365dp"
+    android:layout_height="205dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="30dp"
+    android:gravity="center"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:text="@string/presentation"
+    android:textColor="@color/white"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView3"
+    tools:ignore="MissingConstraints" /><TextView
+    android:id="@+id/textView3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="4dp"
+    android:gravity="center"
+    android:text="L'aventure s'offre à vous !"
+    android:textColor="@color/white"
+    android:layout_marginTop="125dp"
+    android:textSize="25sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="MissingConstraints">        </TextView>        <Button
+    android:id="@+id/guides_button"
+    android:layout_width="292dp"
+    android:layout_height="67dp"
+    android:layout_alignBottom="@+id/buttonExpedition"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:backgroundTint="@color/grau"
+    android:layout_marginTop="10dp"
+    android:text="Découvrez nos guides"
+    android:textSize="13sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/buttonExpedition"
+    tools:ignore="MissingConstraints" />    </androidx.constraintlayout.widget.ConstraintLayout>    <com.google.android.material.navigation.NavigationView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/navigationView"
+    app:headerLayout="@layout/header"
+    app:menu="@menu/menu_principal"
+    android:fitsSystemWindows="true"
+    android:layout_gravity = "start">    </com.google.android.material.navigation.NavigationView></androidx.drawerlayout.widget.DrawerLayout>

@@ -15,35 +15,35 @@
         android:theme="@style/Theme.ApplicationProjetSergioJerem"
         tools:targetApi="31">
         <activity
-            android:name=".ExpeditionActivity"
+            android:name=".exo.ui.ExpeditionActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".addexpedition"
+            android:name=".exo.ui.activity_addexpedition"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".GuideList"
+            android:name=".exo.ui.GuideList"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AddGuide"
+            android:name=".exo.ui.AddGuide"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".GuideDetails"
+            android:name=".exo.ui.GuideDetails"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -64,22 +64,23 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name=".exo.ui.SettingsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <!--
         <activity
-            android:name=".SettingsFragment"
+            android:name=""
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
+        -->
         <activity
-            android:name=".MainActivity"
+            android:name=".exo.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

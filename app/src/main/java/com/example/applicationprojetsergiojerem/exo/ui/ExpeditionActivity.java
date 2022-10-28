@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.applicationprojetsergiojerem.Muveran;
+import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.addexpedition;
 
 public class ExpeditionActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicationprojetsergiojerem.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class GuideDetails extends AppCompatActivity {

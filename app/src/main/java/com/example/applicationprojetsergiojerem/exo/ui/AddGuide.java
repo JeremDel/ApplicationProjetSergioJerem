@@ -1,10 +1,11 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicationprojetsergiojerem.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddGuide extends AppCompatActivity {
