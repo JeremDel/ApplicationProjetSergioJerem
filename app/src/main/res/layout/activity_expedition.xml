@@ -10,12 +10,7 @@
     <include layout="@layout/toolbar"/>
 
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
+    <ImageView
             android:id="@+id/imageMuveran"
             android:layout_width="173dp"
             android:layout_height="161dp"
@@ -25,37 +20,65 @@
             android:layout_marginTop="98dp"
             app:srcCompat="@drawable/muverans" />
 
-        <TextView
-            android:id="@+id/titreMuveran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="99dp"
-            android:layout_marginEnd="25dp"
-            android:text="Tour des Muverans"
-            android:textColor="#F2FFFFFF"
-            android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/textMuveran"
-            android:layout_width="201dp"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="101dp"
-            android:layout_marginEnd="11dp"
-            android:breakStrategy="balanced"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="@string/muverans"
-            android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/titreMuveran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="18dp"
+        android:text="Tour des Muverans"
+        android:textColor="#F2FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/lieuxMuv"
+        android:layout_width="157dp"
+        android:layout_height="21dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="568dp"
+        android:text="@string/LieuxMuv"
+        android:textColor="@color/white" />
 
+    <TextView
+        android:id="@+id/DistanceMuv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="543dp"
+        android:text="@string/DistanceMuv"
+        android:textColor="@color/white" />
 
+    <TextView
+        android:id="@+id/DifficulteMuv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="517dp"
+        android:text="@string/DifficultéMuv"
+        android:textColor="@color/white" />
 
+    <TextView
+        android:id="@+id/PrixMuv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="492dp"
+        android:text="@string/PrixMuv"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/imageWalser"
@@ -74,39 +97,70 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="273dp"
-        android:layout_marginEnd="54dp"
+        android:layout_marginTop="289dp"
+        android:layout_marginEnd="67dp"
         android:text="Tour Walser"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textWalser"
-        android:breakStrategy="balanced"
-        android:layout_width="192dp"
-        android:layout_height="94dp"
+        android:id="@+id/lieuxWals"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="383dp"
+        android:text="@string/LieuxWals"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/DistanceWals"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="316dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:text="@string/wall"
-        android:textColor="@color/white">
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="356dp"
+        android:text="@string/DistanceWals"
+        android:textColor="@color/white" />
 
-    </TextView>
+    <TextView
+        android:id="@+id/DifficulteWals"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="332dp"
+        android:text="@string/DifficultéWals"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/PrixWals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="308dp"
+        android:text="@string/PrixWals"
+        android:textColor="@color/white" />
 
     <ImageView
-        android:id="@+id/image7lacs"
-        android:layout_width="171dp"
-        android:layout_height="172dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginBottom="120dp"
-        app:srcCompat="@drawable/lacs" />
+            android:id="@+id/image7lacs"
+            android:layout_width="171dp"
+            android:layout_height="172dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginBottom="120dp"
+            app:srcCompat="@drawable/lacs" />
 
     <TextView
         android:id="@+id/titre7lacs"
@@ -114,25 +168,59 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="69dp"
+        android:layout_marginEnd="77dp"
         android:layout_marginBottom="262dp"
         android:text="Les 7 lacs"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/text7lacs"
-        android:layout_width="191dp"
-        android:layout_height="143dp"
+        android:id="@+id/lieux7lacs"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="122dp"
-        android:ems="10"
-        android:breakStrategy="balanced"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:text="@string/lacs"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="238dp"
+        android:text="@string/Lieux7lacs"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/Distance7lacs"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="212dp"
+        android:text="@string/Distance7lacs"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/Difficulte7lacs"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="187dp"
+        android:text="@string/Difficulté7lacs"
+        android:textColor="@color/white" />
+
+
+    <TextView
+        android:id="@+id/Prix7lacs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="162dp"
+        android:text="@string/Prix7lacs"
         android:textColor="@color/white" />
 
     <ImageButton

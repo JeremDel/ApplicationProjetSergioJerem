@@ -20,19 +20,7 @@
                 android:layout_marginBottom="30dp"
                 android:src="@drawable/ic_baseline_menu_24"
                 android:id="@+id/right_icon"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="121dp"
-                android:gravity="center"
-                android:text="@string/titre"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:textColor="@color/gold"
-                />
+
 
 
     </RelativeLayout>

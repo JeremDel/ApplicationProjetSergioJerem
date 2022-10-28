@@ -9,13 +9,7 @@ Notre credo, c\'est chercher à vous faire vivre une reconnexion forte avec la n
     </string>
     <string name="close_menu">Close
     </string>
-    <string name="muverans">
-        • Lieux: Bex à Ovronnaz
-        • Distance: 110 km
-        • Difficulté: Moyenne
-        • Prix: 330.-
-        • Guide: Jean Bonvin
-    </string>
+
     <string name="right_icon">
         Nos excursions     >
         Nos guides         >
@@ -35,20 +29,26 @@ Notre credo, c\'est chercher à vous faire vivre une reconnexion forte avec la n
         <item>Michael Ritz</item>
     </string-array>
 
-    <string name="wall">
-        • Lieux: Conche
-        • Distance: 205 km
-        • Difficulté: Dure
-        • Prix: 615.-
-        • Guide: Michael Ritz
+    <string name="LieuxMuv">• Lieux: Bex à Ovronnaz
     </string>
-    <string name="lacs">
-        • Lieux: Bellwald
-        • Distance: 8.1km
-        • Difficulté: Moyenne
-        • 425.-
-        • Guide: George Derivaz
-    </string>
+    <string name="DistanceMuv">• Distance: 110 km</string>
+    <string name="DifficultéMuv">• Difficulté: Moyenne</string>
+    <string name="PrixMuv">• Prix: 330.-</string>
+    <string name="GuideMuv">• Guide: Jean Bonvin</string>
+
+    <string name="LieuxWals">• Lieux: Conches</string>
+    <string name="DistanceWals">• Distance: 205km</string>
+    <string name="DifficultéWals">• Difficulté: Dure</string>
+    <string name="PrixWals">• Prix: 615.-</string>
+    <string name="GuideWals">• Guide: Michael Ritz</string>
+
+    <string name="Lieux7lacs">• Lieux: Bellwald</string>
+    <string name="Distance7lacs">• Distance: 81km</string>
+    <string name="Difficulté7lacs">• Difficulté: Moyenne</string>
+    <string name="Prix7lacs">• Prix: 425.-.-</string>
+    <string name="Guide7lacs">• Guide: George Derivaz</string>
+
+
     <string name="email">Email
     </string>
     <string name="name">Name
