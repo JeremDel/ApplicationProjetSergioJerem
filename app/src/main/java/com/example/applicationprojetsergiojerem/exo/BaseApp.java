@@ -12,8 +12,7 @@ public class BaseApp extends Application {
     public void onCreate(){
         super.onCreate();
     }
-
-    // TODO add getDatabase(), getAccountRepository(), getClientRepository() versions with the snowshoes
+    
     public AppDatabase getDatabase(){
         return AppDatabase.getInstance(this);
     }
