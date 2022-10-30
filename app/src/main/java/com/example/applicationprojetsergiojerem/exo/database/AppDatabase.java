@@ -32,9 +32,6 @@ public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
 
     @SuppressLint("NotConstructor")
-    public AppDatabase(){
-
-    }
 
     public static AppDatabase getInstance(final Context context){
         if (instance == null){
