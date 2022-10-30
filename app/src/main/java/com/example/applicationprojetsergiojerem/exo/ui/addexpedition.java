@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.applicationprojetsergiojerem.exo.ui.ExpeditionActivity;
+import com.example.applicationprojetsergiojerem.R;
 
 public class addexpedition extends AppCompatActivity {
 

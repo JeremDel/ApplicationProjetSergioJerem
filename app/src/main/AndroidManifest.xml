@@ -50,14 +50,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".exo.ui.Login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Register"
+            android:name=".exo.ui.Register"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

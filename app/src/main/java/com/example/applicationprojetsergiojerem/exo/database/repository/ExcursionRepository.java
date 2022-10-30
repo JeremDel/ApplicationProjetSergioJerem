@@ -2,6 +2,8 @@ package com.example.applicationprojetsergiojerem.exo.database.repository;
 
 import android.app.Application;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.async.excursion.CreateExcursion;
 import com.example.applicationprojetsergiojerem.exo.database.async.excursion.DeleteExcursion;
@@ -33,7 +35,7 @@ public class ExcursionRepository {
     }
 
     public List<Excursion> getExcursion(final int id, Application application){
-        return ((BaseApp) application).getDatabase().excursionDAO().getExcursionById(id);
+        return (List<Excursion>) ((BaseApp) application).getDatabase().excursionDAO().getExcursionById(id);
     }
 
     public List<Excursion> getAllExcursions(Application application){

@@ -10,16 +10,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.applicationprojetsergiojerem.Login;
 import com.example.applicationprojetsergiojerem.R;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+
 import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;

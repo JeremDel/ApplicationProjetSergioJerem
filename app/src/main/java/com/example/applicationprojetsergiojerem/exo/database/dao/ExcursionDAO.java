@@ -22,6 +22,7 @@ public abstract class ExcursionDAO {
     @Query("SELECT * FROM Excursion WHERE id = :id")
     public abstract List<Excursion> getExcursionById(int id);
 
+
     @Query("SELECT * FROM Excursion WHERE guide = :guideId")
     public abstract List<Excursion> getExcursionsByGuide(int guideId);
 

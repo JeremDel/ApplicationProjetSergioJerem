@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity
+@Entity //manque tablename + primaryKey
 public class Guide {
     @PrimaryKey
     public int id;
@@ -20,6 +20,9 @@ public class Guide {
     public String email;
     public String picPath;
 
+    //Guide vide ?
+
+    //obliger certaines valeures à être non null ?
     public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
                  String address, String email, String picPath){
         this.phoneNumber = phoneNumber;
@@ -31,6 +34,8 @@ public class Guide {
         this.email = email;
         this.picPath = picPath;
     }
+
+    //pas de setter ?
 
     // -- Getters --
     public int getId() {
@@ -68,4 +73,6 @@ public class Guide {
     public String getPicPath() {
         return picPath;
     }
+
+    //pas de equals ?
 }

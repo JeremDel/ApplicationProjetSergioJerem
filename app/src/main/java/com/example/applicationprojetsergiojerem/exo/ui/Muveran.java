@@ -1,8 +1,10 @@
-package com.example.applicationprojetsergiojerem;
+package com.example.applicationprojetsergiojerem.exo.ui;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.applicationprojetsergiojerem.R;
 
 public class Muveran extends AppCompatActivity {
 

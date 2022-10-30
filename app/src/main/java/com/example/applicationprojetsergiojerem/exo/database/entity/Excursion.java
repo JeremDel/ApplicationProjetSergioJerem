@@ -5,16 +5,18 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = {
+@Entity(
+        foreignKeys = {
         @ForeignKey(
                 entity = Guide.class,
                 parentColumns = "id",
                 childColumns = "guide",
                 onDelete = ForeignKey.CASCADE
         )
+
 })
 public class Excursion {
-    @PrimaryKey
+    @PrimaryKey //autogenerate = true ?
     public int id;
     public int price;
 
@@ -27,6 +29,7 @@ public class Excursion {
 
     @NonNull
     public int guide;
+
 
     public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, int guide){
         this.price = price;
@@ -70,4 +73,5 @@ public class Excursion {
     public int getGuide() {
         return guide;
     }
+
 }
