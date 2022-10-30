@@ -49,7 +49,7 @@ public class ListAdapter<G> extends ArrayAdapter<G> {
             convertView = LayoutInflater.from(this.getContext()).inflate(mResource, parent, false);
 
             viewHolder = new ListAdapter.ViewHolder();
-            viewHolder.itemView = convertView.findViewById(R.id.tvClientView); // TODO change tvClientView
+            viewHolder.itemView = convertView.findViewById(R.id.tvGuideView);
 
             convertView.setTag(viewHolder);
         } else {
