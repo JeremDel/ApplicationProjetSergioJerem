@@ -20,17 +20,17 @@
     android:layout_marginTop="35dp"
     android:backgroundTint="@color/grau"
     android:onClick="pageExcursion"
-    android:text="Découvrez nos excursions"
+    android:text="Discover our excursions"
     android:textSize="13sp"
     android:visibility="visible"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView"
+    app:layout_constraintTop_toBottomOf="@+id/textPresentation"
     tools:ignore="MissingConstraints">
 </Button>
 
     <TextView
-    android:id="@+id/textView"
+    android:id="@+id/textPresentation"
     android:layout_width="365dp"
     android:layout_height="205dp"
     android:layout_alignParentStart="true"
@@ -44,16 +44,16 @@
     android:textColor="@color/white"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView3"
+    app:layout_constraintTop_toBottomOf="@+id/titrePresentation"
     tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/titrePresentation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:gravity="center"
-        android:text="L'aventure s'offre à vous !"
+        android:text="@string/titrePresentation"
         android:textColor="@color/white"
         android:layout_marginTop="125dp"
         android:textSize="25sp"
@@ -71,7 +71,7 @@
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/grau"
         android:layout_marginTop="10dp"
-        android:text="Découvrez nos guides"
+        android:text="Discover our guides"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,6 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:id="@+id/navigationView"
-    app:headerLayout="@layout/header"
     app:menu="@menu/menu_principal"
     android:fitsSystemWindows="true"
     android:layout_gravity = "start">

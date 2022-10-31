@@ -2,8 +2,11 @@
     <string name="menu_action">Settings</string>
     <string name="app_name">ApplicationProjetSergioJerem</string>
     <string name="titre">SNOWSHOES TOURING</string>
-    <string name="presentation">Basée à Sion et emmenée par une équipe de passionnés d\'outdoor engagés pour la planète.\n \n Nous proposons des expéditions de 2 à 15 jours en petits groupes, pour tous les niveaux sportifs, partout en Valais.\n\n
-Notre credo, c\'est chercher à vous faire vivre une reconnexion forte avec la nature, et une expérience de dépassement de soi unique, tout en préservant les environnements traversés au cours de votre programme.
+
+    <string name="titrePresentation">Adventure awaits you !</string>
+    <string name="presentation">Based in Sion and led by a team of passionate people committed to the planet.\n \n We offer expeditions from 2 to 15 days in small groups, for all sport levels, everywhere in Valais.\n \n
+Our credo is to make you live a strong reconnection with nature, and a unique experience of surpassing oneself, while preserving the environments crossed during your program.
+
     </string>
     <string name="menu_Open">Open
     </string>
@@ -11,17 +14,17 @@ Notre credo, c\'est chercher à vous faire vivre une reconnexion forte avec la n
     </string>
 
     <string name="right_icon">
-        Nos excursions     >
-        Nos guides         >
+        Our excursions     >
+        Our guides         >
         Intranet           >
         Contact            >
-        Paramètres         >
+        Settings           >
     </string>
 
     <string-array name="Difficulté">
-        <item>Facile</item>
-        <item>Moyen</item>
-        <item>Difficile</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Difficult</item>
     </string-array>
 
     <string-array name="Guide">
@@ -29,25 +32,27 @@ Notre credo, c\'est chercher à vous faire vivre une reconnexion forte avec la n
         <item>Michael Ritz</item>
     </string-array>
 
-    <string name="LieuxMuv">• Lieux: Bex à Ovronnaz
+    <string name="LieuxMuv">• Places: Bex to Ovronnaz
     </string>
     <string name="DistanceMuv">• Distance: 110 km</string>
-    <string name="DifficultéMuv">• Difficulté: Moyenne</string>
-    <string name="PrixMuv">• Prix: 330.-</string>
+    <string name="DifficultéMuv">• Difficulty: Medium</string>
+    <string name="PrixMuv">• Price: 330.-</string>
     <string name="GuideMuv">• Guide: Jean Bonvin</string>
 
-    <string name="LieuxWals">• Lieux: Conches</string>
+    <string name="LieuxWals">• Places: Conches</string>
     <string name="DistanceWals">• Distance: 205km</string>
-    <string name="DifficultéWals">• Difficulté: Dure</string>
-    <string name="PrixWals">• Prix: 615.-</string>
+    <string name="DifficultéWals">• Difficulty: Hard</string>
+    <string name="PrixWals">• Price: 615.-</string>
     <string name="GuideWals">• Guide: Michael Ritz</string>
 
-    <string name="Lieux7lacs">• Lieux: Bellwald</string>
+    <string name="Lieux7lacs">• Place: Bellwald</string>
     <string name="Distance7lacs">• Distance: 81km</string>
-    <string name="Difficulté7lacs">• Difficulté: Moyenne</string>
-    <string name="Prix7lacs">• Prix: 425.-.-</string>
+    <string name="Difficulté7lacs">• Difficulty: Medium</string>
+    <string name="Prix7lacs">• Price: 425.-.-</string>
     <string name="Guide7lacs">• Guide: George Derivaz</string>
 
+    <string name="pref_select_language">Select your language</string>
+    <string name="pref_summary">Define your preferred language</string>
 
     <string name="email">Email
     </string>

@@ -11,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicationprojetsergiojerem.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class GuideList extends AppCompatActivity {
+public class
+GuideList extends AppCompatActivity {
 
     private ImageView ivGuideIcon;
     private TextView tvGuideName, tvGuideDescription;

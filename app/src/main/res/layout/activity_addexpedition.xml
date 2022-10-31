@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#B0C4DE"
     >
+
     <include layout="@layout/toolbar"/>
 
 
@@ -23,7 +24,7 @@
             android:paddingLeft="30dp"
             android:textSize="20dp"
             android:textColor="@color/white"
-            android:text="Titre :" />
+            android:text="Title :" />
 
         <EditText
             android:layout_width="336dp"
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:paddingLeft="30dp"
-            android:text="Image :"
+            android:text="Picture :"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:textSize="20dp"
-                android:text="Lieux :"
+                android:text="Places :"
                 android:textColor="@color/white"
                 android:layout_column="0"
                 />
@@ -106,7 +107,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="30dp"
             android:textSize="20dp"
-            android:text="Prix :"
+            android:text="Price :"
             android:textColor="@color/white"
             android:layout_column="0"
             />
@@ -127,7 +128,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Difficulté :"
+            android:text="Difficulty :"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:layout_column="0"
@@ -180,14 +181,14 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/grau"
             android:layout_marginRight="10dp"
-            android:text="Sauvegarder"
+            android:text="Save"
             />
         <Button
             android:id="@+id/supprimerExped"
             android:backgroundTint="@color/grau"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Supprimer"
+            android:text="Delete"
             />
     </LinearLayout>
 

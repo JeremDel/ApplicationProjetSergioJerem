@@ -20,7 +20,9 @@ public class ExpeditionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_expedition);
 
         button = (ImageButton) findViewById(R.id.ExpeditionAdd);

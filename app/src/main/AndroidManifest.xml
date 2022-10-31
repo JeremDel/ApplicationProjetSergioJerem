@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.activity_addexpedition"
+            android:name=".exo.ui.addexpedition"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -70,15 +70,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <!--
         <activity
-            android:name=""
-            android:exported="false">
+            android:name=".exo.ui.Muveran"
+            android:exported="false"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        -->
         <activity
             android:name=".exo.ui.MainActivity"
             android:exported="true">

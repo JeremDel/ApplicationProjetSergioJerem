@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+   <string name="menu_action">Parametri</string>
+   <string name="app_name">ApplicationProjetSergioJerem</string>
+   <string name="titre">SNOWSHOES TOURING</string>
+   <string name="presentation">Con sede a Sion e gestita da un team di persone appassionate e impegnate per il pianeta. \n \n Offriamo spedizioni da 2 a 15 giorni in piccoli gruppi, per tutti i livelli di sport, ovunque nel Vallese.\n \n
+Il nostro credo è farvi vivere una forte riconnessione con la natura e un'esperienza unica di superamento di se stessi, preservando gli ambienti attraversati durante il vostro programma.
+    </string>
+   <string name="menu_Open">Aprire
+    </string>
+   <string name="close_menu">Chiudere
+    </string>
+
+   <string name="right_icon">
+        Les nostre excursioni     >
+        Les nostre guide          >
+        Intranet                  >
+        Contact                   >
+        Parametri                 >
+    </string>
+
+   <string-array name="Difficultà">
+      <item>Facile</item>
+      <item>Medio</item>
+      <item>Difficile</item>
+   </string-array>
+
+   <string-array name="Guide">
+      <item>Jean Bonvin</item>
+      <item>Michael Ritz</item>
+   </string-array>
+
+   <string name="LieuxMuv">• Posti: Bex a Ovronnaz
+    </string>
+   <string name="DistanceMuv">• Distanza: 110 km</string>
+   <string name="DifficultéMuv">• Difficoltà: Medium</string>
+   <string name="PrixMuv">• Prezzo: 330.-</string>
+   <string name="GuideMuv">• Guida: Jean Bonvin</string>
+
+   <string name="LieuxWals">• Posti: Conches</string>
+   <string name="DistanceWals">• Distanza: 205km</string>
+   <string name="DifficultéWals">• Difficoltà: Hard</string>
+   <string name="PrixWals">• Prezzo: 615.-</string>
+   <string name="GuideWals">• Guida: Michael Ritz</string>
+
+   <string name="Lieux7lacs">• Posto: Bellwald</string>
+   <string name="Distance7lacs">• Distanza: 81km</string>
+   <string name="Difficulté7lacs">• Difficolta: Medium</string>
+   <string name="Prix7lacs">• Prezzo: 425.-.-</string>
+   <string name="Guide7lacs">• Guida: George Derivaz</string>
+
+   <string name="pref_select_language">Scelgliete la vostra lingua</string>
+   <string name="pref_summary">Impostare la lingua preferita</string>
+
+   <string name="email">Email
+    </string>
+   <string name="name">Nome
+    </string>
+   <string name="surname">Cognome
+    </string>
+    -->
+</resources>

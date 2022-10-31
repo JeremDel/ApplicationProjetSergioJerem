@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <string name="menu_action">Schwierigkeit</string>
+    <string name="app_name">ApplicationProjetSergioJerem</string>
+    <string name="titre">SNOWSHOES TOURING</string>
+    <string name="presentation">Wir haben unseren Sitz in Sitten und werden von einem Team leidenschaftlicher Menschen geleitet, die sich für unseren Planeten engagieren. \n \n  Wir bieten Expeditionen von 2 bis 15 Tagen in kleinen Gruppen, für alle Sportniveaus, überall im Wallis an. \n \n
+Unser Credo ist es, Ihnen eine starke Verbindung mit der Natur und eine einzigartige Erfahrung zu ermöglichen, über sich selbst hinauszuwachsen und gleichzeitig die Umwelt zu schützen, die Sie während Ihres Programms durchqueren.
+    </string>
+    <string name="menu_Open">]Öffnen
+    </string>
+    <string name="close_menu">Schliessen
+    </string>
+
+    <string name="right_icon">
+        Unsere Ausflüge    >
+        Unsere Führer      >
+        Intranet           >
+        Contact            >
+        Einstellungen      >
+    </string>
+
+    <string-array name="Difficulté">
+        <item>Leicht</item>
+        <item>Mittel</item>
+        <item>Schwierig</item>
+    </string-array>
+
+    <string-array name="Guide">
+        <item>Jean Bonvin</item>
+        <item>Michael Ritz</item>
+    </string-array>
+
+    <string name="LieuxMuv">• Plätze: Bex nach Ovronnaz
+    </string>
+    <string name="DistanceMuv">• Distanz: 110 km</string>
+    <string name="DifficultéMuv">• Schwierigkeit: Medium</string>
+    <string name="PrixMuv">• Preis: 330.-</string>
+    <string name="GuideMuv">• Führer: Jean Bonvin</string>
+
+    <string name="LieuxWals">• Plätze: Conches</string>
+    <string name="DistanceWals">• Distanz: 205km</string>
+    <string name="DifficultéWals">• Schwierigkeit: Schwierig</string>
+    <string name="PrixWals">• Preis: 615.-</string>
+    <string name="GuideWals">• Führer: Michael Ritz</string>
+
+    <string name="Lieux7lacs">• Plätze: Bellwald</string>
+    <string name="Distance7lacs">• Distanz: 81km</string>
+    <string name="Difficulté7lacs">• Schwierigkeit: Medium</string>
+    <string name="Prix7lacs">• Preis: 425.-.-</string>
+    <string name="Guide7lacs">• Führer: George Derivaz</string>
+
+    <string name="pref_select_language">Wählen Sie Ihre Sprache.</string>
+    <string name="pref_summary">Wählen Sie Ihre bevorzugte Sprache.</string>
+
+    <string name="email">Email
+    </string>
+    <string name="name">Name
+    </string>
+    <string name="surname">Vorname
+    </string>-->
+</resources>
