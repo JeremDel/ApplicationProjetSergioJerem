@@ -2,6 +2,7 @@ package com.example.applicationprojetsergiojerem.exo.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -151,6 +152,21 @@ public class MainActivity extends AppCompatActivity {
 
         TextView titrePresentation = (TextView) findViewById(R.id.titrePresentation);
         titrePresentation.setText(R.string.titrePresentation);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return;
+        }
+        final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("Voulez-vous quitter l'app ?");
+        alertDialog.setCancelable(false);
+        //alertDialog.setMessage("");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Oui", (dialog, which) -> finish());
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE,"Non", (dialog, which) -> alertDialog.dismiss());
+        alertDialog.show();
     }
 
 }
