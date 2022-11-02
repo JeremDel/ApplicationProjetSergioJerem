@@ -36,10 +36,9 @@ public class GuideList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_guides);
 
-        setContentView(R.layout.guides_list);
-
-        RecyclerView recyclerView = findViewById(R.layout.guidesRecycleView);
+        RecyclerView recyclerView = findViewById(R.id.guidesRecycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.HORIZONTAL));
 
@@ -69,15 +68,14 @@ public class GuideList extends AppCompatActivity {
             }
         });
 
-        // TODO change with actual values
-        FloatingActionButton fab = findViewById(R.id.guidesListFloatingActionButton);
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(view -> {
                     Intent intent = new Intent(GuideList.this, GuideEdit.class);
                     startActivity(intent);
                 }
         );
 
-        // TODO change with actual values
+        // TODO Waiting for the BG's code
         GuideListViewModel.Factory factory = new GuideListViewModel.Factory(getApplication());
         viewModel = ViewModelProviders.of(this, factory).get(GuideListViewModel.class);
         viewModel.getGuides().observe(this, guidesEntities -> {

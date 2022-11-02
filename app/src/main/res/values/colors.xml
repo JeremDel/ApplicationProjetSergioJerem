@@ -11,4 +11,5 @@
     <color name="grau">#808080</color>
     <color name="lightBlue">#ADD8E6</color>
     <color name="lightRed">#FF7F7F</color>
+    <color name="colorPrimary">#22A4FF</color>
 </resources>
