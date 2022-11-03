@@ -43,7 +43,7 @@ public class GuideEdit extends BaseActivity {
             toast.show();
         });
 
-        int guideId = getIntent().getExtra("guideID", -1);
+        int guideId = getIntent().getIntExtra("guideID", -1);
         if (guideId == -1){
             setTitle(getString(R.string.title_activity_create_guide));
             toast = Toast.makeText(this, getString(R.string.guide_created)), Toast.LENGTH_LONG;
