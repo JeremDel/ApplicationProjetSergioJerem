@@ -22,6 +22,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import viewmodel.guide.GuideListViewModel;
+
 public class GuideList extends AppCompatActivity {
 
     private ImageView ivGuideIcon;
@@ -32,7 +34,7 @@ public class GuideList extends AppCompatActivity {
 
     private List<Guide> guides;
     private RecyclerAdapter<Guide> adapter;
-    private GuideListViewModel viewModel; // TODO Waiting for Jeremie to add the view models
+    private GuideListViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,12 +78,11 @@ public class GuideList extends AppCompatActivity {
                 }
         );
 
-        // TODO Waiting for the BG's code
         GuideListViewModel.Factory factory = new GuideListViewModel.Factory(getApplication());
         viewModel = new ViewModelProvider(this).get(GuideListViewModel.class);
         viewModel.getGuides().observe(this, guidesEntities -> {
             if (guidesEntities != null) {
-                guides = guidesEntities; // TODO check why the error...
+                guides = guidesEntities;
                 adapter.setData(guides);
             }
         });
