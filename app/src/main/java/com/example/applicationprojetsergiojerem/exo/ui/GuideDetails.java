@@ -7,10 +7,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import viewmodel.guide.GuideViewModel;
 
 public class GuideDetails extends AppCompatActivity {
     private Guide guide;
@@ -30,7 +33,7 @@ public class GuideDetails extends AppCompatActivity {
 
 
         GuideViewModel.Factory factory = new GuideViewModel.Factory(getApplication(), guideId);
-        viewModel = ViewModelProviders.of(this, factory).get(GuideViewModel.class);
+        viewModel = new ViewModelProvider(this).get(GuideViewModel.class);
         viewModel.getGuide().observe(this, guideEntity -> {
            if (guideEntity != null){
                this.guide = guideEntity;
