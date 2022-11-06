@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -77,7 +78,7 @@ public class GuideList extends AppCompatActivity {
 
         // TODO Waiting for the BG's code
         GuideListViewModel.Factory factory = new GuideListViewModel.Factory(getApplication());
-        viewModel = ViewModelProviders.of(this, factory).get(GuideListViewModel.class);
+        viewModel = new ViewModelProvider(this).get(GuideListViewModel.class);
         viewModel.getGuides().observe(this, guidesEntities -> {
             if (guidesEntities != null) {
                 guides = guidesEntities; // TODO check why the error...

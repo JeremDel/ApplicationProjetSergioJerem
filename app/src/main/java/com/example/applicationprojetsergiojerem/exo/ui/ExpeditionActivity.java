@@ -1,6 +1,7 @@
 package com.example.applicationprojetsergiojerem.exo.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import viewmodel.excursion.ExcursionListViewModel;
 
 public class ExpeditionActivity extends AppCompatActivity {
 
@@ -119,7 +122,7 @@ public class ExpeditionActivity extends AppCompatActivity {
 
         ExcursionListViewModel.Factory factory = new ExcursionListViewModel.Factory(getApplication());
 
-        viewModel = ViewModelProviders.of(this, factory).get(ExcursionListViewModel.class);
+        viewModel = new ViewModelProvider.(this).get(ExcursionListViewModel.class);
         viewModel.getExcursions().observe(this, excursionEntities -> {
             if (excursionEntities != null) {
                 excursions = excursionEntities;
