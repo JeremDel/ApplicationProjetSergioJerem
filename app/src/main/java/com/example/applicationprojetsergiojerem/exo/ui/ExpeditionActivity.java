@@ -123,7 +123,7 @@ public class ExpeditionActivity extends AppCompatActivity {
         ExcursionListViewModel.Factory factory = new ExcursionListViewModel.Factory(getApplication());
 
         viewModel = new ViewModelProvider.(this).get(ExcursionListViewModel.class);
-        viewModel.getExcursions().observe(this, excursionEntities -> {
+        viewModel.getOwnExcursion().observe(this, excursionEntities -> {
             if (excursionEntities != null) {
                 excursions = excursionEntities;
                 adapter.setData(excursions);
