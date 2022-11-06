@@ -40,40 +40,6 @@ public class GuideDetails extends AppCompatActivity {
                updateContent();
            }
         });
-
-
-        // TODO check if anything of this is useful
-        tvEmail = findViewById(R.id.contact_email);
-        tvPhone = findViewById(R.id.contact_number);
-        edit = findViewById(R.id.edit);
-
-        tvEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mailIntent = new Intent(Intent.ACTION_SEND);
-                mailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{tvEmail.getText().toString()});
-                mailIntent.setType("message/rfc822");
-
-                startActivity(mailIntent);
-            }
-        });
-
-        tvPhone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
-                phoneIntent.setData(Uri.parse("tel:" + tvPhone.getText().toString()));
-                startActivity(phoneIntent);
-            }
-        });
-
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                // TODO add edit menu
-            }
-        });
     }
 
     private void updateContent(){
