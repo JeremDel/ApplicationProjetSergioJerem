@@ -35,7 +35,7 @@ public class GuideEdit extends BaseActivity {
         etDescription = findViewById(R.id.etDescription);
         etAddress = findViewById(R.id.etAddress);
         etEmail = findViewById(R.id.etEmail);
-        etPicPath = findViewById(R.id.etPicPath);
+        //etPicPath = findViewById(R.id.etPicPath);
         etPhoneNumber = findViewById(R.id.etPhoneNumber);
         etBirthDate = findViewById(R.id.etBirthDate);
 
@@ -43,8 +43,8 @@ public class GuideEdit extends BaseActivity {
 
         btnSave.setOnClickListener(View -> {
             saveChanges(etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
-                    etAddress.getText().toString(), etEmail.getText().toString(), etPicPath.getText().toString(),
-                    etPhoneNumber.getText().toString(), etBirthDate.getText().toString());
+                    etAddress.getText().toString(), etEmail.getText().toString(), /*etPicPath.getText().toString(),*/
+                    etPhoneNumber.getText().toString().replace(" ", ""), etBirthDate.getText().toString());
             onBackPressed();
             toast.show();
         });
@@ -52,7 +52,7 @@ public class GuideEdit extends BaseActivity {
         int guideId = getIntent().getIntExtra("guideID", -1);
         if (guideId == -1){
             setTitle(getString(R.string.title_activity_create_guide));
-            toast = Toast.makeText(this, getString(R.string.guide_created)), Toast.LENGTH_LONG;
+            toast = Toast.makeText(this, getString(R.string.guide_created), Toast.LENGTH_LONG);
             isEditMode = false;
         } else {
             setTitle(getString(R.string.title_edit_guide));
@@ -84,7 +84,7 @@ public class GuideEdit extends BaseActivity {
 
 
     private void saveChanges(String name, String lastName, String description, String address,
-                             String email, String picPath, String phoneNumber,String birthDate){
+                             String email, /*String picPath,*/ String phoneNumber,String birthDate){
         if (isEditMode){
             // TODO check that params aren't empty
             guide.setName(name);
@@ -92,7 +92,7 @@ public class GuideEdit extends BaseActivity {
             guide.setDescription(description);
             guide.setAddress(address);
             guide.setEmail(email);
-            guide.setPicPath(picPath);
+            //guide.setPicPath(picPath);
             guide.setPhoneNumber(Integer.parseInt(phoneNumber));
             guide.setBirthdate(birthDate);
 
