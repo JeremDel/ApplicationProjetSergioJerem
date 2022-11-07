@@ -5,25 +5,26 @@
     android:id="@+id/GuideGUI"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include layout="@layout/toolbar"/>
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="158dp"
         android:layout_height="158dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/jc" />
+        android:layout_marginTop="130dp"
+        android:src="@drawable/bonvin" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_marginTop="35dp"
+        android:layout_width="201dp"
+        android:layout_height="116dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="145dp"
         android:layout_toRightOf="@id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="18sp"
-        android:text="Hello, my name is Michelle! Je suis le frèro à Jackie et comme tout bon informaticien je suis un FUUUUUUUUUUUUUUUUMIER!" />
+        android:text="Hobbies: Cryptography, computer security, marmots, mountains, haunting students until they graduate, Japanese culture in general."
+        android:textAlignment="center"
+        android:textSize="15sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
         android:layout_below="@id/imageView3"
         android:layout_marginStart="15dp"
         android:textSize="18sp"
-        android:text="Nom: Jolichien"
+        android:text="Name: Bonvin"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -42,7 +43,7 @@
         android:layout_marginStart="15dp"
         android:textSize="18sp"
         android:layout_marginTop="5dp"
-        android:text="Prénom: Luc-Jean"
+        android:text="Surname: Jean"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -64,7 +65,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
         android:textSize="18sp"
-        android:text="Curiosités: :(){ :|: }; :"
+        android:text="Curiosity: :(){ :|: }; :"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -75,53 +76,54 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
         android:textSize="18sp"
-        android:text="Craintes: Kernel panic"
+        android:text="Fears: Herens cows, Kernel panic"
         />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tvContactMe"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvCraintes"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="132dp"
+        android:gravity="center_horizontal"
+        android:text="Contact me"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="Contactez-moi"
-        />
+        android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/contact_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/contact_number"
         android:layout_below="@id/tvContactMe"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:textSize="18sp"
-        android:text="0762156874"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="138dp"
+        android:text="761857496"
         android:textColor="@color/design_default_color_primary_dark"
-        />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/contact_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/contact_number"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="15dp"
-        android:text="jlb@outlook.com"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="62dp"
+        android:text="braindestroyer@gmail.com"
         android:textColor="@color/design_default_color_primary_dark"
         android:textSize="18sp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/edit"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/ic_baseline_edit_24"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="11dp"
         android:backgroundTint="@color/lightBlue"
-        />
+        android:src="@drawable/ic_baseline_edit_24" />
 </RelativeLayout>
