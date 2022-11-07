@@ -24,7 +24,7 @@ import java.util.List;
 
 import viewmodel.guide.GuideListViewModel;
 
-public class GuideList extends AppCompatActivity {
+public class GuideList extends BaseActivity {
 
     private ImageView ivGuideIcon;
     private TextView tvGuideName, tvGuideDescription;
@@ -39,7 +39,9 @@ public class GuideList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guides);
+        getLayoutInflater().inflate(R.layout.activity_guides, frameLayout);
+
+        setTitle("Guides");
 
         RecyclerView recyclerView = findViewById(R.id.guidesRecycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

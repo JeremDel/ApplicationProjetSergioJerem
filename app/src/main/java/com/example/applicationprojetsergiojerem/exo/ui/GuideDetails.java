@@ -15,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import viewmodel.guide.GuideViewModel;
 
-public class GuideDetails extends AppCompatActivity {
+public class GuideDetails extends BaseActivity {
     private Guide guide;
 
     private TextView tvBirthDate, tvName, tvLastName, tvDescription, tvAddress, tvEmail, tvPhone;
@@ -26,7 +26,7 @@ public class GuideDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.guide);
+        getLayoutInflater().inflate(R.layout.activity_guide, frameLayout);
 
         int guideId = getIntent().getIntExtra("guideID", 0);
         initiateView();
@@ -40,6 +40,30 @@ public class GuideDetails extends AppCompatActivity {
                updateContent();
            }
         });
+
+        setTitle(guide.getName() + " " + guide.getLastName());
+
+        tvEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{tvEmail.getText().toString()});
+                startActivity(intent);
+            }
+        });
+
+        tvPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:"));
+                intent.putExtra(Intent.EXTRA_PHONE_NUMBER, tvPhone.getText().toString());
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void updateContent(){

@@ -6,9 +6,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
+
+import viewmodel.guide.GuideListViewModel;
+import viewmodel.guide.GuideViewModel;
 
 public class GuideEdit extends BaseActivity {
 
@@ -23,6 +28,7 @@ public class GuideEdit extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        getLayoutInflater().inflate(R.layout.activity_edit_guide, frameLayout);
 
         etName = findViewById(R.id.etName);
         etLastName = findViewById(R.id.etLastName);
@@ -55,8 +61,8 @@ public class GuideEdit extends BaseActivity {
             isEditMode = true;
         }
 
-        GuideViewModel.Factory factory = new AccountViewModel.Factory(getApplication(), guideId);
-        viewModel = ViewModelProviders.of(this, factory).get(GuideViewModel.class);
+        GuideViewModel.Factory factory = new GuideViewModel.Factory(getApplication(), guideId);
+        viewModel = new ViewModelProvider(this).get(GuideViewModel.class);
 
         if(isEditMode){
             viewModel.getGuide().observe(this, guideEntity -> {
@@ -87,8 +93,8 @@ public class GuideEdit extends BaseActivity {
             guide.setAddress(address);
             guide.setEmail(email);
             guide.setPicPath(picPath);
-            guide.setPhoneNumber(phoneNumber);
-            guide.setBirthDate(birthDate);
+            guide.setPhoneNumber(Integer.parseInt(phoneNumber));
+            guide.setBirthdate(birthDate);
 
             viewModel.updateGuide(guide, new OnAsyncEventListener(){
                @Override
