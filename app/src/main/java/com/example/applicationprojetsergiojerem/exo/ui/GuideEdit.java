@@ -30,6 +30,7 @@ public class GuideEdit extends BaseActivity {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_edit_guide, frameLayout);
 
+        // Get every EditText object from the layout
         etName = findViewById(R.id.etName);
         etLastName = findViewById(R.id.etLastName);
         etDescription = findViewById(R.id.etDescription);
@@ -41,6 +42,7 @@ public class GuideEdit extends BaseActivity {
 
         Button btnSave = findViewById(R.id.btnSave);
 
+        // When clicking on Save button, save changes
         btnSave.setOnClickListener(View -> {
             saveChanges(etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
                     etAddress.getText().toString(), etEmail.getText().toString(), /*etPicPath.getText().toString(),*/
@@ -49,7 +51,10 @@ public class GuideEdit extends BaseActivity {
             toast.show();
         });
 
+        // Get guide id from the intent. If there is none, -1 is automatically assigned
         int guideId = getIntent().getIntExtra("guideID", -1);
+
+        // If there was no guide id in the intent, we're in create new guide mode, else we're in edit guide mode
         if (guideId == -1){
             setTitle(getString(R.string.title_activity_create_guide));
             toast = Toast.makeText(this, getString(R.string.guide_created), Toast.LENGTH_LONG);
@@ -64,6 +69,7 @@ public class GuideEdit extends BaseActivity {
         GuideViewModel.Factory factory = new GuideViewModel.Factory(getApplication(), guideId);
         viewModel = new ViewModelProvider(this).get(GuideViewModel.class);
 
+        // If we got a guide id, we assign the guide values to the edit text objects
         if(isEditMode){
             viewModel.getGuide().observe(this, guideEntity -> {
                 if (guideEntity != null){
