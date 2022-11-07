@@ -18,8 +18,8 @@ public class DatabaseInitializer {
     }
 
     private static void addGuide(final AppDatabase database, final String name, final String lastName, final String description, final String address, final String email,
-                                 final String picPath, final int phoneNumber, final String birthDate){
-        Guide guide = new Guide(phoneNumber, birthDate, name, lastName, description, address, email, picPath);
+                                 final String picPath, final int phoneNumber, final String birthDate, final String userName, final String password){
+        Guide guide = new Guide(phoneNumber, birthDate, name, lastName, description, address, email, picPath, userName, password);
         database.guideDAO().insert(guide);
     }
 
@@ -33,17 +33,17 @@ public class DatabaseInitializer {
     private static void populateWithTestData(AppDatabase database){
         database.guideDAO().deleteAll();
 
-        addGuide(database, "Jean", "Néo-Skours", "Ma maman dit toujours que je suis très spécial :)", "Route des chromosomes 123",
-                "3pecial@gmail.com", "special.png", 761857496, "11.12.2003");
+        addGuide(database, "Jean", "Bonvin", "I have always been very passionate about the mountains. During my various excursions. I learned to know the nature and its inhabitants. The marmots consider me now as one of theirs and do not hesitate to guide me on unknown paths by most of the Valaisans." +
+                        "With me, you will be able to say that you will have lived absolutely unique experiences.", "Route des joyeux lurons 23",
+                "3pecial@gmail.com", "walserguide.jpg", 761857496, "11.12.1982", "petitePerruche", "Argh88!");
 
-        addGuide(database, "Barry", "Not-Allen-Si-Jamais", "Ma maman dit toujours que je suis un bon garçon :))", "Avenue des doggos 455",
-                "woofPasUnChienWoof@outlook.com", "barryLeBG.png", 768125594, "23.2.1970");
+        addGuide(database, "Michael", "Ritz", "I have lived in these mountains since I was a child. My friends call me the flying chamois because I am fast and slender. I would be happy to show you my favorite raclette spots. " +
+                        "Hang on, because with me, there will be sport.)", "Avenue des bouquiniers 18",
+                "tiptop@outlook.com", "ritz.jpg", 768125594, "23.2.1970", "ObiWan", "HelloThere");
 
-        addGuide(database, "Storm", "Front", "Il faut respecter l'opinion des autres ;)", "Route des Delphins 420",
-                "eineBierBitte@gmail.com", "meinestraSSe.png", 784825169, "24.12.1905");
-
-        addGuide(database, "Soldier", "Boy", "Si tu veux être heureux, ne te marie jamais à une belle femme", "Avenue de Lennil Boss 79",
-                "iEnjoyEatingCars@yahoo.com", "heroGsm.png", 792871056, "20.04.1875");
+        addGuide(database, "George", "Derivaz", "Want to think about something other than your IT projects that make you sick? Then I'm here to help you! I've been exploring the Alps for 20 years and nothing has any secrets for me anymore. " +
+                        "I am able to locate a Dahu at more than 12 km. I am the master of the excursion.", "Route des crapaux 14",
+                "WeissWein@gmail.com", "derivaz.jpg", 784825169, "24.12.1965", "gentilBonhomme", "Dahmer69");
 
 
         try{
@@ -53,21 +53,13 @@ public class DatabaseInitializer {
         }
 
 
-        addExcursion(database, 45, 13.5f, "Tour du Mort D'or", "De Bex à Lavey (?)", "Difficile", "mortDor.png", 1);
+        addExcursion(database, 330, 110, "Tour des Muverans", "Bex to Ovronnaz", "Medium", "@+id/imageMuveran", 1);
 
-        addExcursion(database, 169, 50.2f, "Marathon à la Norwegian Regaetton", "Du Mont Blanc aux Alpes", "Difficile", "rega.png", 2);
+        addExcursion(database, 615, 205, "Tour Walser", "Conches", "Hard", "@+id/imageWalser", 2);
 
-        addExcursion(database, 25, 5.9f, "Tour des monarques", "De Sierre à... Sierre aussi", "Facile", "filetmignons.png", 4);
+        addExcursion(database, 425, 81, "Les 7 lacs", "Bellwald", "Medium", "@drawable/lacs", 3);
 
-        addExcursion(database, 0, 350.0f, "Promenade Germanique", "De n'importe où en Allemagne à... Austwichz", "Facile", "doucheRelaxante.png", 3);
 
-        addExcursion(database, 70, 20.0f, "Marche du Saint-Bernard", "Du Petit Saint-Bernard au Grand Saint-Bernard", "Moyenne", "bethoven.png", 2);
-
-        addExcursion(database, 35, 136.25f, "Marche Boréale ou jsp", "Du Simplon au Singleton", "Difficile", "badPun.png", 1);
-
-        addExcursion(database, 10, 10.7f, "Tour des déceptions", "", "Moyenne", "mirror.png", 4);
-
-        addExcursion(database, 60, 35.0f, "Marche des Sares Hien", "Du Mont Blanc au Mont Blond aux yeux Bleus", "Moyenne", "saresHiens.png", 3);
     }
 
 

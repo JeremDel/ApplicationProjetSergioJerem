@@ -19,12 +19,13 @@ public class Guide {
     public String address;
     public String email;
     public String picPath;
+    public String userName;
+    public String password;
 
-    //Guide vide ?
 
     //obliger certaines valeures à être non null ?
     public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
-                 String address, String email, String picPath){
+                 String address, String email, String picPath, String userName, String password){
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
         this.name = name;
@@ -33,9 +34,11 @@ public class Guide {
         this.address = address;
         this.email = email;
         this.picPath = picPath;
+        this.userName = userName;
+        this.password = password;
     }
 
-    //pas de setter ?
+
 
     // -- Getters --
     public int getId() {
@@ -74,5 +77,21 @@ public class Guide {
         return picPath;
     }
 
-    //pas de equals ?
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }
