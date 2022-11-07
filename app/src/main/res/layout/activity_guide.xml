@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvName"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"
+        android:textSize="18sp"
+        android:text="John"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_alignTop="@id/tvName"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/tvName"
+        android:textStyle="bold"
+        android:text="Doe"
+        android:id="@+id/tvLastName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvBirthDate"
+        android:layout_toRightOf="@id/tvLastName"
+        android:text="05.10.1998"
+        android:layout_alignTop="@id/tvLastName"
+        android:textSize="16sp"
+        android:layout_marginStart="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAddress"
+        android:textSize="18sp"
+        android:layout_below="@id/tvName"
+        android:layout_alignStart="@id/tvName"
+        android:text="Av de la Gare 69 - 1870 Monthey"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDescription"
+        android:textSize="18sp"
+        android:layout_below="@id/tvAddress"
+        android:layout_marginTop="50dp"
+        android:layout_alignStart="@id/tvAddress"
+        android:layout_marginEnd="30dp"
+        android:textStyle="italic"
+        android:text="Lorem ipsum machin machin parce que je ne sais pas par
+coeur comme ça continue... malheureusement je n'ai pas étudié le latin"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_below="@id/tvDescription"
+        android:layout_marginTop="70dp"
+        android:textStyle="bold"
+        android:id="@+id/ContactLabel"
+        android:text="Contact:"
+        android:layout_alignStart="@id/tvDescription"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPhone"
+        android:textSize="18sp"
+        android:layout_below="@+id/ContactLabel"
+        android:layout_marginTop="20dp"
+        android:layout_alignStart="@id/ContactLabel"
+        android:text="0795197106"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvEmail"
+        android:layout_below="@id/tvPhone"
+        android:layout_alignStart="@id/tvPhone"
+        android:layout_marginTop="10dp"
+        android:text="gomez.c.sergio@outlook.com"
+        android:textSize="18sp"
+        />
+
+</RelativeLayout>
