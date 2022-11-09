@@ -49,7 +49,7 @@ public class ExcursionViewModel extends AndroidViewModel {
 
         private final ExcursionRepository repository;
 
-        public Factory(@NonNull Application application, int id) {
+        public Factory(@NonNull Application application) {
             this.application = application;
             this.id = id;
             repository = ((BaseApp) application).getExcursionRepository();

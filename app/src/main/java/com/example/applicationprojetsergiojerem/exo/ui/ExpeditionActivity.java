@@ -26,7 +26,7 @@ import java.util.List;
 
 import viewmodel.excursion.ExcursionListViewModel;
 
-public class ExpeditionActivity extends AppCompatActivity {
+public class ExpeditionActivity extends BaseActivity {
 
     /*
     private ImageButton button;
@@ -83,7 +83,7 @@ public class ExpeditionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_expedition, frameLayout); // TODO Check what does the frame layout do
+        getLayoutInflater().inflate(R.layout.activity_excursions, frameLayout); // TODO Check what does the frame layout do
 
         setTitle(getString(R.string.title_excursion_list));
 
@@ -122,7 +122,7 @@ public class ExpeditionActivity extends AppCompatActivity {
 
         ExcursionListViewModel.Factory factory = new ExcursionListViewModel.Factory(getApplication());
 
-        viewModel = new ViewModelProvider.(this).get(ExcursionListViewModel.class);
+        viewModel = new ViewModelProvider(this).get(ExcursionListViewModel.class);
         viewModel.getOwnExcursion().observe(this, excursionEntities -> {
             if (excursionEntities != null) {
                 excursions = excursionEntities;

@@ -63,7 +63,7 @@ public class ExcursionListViewModel extends AndroidViewModel {
 
         private final ExcursionRepository excursionRepository;
 
-        public Factory(@NonNull Application application, int ownerId) {
+        public Factory(@NonNull Application application) {
             this.application = application;
             this.ownerId = ownerId;
             guideRepository = ((BaseApp) application).getGuideRepository();
