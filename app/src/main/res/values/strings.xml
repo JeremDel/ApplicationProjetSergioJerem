@@ -67,4 +67,6 @@ Our credo is to make you live a strong reconnection with nature, and a unique ex
     <string name="title_edit_guide">Guide edition</string>
     <string name="action_update">Save</string>
     <string name="guide_eddited">Guide updated successfully</string>
+
+    <string name="title_excursion_list">Our expeditions</string>
 </resources>
