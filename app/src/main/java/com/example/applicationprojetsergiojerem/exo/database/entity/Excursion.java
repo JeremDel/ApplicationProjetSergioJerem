@@ -62,6 +62,38 @@ public class Excursion {
         return locations;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setDistance(float distance) {
+        this.distance = distance;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLocations(String locations) {
+        this.locations = locations;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
+    }
+
+    public void setGuide(int guide) {
+        this.guide = guide;
+    }
+
     public String getDifficulty() {
         return difficulty;
     }
