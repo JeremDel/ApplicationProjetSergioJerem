@@ -7,14 +7,19 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
+import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 
 import viewmodel.excursion.ExcursionViewModel;
+import viewmodel.guide.GuideViewModel;
 
 public class ExpeditionDetails extends BaseActivity {
     private Excursion excursion;
+    private Guide guide;
     private TextView tvPrice, tvDistance, tvName, tvLocations, tvDifficulty;
+    private TextView tvExcursionGuideName, tvExcursionGuideLastName, tvExcursionGuideEmail, tvExcursionGuidePhone;
 
     private ExcursionViewModel viewModel;
+    private GuideViewModel gViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -30,6 +35,15 @@ public class ExpeditionDetails extends BaseActivity {
             if (excursionEntity != null){
                 excursion = excursionEntity;
                 updateContent();
+            }
+        });
+
+        GuideViewModel.Factory gFactory = new GuideViewModel.Factory(getApplication(), excursion.getGuide());
+        gViewModel = new ViewModelProvider(this).get(GuideViewModel.class);
+        gViewModel.getGuide().observe(this, guideEntity -> {
+            if (guideEntity != null){
+                guide = guide;
+                updateGuide();
             }
         });
     }
@@ -51,6 +65,15 @@ public class ExpeditionDetails extends BaseActivity {
             tvName.setText(excursion.getName());
             tvLocations.setText(excursion.getLocations());
             tvDifficulty.setText(excursion.getDifficulty());
+        }
+    }
+
+    private void updateGuide(){
+        if (guide != null){
+            tvExcursionGuideName.setText(guide.getName());
+            tvExcursionGuideLastName.setText(guide.getLastName());
+            tvExcursionGuideEmail.setText(guide.getEmail());
+            tvExcursionGuidePhone.setText(guide.getPhoneNumber());
         }
     }
 }
