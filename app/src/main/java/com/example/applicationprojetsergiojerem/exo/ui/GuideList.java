@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class
 GuideList extends AppCompatActivity {
 
+    // My comment
     private ImageView ivGuideIcon;
     private TextView tvGuideName, tvGuideDescription;
     private FloatingActionButton addButton;
