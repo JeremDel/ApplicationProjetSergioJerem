@@ -5,49 +5,46 @@
     android:id="@+id/GuideGUI"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/toolbar"/>
+
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="155dp"
         android:layout_height="174dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/muverans" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="231dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginTop="35dp"
         android:layout_toRightOf="@id/imageView3"
-        android:text="Are you tired of computers ? Are you not making any progress with your projects? Come and take a tour of the Muverans !"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        android:text="Vous en avez marre de l'informatique ? Vous n'avancez pas dans vos projets ? Venez donc faire le tour des Muverans !" />
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/imageView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:gravity="center_horizontal"
-        android:text="An excursion for experts only"
-        android:textSize="16sp" />
-
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:text="Une excursion réservée aux habitués"
+        />
     <TextView
-        android:id="@+id/tvFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/tvFirstName"
         android:layout_below="@id/tvName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="No refund in case of disappointment."
-        android:textSize="16sp" />
-
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:text="Pas de remboursement en cas de déception."
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,8 +54,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
         android:textSize="18sp"
-        android:gravity="center_horizontal"
-        android:text="The Muverans are a mountain range located between the Valais and the Vaud region. \n \n Take advantage of this exceptional trip to take pictures of marmots and eat a big fondue. "
+        android:text="Les Muverans sont une chaîne de montagne situéee entre le Valais et le pays de Vaud. Profitez de ce voyage exceptionnel pour prendre en photo des marmottes et manger une bonne grosse fondue. "
         />
 
 </RelativeLayout>

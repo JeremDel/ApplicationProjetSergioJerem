@@ -35,7 +35,7 @@ public class DatabaseInitializer {
 
         addGuide(database, "Jean", "Bonvin", "I have always been very passionate about the mountains. During my various excursions. I learned to know the nature and its inhabitants. The marmots consider me now as one of theirs and do not hesitate to guide me on unknown paths by most of the Valaisans." +
                         "With me, you will be able to say that you will have lived absolutely unique experiences.", "Route des joyeux lurons 23",
-                "braindestroyer@gmail.com", "walserguide.jpg", 761857496, "11.12.1982", "petitePerruche", "Argh88!");
+                "3pecial@gmail.com", "walserguide.jpg", 761857496, "11.12.1982", "petitePerruche", "Argh88!");
 
         addGuide(database, "Michael", "Ritz", "I have lived in these mountains since I was a child. My friends call me the flying chamois because I am fast and slender. I would be happy to show you my favorite raclette spots. " +
                         "Hang on, because with me, there will be sport.)", "Avenue des bouquiniers 18",
