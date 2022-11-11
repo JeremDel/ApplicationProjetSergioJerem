@@ -1,5 +1,6 @@
 package com.example.applicationprojetsergiojerem.exo.database.peugeot;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Embedded;
 import androidx.room.Relation;
 
@@ -13,5 +14,5 @@ public class GuideWithExcursions {
     public Guide guide;
 
     @Relation(parentColumn = "id", entityColumn = "guide", entity = Excursion.class)
-    public List<Excursion> excursionList;
+    public LiveData<Excursion> excursionList;
 }

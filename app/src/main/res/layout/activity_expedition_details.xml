@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPrice"
+        android:textSize="18sp"
+        android:layout_toRightOf="@id/tvLocations"
+        android:layout_alignTop="@id/tvLocations"
+        android:layout_marginLeft="20dp"
+        android:text="15 CHF"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvName"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:textSize="30sp"
+        android:text="Tour des fourmies géantes"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDistance"
+        android:textSize="18sp"
+        android:layout_below="@id/tvLocations"
+        android:layout_alignStart="@id/tvLocations"
+        android:layout_marginTop="10dp"
+        android:text="17 km"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvLocations"
+        android:textSize="18sp"
+        android:layout_below="@id/tvDifficulty"
+        android:layout_alignStart="@id/tvDifficulty"
+        android:layout_marginTop="20dp"
+        android:text="De Vilars à Ollon"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDifficulty"
+        android:layout_below="@id/tvName"
+        android:layout_alignStart="@id/tvName"
+        android:textSize="18sp"
+        android:layout_marginTop="3dp"
+        android:text="Moyen"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvExcursionGuideName"
+        android:layout_below="@+id/tvExcursionGuideDetails"
+        android:layout_alignStart="@id/tvExcursionGuideDetails"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:text="Sergio"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:id="@+id/tvExcursionGuideDetails"
+        android:layout_below="@id/tvDistance"
+        android:layout_alignStart="@id/tvDistance"
+        android:layout_marginTop="80dp"
+        android:text="Le guide"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvExcursionGuideLastName"
+        android:layout_toRightOf="@id/tvExcursionGuideName"
+        android:layout_alignTop="@id/tvExcursionGuideName"
+        android:textSize="20sp"
+        android:text="Gomez"
+        android:layout_marginLeft="7dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvExcursionGuideEmail"
+        android:textSize="18sp"
+        android:layout_below="@id/tvExcursionGuideName"
+        android:layout_alignStart="@id/tvExcursionGuideName"
+        android:layout_marginTop="15dp"
+        android:text="gosermez@gmail.com"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvExcursionGuidePhone"
+        android:textSize="18sp"
+        android:layout_below="@id/tvExcursionGuideEmail"
+        android:layout_alignStart="@id/tvExcursionGuideEmail"
+        android:layout_marginTop="5dp"
+        android:text="0795197106"
+        />
+
+</RelativeLayout>

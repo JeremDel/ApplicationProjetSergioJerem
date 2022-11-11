@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/toolbar"/>
 
     <ImageView
-
         android:id="@+id/guideBonvin"
         android:layout_width="172dp"
         android:layout_height="162dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/bonvin" />
 
     <TextView
         android:id="@+id/guideName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="85dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
         android:layout_toRightOf="@+id/guideBonvin"
         android:text="Jean Bonvin"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/guideDescription"

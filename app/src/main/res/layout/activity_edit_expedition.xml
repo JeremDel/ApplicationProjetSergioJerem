@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:hint="Excursion name"
+        />
+
+    <EditText
+        android:layout_width="30mm"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDifficulty"
+        android:layout_below="@id/etName"
+        android:layout_alignStart="@id/etName"
+        android:hint="Difficulty"
+        />
+
+    <EditText
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:id="@+id/etLocations"
+        android:layout_below="@id/etDifficulty"
+        android:layout_alignStart="@id/etDifficulty"
+        android:layout_marginTop="30dp"
+        android:hint="Locations"
+        />
+
+    <EditText
+        android:layout_width="25mm"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDistance"
+        android:layout_below="@id/etLocations"
+        android:layout_alignStart="@id/etLocations"
+        android:hint="Distance"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:layout_width="25mm"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPrice"
+        android:layout_below="@id/etLocations"
+        android:layout_alignEnd="@id/etLocations"
+        android:hint="Price"
+        android:layout_alignTop="@id/etDistance"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSave"
+        android:text="Save"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        />
+
+</RelativeLayout>

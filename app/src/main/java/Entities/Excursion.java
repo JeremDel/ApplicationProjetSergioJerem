@@ -1,35 +1,32 @@
-package com.example.applicationprojetsergiojerem.exo.database.entity;
+package Entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(
-        foreignKeys = {
+@Entity(foreignKeys = {
         @ForeignKey(
                 entity = Guide.class,
                 parentColumns = "id",
                 childColumns = "guide",
                 onDelete = ForeignKey.CASCADE
         )
-
 })
 public class Excursion {
-    @PrimaryKey(autoGenerate = true)
-    public int id;
-    public int price;
+    @PrimaryKey
+    private int id;
+    private int price;
 
-    public float distance;
+    private float distance;
 
-    public String name;
-    public String locations;
-    public String difficulty;
-    public String picPath;
+    private String name;
+    private String locations;
+    private String difficulty;
+    private String picPath;
 
     @NonNull
-    public int guide;
-
+    private int guide;
 
     public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, int guide){
         this.price = price;
@@ -62,38 +59,6 @@ public class Excursion {
         return locations;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setDistance(float distance) {
-        this.distance = distance;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLocations(String locations) {
-        this.locations = locations;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public void setPicPath(String picPath) {
-        this.picPath = picPath;
-    }
-
-    public void setGuide(int guide) {
-        this.guide = guide;
-    }
-
     public String getDifficulty() {
         return difficulty;
     }
@@ -105,5 +70,4 @@ public class Excursion {
     public int getGuide() {
         return guide;
     }
-
 }
