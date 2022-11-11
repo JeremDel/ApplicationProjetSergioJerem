@@ -14,6 +14,8 @@ import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.w3c.dom.Text;
+
 import viewmodel.guide.GuideViewModel;
 
 public class GuideDetails extends BaseActivity {
@@ -27,7 +29,9 @@ public class GuideDetails extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_guide, frameLayout);
+        //getLayoutInflater().inflate(R.layout.activity_guide, frameLayout);
+
+        setContentView(R.layout.activity_guide);
 
         int guideId = getIntent().getIntExtra("guideID", -1);
         initiateView();
@@ -35,14 +39,20 @@ public class GuideDetails extends BaseActivity {
 
         GuideViewModel.Factory factory = new GuideViewModel.Factory(getApplication(), guideId);
         viewModel = new ViewModelProvider(new ViewModelStore(), (ViewModelProvider.Factory) factory).get(GuideViewModel.class);
-        viewModel.getGuide().observe(this, guideEntity -> {
-           if (guideEntity != null){
-               this.guide = guideEntity;
-               updateContent();
+        viewModel.getGuide().observe(this, entiteGuide -> {
+           if (entiteGuide != null){
+               guide = entiteGuide;
+               setTitle(guide.getName() + " " + guide.getLastName());
+
+               tvBirthDate.setText(guide.getBirthdate());
+               tvName.setText(guide.getName());
+               tvLastName.setText(guide.getLastName());
+               tvDescription.setText(guide.getDescription());
+               tvAddress.setText(guide.getAddress());
+               tvPhone.setText(String.valueOf(guide.getPhoneNumber()));
+               tvEmail.setText(guide.getEmail());
            }
         });
-
-        setTitle(guide.getName() + " " + guide.getLastName());
 
         tvEmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,12 +92,12 @@ public class GuideDetails extends BaseActivity {
     }
 
     private void initiateView(){
-        tvBirthDate = findViewById(R.id.tvBirthDate);
-        tvName = findViewById(R.id.tvName);
-        tvLastName = findViewById(R.id.tvLastName);
-        tvDescription = findViewById(R.id.tvDescription);
-        tvAddress = findViewById(R.id.tvAddress);
-        tvPhone = findViewById(R.id.tvPhone);
-        tvEmail = findViewById(R.id.tvEmail);
+        tvBirthDate = findViewById(R.id.tvBirthDateGuideDetail);
+        tvName = findViewById(R.id.tvNameGuideDetail);
+        tvLastName = findViewById(R.id.tvLastNameGuideDetail);
+        tvDescription = findViewById(R.id.tvDescriptionGuideDetail);
+        tvAddress = findViewById(R.id.tvAddressGuideDetail);
+        tvPhone = findViewById(R.id.tvPhoneGuideDetail);
+        tvEmail = findViewById(R.id.tvEmailGuideDetail);
     }
 }

@@ -22,7 +22,7 @@ public class GuideList extends AppCompatActivity {
 
         setContentView(R.layout.guides_list);
 
-        ivGuideIcon = (ImageView) findViewById(R.id.guideIcon);
+        //ivGuideIcon = (ImageView) findViewById(R.id.guideIcon);
         tvGuideDescription = (TextView) findViewById(R.id.guideDescription);
         tvGuideName = (TextView) findViewById(R.id.guideName);
         addButton = (FloatingActionButton) findViewById(R.id.add);

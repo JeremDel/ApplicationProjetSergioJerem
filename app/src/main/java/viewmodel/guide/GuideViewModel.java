@@ -26,7 +26,7 @@ public class GuideViewModel extends AndroidViewModel {
                             final int id, GuideRepository guideRepository){
         super(application);
 
-        this.application = application;
+        //this.application = application;
 
         repository = guideRepository;
 
@@ -34,16 +34,17 @@ public class GuideViewModel extends AndroidViewModel {
 
         observableGuide.setValue(null);
 
-        LiveData<Guide> guide = (LiveData<Guide>) repository.getGuideById(id, application);
+        LiveData<Guide> guide = repository.getGuideById(id, application);
 
         observableGuide.addSource(guide, observableGuide::setValue);
     }
-    public static class Factory extends ViewModelProvider.NewInstanceFactory {
+    public static class Factory implements ViewModelProvider.Factory {
 
         @NonNull
-        private final Application application;
+        private Application applicationBase;
 
         private final int id;
+        private Application application;
 
         private final GuideRepository repository;
 
