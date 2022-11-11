@@ -20,7 +20,7 @@ import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import java.util.concurrent.Executors;
 
 @Database(entities = {Excursion.class, Guide.class}, version = 1)
-public abstract class AppDatabase extends RoomDatabase {
+public abstract class  AppDatabase extends RoomDatabase {
     private static final String TAG = "AppDatabase";
     private static final String DATABASE_NAME = "ExcursionsDB";
 
@@ -30,8 +30,6 @@ public abstract class AppDatabase extends RoomDatabase {
     private final MutableLiveData<Boolean> mIsDatabaseCreated = new MutableLiveData<>();
 
     private static AppDatabase instance;
-
-    @SuppressLint("NotConstructor")
 
     public static AppDatabase getInstance(final Context context){
         if (instance == null){

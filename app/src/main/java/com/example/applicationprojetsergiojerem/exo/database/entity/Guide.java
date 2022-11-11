@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity //manque tablename + primaryKey
 public class Guide {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int id;
     public int phoneNumber;
 
@@ -71,6 +71,38 @@ public class Guide {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
     }
 
     public String getPicPath() {

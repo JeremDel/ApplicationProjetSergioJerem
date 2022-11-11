@@ -61,7 +61,6 @@ public class GuideViewModel extends AndroidViewModel {
     }
 
     public LiveData<Guide> getGuide() {
-
         return observableGuide;
     }
 

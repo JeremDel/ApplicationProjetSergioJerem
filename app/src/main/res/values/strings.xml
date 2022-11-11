@@ -64,4 +64,17 @@ Our credo is to make you live a strong reconnection with nature, and a unique ex
     </string>
     <string name="surname">Surname
     </string>
+
+    <string name="title_activity_create_guide">Create a new Guide</string>
+    <string name="guide_created">Guide successfully created</string>
+
+    <string name="title_edit_guide">Guide edition</string>
+    <string name="action_update">Save</string>
+    <string name="guide_eddited">Guide updated successfully</string>
+
+    <string name="title_excursion_list">Our expeditions</string>
+    <string name="title_activity_create_excursion">Create a new excursion</string>
+    <string name="excursion_created">Excursion created successfully</string>
+    <string name="title_activity_edit_excursion">Edit an excursion</string>
+    <string name="excursion_editted">Excursion editted successfully</string>
 </resources>

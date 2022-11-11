@@ -2,6 +2,8 @@ package com.example.applicationprojetsergiojerem.exo.database.repository;
 
 import android.app.Application;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.async.guide.CreateGuide;
 import com.example.applicationprojetsergiojerem.exo.database.async.guide.DeleteGuide;
@@ -30,11 +32,11 @@ public class GuideRepository {
         return instance;
     }
 
-    public List<Guide> getAllGuides(Application application){
+    public LiveData<List<Guide>> getAllGuides(Application application){
         return ((BaseApp) application).getDatabase().guideDAO().getAllGuides();
     }
 
-    public List<Guide> getGuideById(final int id, Application application){
+    public LiveData<Guide> getGuideById(final int id, Application application){
         return ((BaseApp) application).getDatabase().guideDAO().getGuideById(id);
     }
 

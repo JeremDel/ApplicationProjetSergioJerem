@@ -7,6 +7,10 @@ import com.example.applicationprojetsergiojerem.exo.database.repository.Excursio
 import com.example.applicationprojetsergiojerem.exo.database.repository.GuideRepository;
 
 public class BaseApp extends Application {
+    public BaseApp() {
+
+        super();
+    }
 
     @Override
     public void onCreate(){
