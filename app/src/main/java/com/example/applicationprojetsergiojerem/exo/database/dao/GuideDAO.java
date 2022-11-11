@@ -17,10 +17,10 @@ public abstract class GuideDAO {
     // -- Base queries --
 
     @Query("SELECT * FROM Guide")
-    public abstract List<Guide> getAllGuides();
+    public abstract LiveData<List<Guide>> getAllGuides();
 
     @Query("SELECT * FROM Guide WHERE id = :id")
-    public abstract List<Guide> getGuideById(int id);
+    public abstract LiveData<Guide> getGuideById(int id);
 
 
     // -- Insert --

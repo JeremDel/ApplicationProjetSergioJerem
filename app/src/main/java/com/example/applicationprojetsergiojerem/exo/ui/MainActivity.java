@@ -26,7 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
 
     private Button bton_expedition, btnGuides;
@@ -46,13 +46,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        getLayoutInflater().inflate(R.layout.activity_main, frameLayout);
 
-        setContentView(R.layout.activity_main);
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         changeLanguage(sharedPrefs.getString("pref_lang", "fr"));
 

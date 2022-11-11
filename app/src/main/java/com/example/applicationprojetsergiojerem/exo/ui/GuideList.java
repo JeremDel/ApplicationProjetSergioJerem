@@ -8,7 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,11 +41,13 @@ public class GuideList extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_guides, frameLayout);
-
+        //getLayoutInflater().inflate(R.layout.activity_guides, frameLayout);
+        setContentView(R.layout.activity_guides);
         setTitle("Guides");
 
         RecyclerView recyclerView = findViewById(R.id.guidesRecycleView);
+        if(recyclerView == null)
+            recyclerView = new RecyclerView(getApplicationContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.HORIZONTAL));
 
@@ -57,6 +61,7 @@ public class GuideList extends BaseActivity {
 
                 // Create new intent to the guide details and add the chosen guide id
                 Intent intent = new Intent(GuideList.this, GuideDetails.class);
+                int guideId = guides.get(position).getId();
                 intent.putExtra("guideID", guides.get(position).getId());
 
                 // Launch the activity
@@ -80,8 +85,8 @@ public class GuideList extends BaseActivity {
                 }
         );
 
-        GuideListViewModel.Factory factory = new GuideListViewModel.Factory(getApplication());
-        viewModel = new ViewModelProvider(this).get(GuideListViewModel.class);
+        GuideListViewModel.Factory factory = new GuideListViewModel.Factory(this.getApplication());
+        viewModel = new ViewModelProvider(new ViewModelStore(), (ViewModelProvider.Factory) factory).get(GuideListViewModel.class);
         viewModel.getGuides().observe(this, guidesEntities -> {
             if (guidesEntities != null) {
                 guides = guidesEntities;

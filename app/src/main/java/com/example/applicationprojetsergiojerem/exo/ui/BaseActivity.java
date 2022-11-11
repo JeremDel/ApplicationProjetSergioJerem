@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.applicationprojetsergiojerem.Login;
+//import com.example.applicationprojetsergiojerem.Login;
 import com.example.applicationprojetsergiojerem.R;
 
 public class BaseActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class BaseActivity extends AppCompatActivity {
     protected FrameLayout frameLayout;
     protected DrawerLayout drawerLayout;
 
-    protected static int position; // NO IDEA WHAT IT DOES :(
+    protected static int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -32,7 +32,7 @@ public class BaseActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        frameLayout = findViewById(R.id.flContent); // TODO Make it
+        frameLayout = findViewById(R.id.flContent);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_Open, R.string.close_menu);

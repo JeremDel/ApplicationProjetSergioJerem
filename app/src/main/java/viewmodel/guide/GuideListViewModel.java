@@ -46,12 +46,12 @@ public class GuideListViewModel extends AndroidViewModel {
         @NonNull
         private final Application application;
         private final GuideRepository guideRepository;
-        private final ExcursionRepository excursionRepository;
 
         public Factory(@NonNull Application application) {
             this.application = application;
+
+            //guideRepository = new BaseApp().getGuideRepository();
             guideRepository = ((BaseApp) application).getGuideRepository();
-            excursionRepository = ((BaseApp) application).getExcursionRepository();
         }
 
         @Override

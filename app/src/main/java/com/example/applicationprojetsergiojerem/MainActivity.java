@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_users:
-                        Intent intent2 = new Intent(MainActivity.this, Login.class);
-                        startActivity(intent2);
-                        drawerLayout.closeDrawer(GravityCompat.START);
+                        //Intent intent2 = new Intent(MainActivity.this, Login.class);
+                        //startActivity(intent2);
+                        //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.nav_setting:

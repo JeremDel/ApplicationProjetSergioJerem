@@ -33,14 +33,14 @@ public class DatabaseInitializer {
     private static void populateWithTestData(AppDatabase database){
         database.guideDAO().deleteAll();
 
+        addGuide(database, "Storm", "Front", "Il faut respecter l'opinion des autres ;)", "Route des Delphins 420",
+                "eineBierBitte@gmail.com", "meinestraSSe.png", 784825169, "24.12.1905");
+
         addGuide(database, "Jean", "Néo-Skours", "Ma maman dit toujours que je suis très spécial :)", "Route des chromosomes 123",
                 "3pecial@gmail.com", "special.png", 761857496, "11.12.2003");
 
         addGuide(database, "Barry", "Not-Allen-Si-Jamais", "Ma maman dit toujours que je suis un bon garçon :))", "Avenue des doggos 455",
                 "woofPasUnChienWoof@outlook.com", "barryLeBG.png", 768125594, "23.2.1970");
-
-        addGuide(database, "Storm", "Front", "Il faut respecter l'opinion des autres ;)", "Route des Delphins 420",
-                "eineBierBitte@gmail.com", "meinestraSSe.png", 784825169, "24.12.1905");
 
         addGuide(database, "Soldier", "Boy", "Si tu veux être heureux, ne te marie jamais à une belle femme", "Avenue de Lennil Boss 79",
                 "iEnjoyEatingCars@yahoo.com", "heroGsm.png", 792871056, "20.04.1875");

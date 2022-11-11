@@ -10,7 +10,7 @@ import androidx.room.Update;
 import Entities.Excursion;
 
 @Dao
-public abstract class ExcursionDAO {
+public abstract class  ExcursionDAO {
 
     // -- Base queries --
 

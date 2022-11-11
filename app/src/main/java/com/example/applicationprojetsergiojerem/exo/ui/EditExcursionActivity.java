@@ -66,7 +66,7 @@ public class EditExcursionActivity extends BaseActivity {
         etDistance = findViewById(R.id.etDistance);
         etName = findViewById(R.id.etName);
         etLocations = findViewById(R.id.etLocations);
-        etDiffculty = findViewById(R.id.etDiffculty);
+        etDiffculty = findViewById(R.id.etDifficulty);
 
         btnSave = findViewById(R.id.btnSave);
     }

@@ -30,39 +30,39 @@ public class ExpeditionActivity extends AppCompatActivity {
         titreMuveran = (TextView) findViewById(R.id.titreMuveran);
         titre7lacs = (TextView) findViewById(R.id.titre7lacs);
         titreWalser = (TextView) findViewById(R.id.titreWalser);
-        textMuveran = (TextView) findViewById(R.id.textMuveran);
-        text7lacs = (TextView) findViewById(R.id.text7lacs);
-        textWalser = (TextView) findViewById(R.id.textWalser);
+        //textMuveran = (TextView) findViewById(R.id.textMuveran);
+        //text7lacs = (TextView) findViewById(R.id.text7lacs);
+        //textWalser = (TextView) findViewById(R.id.textWalser);
 
         imageMuveran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
-                startActivity(intent);
+                //Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
+                //startActivity(intent);
             }
         });
 
         titreMuveran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
-                startActivity(intent);
+                //Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
+                //startActivity(intent);
             }
         });
 
         textMuveran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
-                startActivity(intent);
+                //Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
+                //startActivity(intent);
             }
         });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, addexpedition.class);
-                startActivity(intent);
+                //Intent intent = new Intent(ExpeditionActivity.this, addexpedition.class);
+                //startActivity(intent);
             }
         });
     }

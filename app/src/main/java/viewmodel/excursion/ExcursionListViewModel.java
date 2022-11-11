@@ -28,7 +28,7 @@ public class ExcursionListViewModel extends AndroidViewModel {
     private final MediatorLiveData<List<Excursion>> observableOwnExcursion;
 
     public ExcursionListViewModel(@NonNull Application application,
-                                  final int ownerId,
+                                  final int guideId,
                                   GuideRepository guideRepository,
                                   ExcursionRepository excursionRepository) {
 
@@ -44,20 +44,11 @@ public class ExcursionListViewModel extends AndroidViewModel {
 
         observableGuideExcursion.setValue(null);
         observableOwnExcursion.setValue(null);
-
-        LiveData<List<GuideWithExcursions>> guideExcursion =
-                (LiveData<List<GuideWithExcursions>>) guideRepository.getGuideById(ownerId, application);
-        LiveData<List<Excursion>> ownExcursion = (LiveData<List<Excursion>>) repository.getExcursionsByGuide(ownerId, application);
-
-        observableGuideExcursion.addSource(ownExcursion, observableOwnExcursion::setValue);
-        observableOwnExcursion.addSource(ownExcursion, observableOwnExcursion::setValue);
     }
 
     public static class Factory extends ViewModelProvider.NewInstanceFactory {
         @NonNull
         private final Application application;
-
-        private final int ownerId;
 
         private final GuideRepository guideRepository;
 
@@ -65,7 +56,6 @@ public class ExcursionListViewModel extends AndroidViewModel {
 
         public Factory(@NonNull Application application) {
             this.application = application;
-            this.ownerId = ownerId;
             guideRepository = ((BaseApp) application).getGuideRepository();
             excursionRepository = ((BaseApp) application).getExcursionRepository();
         }
@@ -73,7 +63,7 @@ public class ExcursionListViewModel extends AndroidViewModel {
         @Override
         public <T extends ViewModel> T create(Class<T> modelClass) {
 
-            return (T) new ExcursionListViewModel(application, ownerId, guideRepository, excursionRepository);
+            return (T) new ExcursionListViewModel(application, 1, guideRepository, excursionRepository); // TODO Replace the hardcoded 1...
         }
     }
 

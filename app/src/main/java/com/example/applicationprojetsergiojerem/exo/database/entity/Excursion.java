@@ -16,7 +16,7 @@ import androidx.room.PrimaryKey;
 
 })
 public class Excursion {
-    @PrimaryKey //autogenerate = true ?
+    @PrimaryKey(autoGenerate = true)
     public int id;
     public int price;
 

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
 
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
@@ -28,12 +29,12 @@ public class GuideDetails extends BaseActivity {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_guide, frameLayout);
 
-        int guideId = getIntent().getIntExtra("guideID", 0);
+        int guideId = getIntent().getIntExtra("guideID", -1);
         initiateView();
 
 
         GuideViewModel.Factory factory = new GuideViewModel.Factory(getApplication(), guideId);
-        viewModel = new ViewModelProvider(this).get(GuideViewModel.class);
+        viewModel = new ViewModelProvider(new ViewModelStore(), (ViewModelProvider.Factory) factory).get(GuideViewModel.class);
         viewModel.getGuide().observe(this, guideEntity -> {
            if (guideEntity != null){
                this.guide = guideEntity;

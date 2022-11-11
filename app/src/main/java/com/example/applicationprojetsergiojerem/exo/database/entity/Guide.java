@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity //manque tablename + primaryKey
 public class Guide {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int id;
     public int phoneNumber;
 
