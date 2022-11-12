@@ -106,5 +106,8 @@ public class Guide {
         return picPath;
     }
 
-    //pas de equals ?
+    @Override
+    public String toString(){
+        return name + " " + lastName;
+    }
 }
