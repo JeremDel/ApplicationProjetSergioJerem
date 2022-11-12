@@ -52,6 +52,7 @@ public class RecyclerAdapter<G> extends RecyclerView.Adapter<RecyclerAdapter.Vie
         if (item.getClass().equals(Excursion.class))
             holder.mTextView.setText(((Excursion) item).getName());
 
+
         if (item.getClass().equals(Guide.class))
             holder.mTextView.setText(((Guide) item).getName() + " " + ((Guide) item).getLastName());
     }

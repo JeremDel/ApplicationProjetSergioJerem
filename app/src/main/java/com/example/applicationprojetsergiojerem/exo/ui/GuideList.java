@@ -46,8 +46,6 @@ public class GuideList extends BaseActivity {
         setTitle("Guides");
 
         RecyclerView recyclerView = findViewById(R.id.guidesRecycleView);
-        if(recyclerView == null)
-            recyclerView = new RecyclerView(getApplicationContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
