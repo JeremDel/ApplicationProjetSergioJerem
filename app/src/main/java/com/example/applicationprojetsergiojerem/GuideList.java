@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicationprojetsergiojerem.exo.ui.AddGuide;
+import com.example.applicationprojetsergiojerem.exo.ui.GuideDetails;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class GuideList extends AppCompatActivity {
