@@ -6,12 +6,15 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.repository.ExcursionRepository;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
+
+import viewmodel.guide.GuideViewModel;
 
 public class ExcursionViewModel extends AndroidViewModel {
 
@@ -35,21 +38,29 @@ public class ExcursionViewModel extends AndroidViewModel {
 
         observableExcursion.setValue(null);
 
-        LiveData<Excursion> excursion = (LiveData<Excursion>) repository.getExcursion(id, application);
+        LiveData<Excursion> excursion = repository.getExcursion(id, application);
 
         observableExcursion.addSource(excursion, observableExcursion::setValue);
     }
 
-    public static class Factory extends ViewModelProvider.NewInstanceFactory {
+    public static class Factory implements ViewModelProvider.Factory {
 
         @NonNull
         private final Application application;
 
+        private final int excursionId;
         private final ExcursionRepository repository;
 
-        public Factory(@NonNull Application application) {
+        public Factory(@NonNull Application application, int excursionId) {
             this.application = application;
+            this.excursionId = excursionId;
             repository = ((BaseApp) application).getExcursionRepository();
+        }
+
+        @Override
+        public <T extends ViewModel> T create(Class<T> modelClass) {
+            //noinspection unchecked
+            return (T) new ExcursionViewModel(application, excursionId, repository);
         }
     }
 

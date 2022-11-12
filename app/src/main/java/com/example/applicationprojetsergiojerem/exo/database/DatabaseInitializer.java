@@ -31,12 +31,14 @@ public class DatabaseInitializer {
 
 
     private static void populateWithTestData(AppDatabase database){
+        database.excursionDAO().deleteAll();
         database.guideDAO().deleteAll();
+
 
         addGuide(database, "Storm", "Front", "Il faut respecter l'opinion des autres ;)", "Route des Delphins 420",
                 "eineBierBitte@gmail.com", "meinestraSSe.png", 784825169, "24.12.1905");
 
-        addGuide(database, "Jean", "Néo-Skours", "Ma maman dit toujours que je suis très spécial :)", "Route des chromosomes 123",
+        addGuide(database, "Jean", "Néo-Skours", "Ma maman dit toujours que je suis très spécial :)", "Route de l'Avenir 123",
                 "3pecial@gmail.com", "special.png", 761857496, "11.12.2003");
 
         addGuide(database, "Barry", "Not-Allen-Si-Jamais", "Ma maman dit toujours que je suis un bon garçon :))", "Avenue des doggos 455",
@@ -52,14 +54,13 @@ public class DatabaseInitializer {
             e.printStackTrace();
         }
 
-
         addExcursion(database, 45, 13.5f, "Tour du Mort D'or", "De Bex à Lavey (?)", "Difficile", "mortDor.png", 1);
 
         addExcursion(database, 169, 50.2f, "Marathon à la Norwegian Regaetton", "Du Mont Blanc aux Alpes", "Difficile", "rega.png", 2);
 
         addExcursion(database, 25, 5.9f, "Tour des monarques", "De Sierre à... Sierre aussi", "Facile", "filetmignons.png", 4);
 
-        addExcursion(database, 0, 350.0f, "Promenade Germanique", "De n'importe où en Allemagne à... Austwichz", "Facile", "doucheRelaxante.png", 3);
+        addExcursion(database, 0, 350.0f, "Promenade Germanique", "Tournée par Zurich centre ville. En raquettes, oui.", "Facile", "doucheRelaxante.png", 3);
 
         addExcursion(database, 70, 20.0f, "Marche du Saint-Bernard", "Du Petit Saint-Bernard au Grand Saint-Bernard", "Moyenne", "bethoven.png", 2);
 
@@ -67,7 +68,7 @@ public class DatabaseInitializer {
 
         addExcursion(database, 10, 10.7f, "Tour des déceptions", "", "Moyenne", "mirror.png", 4);
 
-        addExcursion(database, 60, 35.0f, "Marche des Sares Hien", "Du Mont Blanc au Mont Blond aux yeux Bleus", "Moyenne", "saresHiens.png", 3);
+        addExcursion(database, 60, 35.0f, "Marche des loups", "Du Mont Blanc au Mont Noir ou jsp", "Moyenne", "garouCLoup.png", 3);
     }
 
 

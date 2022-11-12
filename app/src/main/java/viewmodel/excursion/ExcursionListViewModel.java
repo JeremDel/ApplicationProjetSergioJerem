@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
-import com.example.applicationprojetsergiojerem.exo.database.peugeot.GuideWithExcursions;
 import com.example.applicationprojetsergiojerem.exo.database.repository.ExcursionRepository;
 import com.example.applicationprojetsergiojerem.exo.database.repository.GuideRepository;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
@@ -24,7 +23,7 @@ public class ExcursionListViewModel extends AndroidViewModel {
 
     private ExcursionRepository repository;
 
-    private final MediatorLiveData<List<GuideWithExcursions>> observableGuideExcursion;
+    private final MediatorLiveData<List<Excursion>> observableExcursions;
     private final MediatorLiveData<List<Excursion>> observableOwnExcursion;
 
     public ExcursionListViewModel(@NonNull Application application,
@@ -39,11 +38,18 @@ public class ExcursionListViewModel extends AndroidViewModel {
 
         repository = excursionRepository;
 
-        observableGuideExcursion = new MediatorLiveData<>();
+        observableExcursions = new MediatorLiveData<>();
         observableOwnExcursion = new MediatorLiveData<>();
 
-        observableGuideExcursion.setValue(null);
+        observableExcursions.setValue(null);
         observableOwnExcursion.setValue(null);
+
+        LiveData<List<Excursion>> guideExcursions = repository.getExcursionsByGuide(guideId, application);
+        LiveData<List<Excursion>> allExcursions = repository.getAllExcursions(application);
+
+        // observe the changes of the entities from the database and forward them
+        observableOwnExcursion.addSource(guideExcursions, observableOwnExcursion::setValue);
+        observableExcursions.addSource(allExcursions, observableExcursions::setValue);
     }
 
     public static class Factory extends ViewModelProvider.NewInstanceFactory {
@@ -67,11 +73,12 @@ public class ExcursionListViewModel extends AndroidViewModel {
         }
     }
 
-    public LiveData<List<GuideWithExcursions>> getGuideExcursion() {
-        return observableGuideExcursion;
+    public LiveData<List<Excursion>> getAllExcursions() {
+        return observableExcursions;
     }
 
     public LiveData<List<Excursion>> getOwnExcursion() {
+
         return observableOwnExcursion;
     }
 

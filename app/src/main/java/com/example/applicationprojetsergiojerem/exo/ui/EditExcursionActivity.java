@@ -49,7 +49,7 @@ public class EditExcursionActivity extends BaseActivity {
             isEditMode = true;
         }
 
-        ExcursionViewModel.Factory factory = new ExcursionViewModel.Factory(getApplication());
+        ExcursionViewModel.Factory factory = new ExcursionViewModel.Factory(getApplication(), getIntent().getIntExtra("excursionId", -1));
         viewModel = new ViewModelProvider(this).get(ExcursionViewModel.class);
         if (isEditMode){
             viewModel.getExcursion().observe(this, excursionEntity -> {

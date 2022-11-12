@@ -34,15 +34,15 @@ public class ExcursionRepository {
         return instance;
     }
 
-    public List<Excursion> getExcursion(final int id, Application application){
-        return (List<Excursion>) ((BaseApp) application).getDatabase().excursionDAO().getExcursionById(id);
+    public LiveData<Excursion> getExcursion(final int id, Application application){
+        return ((BaseApp) application).getDatabase().excursionDAO().getExcursionById(id);
     }
 
-    public List<Excursion> getAllExcursions(Application application){
+    public LiveData<List<Excursion>> getAllExcursions(Application application){
         return ((BaseApp) application).getDatabase().excursionDAO().getAllExcursions();
     }
 
-    public List<Excursion> getExcursionsByGuide(final int guideId, Application application){
+    public LiveData<List<Excursion>> getExcursionsByGuide(final int guideId, Application application){
         return ((BaseApp) application).getDatabase().excursionDAO().getExcursionsByGuide(guideId);
     }
 

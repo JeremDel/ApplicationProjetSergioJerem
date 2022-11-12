@@ -1,7 +1,7 @@
 package com.example.applicationprojetsergiojerem.exo.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -79,13 +79,14 @@ public class ExpeditionActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_excursions, frameLayout); // TODO Check what does the frame layout do
+        //getLayoutInflater().inflate(R.layout.activity_excursions, frameLayout); // TODO Check what does the frame layout do
+        setContentView(R.layout.activity_excursions);
 
         setTitle(getString(R.string.title_excursion_list));
 
         RecyclerView recyclerView = findViewById(R.id.excursionRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.HORIZONTAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         excursions = new ArrayList<>();
         adapter = new RecyclerAdapter<>(new RecyclerViewItemClickListener() {
@@ -118,8 +119,8 @@ public class ExpeditionActivity extends BaseActivity {
 
         ExcursionListViewModel.Factory factory = new ExcursionListViewModel.Factory(getApplication());
 
-        viewModel = new ViewModelProvider(this).get(ExcursionListViewModel.class);
-        viewModel.getOwnExcursion().observe(this, excursionEntities -> {
+        viewModel = new ViewModelProvider(new ViewModelStore(), (ViewModelProvider.Factory) factory).get(ExcursionListViewModel.class);
+        viewModel.getAllExcursions().observe(this, excursionEntities -> {
             if (excursionEntities != null) {
                 excursions = excursionEntities;
                 adapter.setData(excursions);

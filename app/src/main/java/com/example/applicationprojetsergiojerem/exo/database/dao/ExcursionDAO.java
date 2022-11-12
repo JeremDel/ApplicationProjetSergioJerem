@@ -17,14 +17,14 @@ public abstract class ExcursionDAO {
     // -- Base queries --
 
     @Query("SELECT * FROM Excursion")
-    public abstract List<Excursion> getAllExcursions();
+    public abstract LiveData<List<Excursion>> getAllExcursions();
 
     @Query("SELECT * FROM Excursion WHERE id = :id")
-    public abstract List<Excursion> getExcursionById(int id);
+    public abstract LiveData<Excursion> getExcursionById(int id);
 
 
     @Query("SELECT * FROM Excursion WHERE guide = :guideId")
-    public abstract List<Excursion> getExcursionsByGuide(int guideId);
+    public abstract LiveData<List<Excursion>> getExcursionsByGuide(int guideId);
 
     // -- Insert --
 

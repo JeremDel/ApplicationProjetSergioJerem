@@ -29,7 +29,7 @@ public abstract class  AppDatabase extends RoomDatabase {
 
     private final MutableLiveData<Boolean> mIsDatabaseCreated = new MutableLiveData<>();
 
-    private static AppDatabase instance;
+    private static volatile AppDatabase instance;
 
     public static AppDatabase getInstance(final Context context){
         if (instance == null){
@@ -66,10 +66,6 @@ public abstract class  AppDatabase extends RoomDatabase {
     public static void initializeDemoData(final AppDatabase database){
         Executors.newSingleThreadExecutor().execute(() -> {
             database.runInTransaction(() -> {
-                Log.i(TAG, "Wipe database");
-                database.guideDAO().deleteAll();
-                database.excursionDAO().deleteAll();
-
                 DatabaseInitializer.populateDatabase(database);
             });
         });

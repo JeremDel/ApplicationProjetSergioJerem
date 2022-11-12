@@ -49,7 +49,7 @@ public class GuideList extends BaseActivity {
         if(recyclerView == null)
             recyclerView = new RecyclerView(getApplicationContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.HORIZONTAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         guides = new ArrayList<>();
         adapter = new RecyclerAdapter<>(new RecyclerViewItemClickListener() {
