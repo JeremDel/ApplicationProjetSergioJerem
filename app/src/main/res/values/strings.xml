@@ -73,4 +73,10 @@ Our credo is to make you live a strong reconnection with nature, and a unique ex
     <string name="excursion_created">Excursion created successfully</string>
     <string name="title_activity_edit_excursion">Edit an excursion</string>
     <string name="excursion_editted">Excursion editted successfully</string>
+
+    <string-array name="difficulties">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
 </resources>

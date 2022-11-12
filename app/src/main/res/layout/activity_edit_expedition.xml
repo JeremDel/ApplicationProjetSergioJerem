@@ -12,21 +12,20 @@
         android:hint="Excursion name"
         />
 
-    <EditText
+    <Spinner
         android:layout_width="30mm"
         android:layout_height="wrap_content"
-        android:id="@+id/etDifficulty"
+        android:id="@+id/spinDifficulty"
         android:layout_below="@id/etName"
         android:layout_alignStart="@id/etName"
-        android:hint="Difficulty"
         />
 
     <EditText
         android:layout_width="50mm"
         android:layout_height="wrap_content"
         android:id="@+id/etLocations"
-        android:layout_below="@id/etDifficulty"
-        android:layout_alignStart="@id/etDifficulty"
+        android:layout_below="@id/spinDifficulty"
+        android:layout_alignStart="@id/spinDifficulty"
         android:layout_marginTop="30dp"
         android:hint="Locations"
         />
@@ -49,6 +48,37 @@
         android:layout_alignEnd="@id/etLocations"
         android:hint="Price"
         android:layout_alignTop="@id/etDistance"
+        />
+
+    <TextView
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCurrentGuide"
+        android:layout_below="@id/etDistance"
+        android:layout_alignStart="@id/etDistance"
+        android:text="Current guide: None"
+        android:layout_marginTop="50dp"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assign a guide"
+        android:textSize="18sp"
+        android:id="@+id/tvAssignAGuide"
+        android:layout_alignTop="@id/spGuideSelection"
+        android:layout_alignStart="@id/tvCurrentGuide"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spGuideSelection"
+        android:layout_toRightOf="@id/tvAssignAGuide"
+        android:layout_below="@id/tvCurrentGuide"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
         />
 
     <Button
