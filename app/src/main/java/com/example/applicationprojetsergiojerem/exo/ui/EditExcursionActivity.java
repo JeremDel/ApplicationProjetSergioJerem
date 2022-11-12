@@ -1,5 +1,6 @@
 package com.example.applicationprojetsergiojerem.exo.ui;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,10 +8,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
@@ -22,6 +25,7 @@ import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import viewmodel.excursion.ExcursionListViewModel;
 import viewmodel.excursion.ExcursionViewModel;
 import viewmodel.guide.GuideListViewModel;
 import viewmodel.guide.GuideViewModel;
@@ -34,6 +38,7 @@ public class EditExcursionActivity extends BaseActivity {
     private EditText etPrice, etDistance, etName, etLocations;
     private TextView tvCurrentGuide;
     private Button btnSave;
+    private ImageButton ibtnDelete;
 
     private Spinner guideSpinner, difficultySpinner;
 
@@ -41,7 +46,6 @@ public class EditExcursionActivity extends BaseActivity {
     private Guide guide;
 
     private List<Guide> guides;
-    private ArrayList<String> guideNames = new ArrayList<>();
 
     private int creationGuideId = -1;
 
@@ -70,6 +74,19 @@ public class EditExcursionActivity extends BaseActivity {
             isEditMode = true;
         }
 
+        if (isEditMode){
+            ibtnDelete.setOnClickListener(view -> {
+                AlertDialog ad = new AlertDialog.Builder(this).create();
+                ad.setTitle("Are you sure you want to delete this excursion?");
+                ad.setCancelable(false);
+                ad.setMessage("This operation is not reversible. Once you deleted the excursion there is no way to get it back.");
+                ad.setButton(AlertDialog.BUTTON_POSITIVE, "Yes", ((dialog, which) -> deleteExcursion()));
+                ad.setButton(AlertDialog.BUTTON_NEGATIVE, "No", ((dialog, which) -> ad.dismiss()));
+
+                ad.show();
+            });
+        }
+
         ExcursionViewModel.Factory factory = new ExcursionViewModel.Factory(getApplication(), getIntent().getIntExtra("excursionId", -1));
         viewModel = new ViewModelProvider(new ViewModelStore(), factory).get(ExcursionViewModel.class);
         if (isEditMode){
@@ -80,6 +97,26 @@ public class EditExcursionActivity extends BaseActivity {
                 }
             });
         }
+    }
+
+    private void deleteExcursion(){
+        Toast deleteToast = Toast.makeText(this, "Excursion deleted", Toast.LENGTH_LONG);
+
+        ExcursionListViewModel.Factory factory = new ExcursionListViewModel.Factory(getApplication());
+        ExcursionListViewModel excursions = new ViewModelProvider(new ViewModelStore(), (ViewModelProvider.Factory) factory).get(ExcursionListViewModel.class);
+        excursions.deleteExcursion(excursion, new OnAsyncEventListener() {
+            @Override
+            public void onSuccess() {
+                Log.i("EDIT MODE", "Excursion deleted");
+                deleteToast.show();
+                onBackPressed();
+            }
+
+            @Override
+            public void onFailure(Exception exception) {
+                Log.i("EDIT MODE", "Could not delete excursion", exception);
+            }
+        });
     }
 
     private void initiateView(){
@@ -98,6 +135,7 @@ public class EditExcursionActivity extends BaseActivity {
         tvCurrentGuide = findViewById(R.id.tvCurrentGuide);
 
         btnSave = findViewById(R.id.btnSave);
+        ibtnDelete = findViewById(R.id.btnDelete);
 
         addSpinner();
     }
@@ -144,7 +182,7 @@ public class EditExcursionActivity extends BaseActivity {
             if (guideEntities != null){
                 guides = guideEntities;
 
-                ArrayAdapter<Guide> adapter1 = new ArrayAdapter<Guide>(getApplicationContext(), android.R.layout.simple_spinner_item, guides);
+                ArrayAdapter<Guide> adapter1 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, guides);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 guideSpinner.setAdapter(adapter1);
 
@@ -197,12 +235,10 @@ public class EditExcursionActivity extends BaseActivity {
                 }
             });
         } else {
-            String priceBase = price.toString();
-            double priceD = Double.parseDouble(priceBase);
+            double priceD = Double.parseDouble(price);
             int priceCorrected = (int) priceD;
 
-            String distanceBase = distance.toString();
-            double distanceD = Double.parseDouble(distanceBase);
+            double distanceD = Double.parseDouble(distance);
             int distanceRight = (int)distanceD;
 
             Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, "", creationGuideId); // TODO Change the hardcoded guide
