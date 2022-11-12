@@ -82,6 +82,7 @@ public class ExpeditionActivity extends BaseActivity {
         //getLayoutInflater().inflate(R.layout.activity_excursions, frameLayout); // TODO Check what does the frame layout do
         setContentView(R.layout.activity_excursions);
 
+        setContentView(R.layout.activity_excursions);
         setTitle(getString(R.string.title_excursion_list));
 
         RecyclerView recyclerView = findViewById(R.id.excursionRecyclerView);

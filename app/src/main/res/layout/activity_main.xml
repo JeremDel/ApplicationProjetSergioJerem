@@ -88,20 +88,7 @@
     app:layout_constraintTop_toBottomOf="@+id/textView3"
     android:layout_height="match_parent"
     android:layout_width="match_parent"/> -->
-
-    <TextView
-    android:id="@+id/textView3"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="125dp"
-    android:layout_marginEnd="4dp"
-    android:gravity="center"
-    android:text="L'aventure s'offre à vous !"
-    android:textColor="@color/white"
-    android:textSize="25sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:ignore="MissingConstraints"/>
+    
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
