@@ -52,9 +52,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_main, frameLayout);
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        changeLanguage(sharedPrefs.getString("pref_lang", "fr"));
-
 
 
         //bouton pour passer de la fenêtre de titre à la fenête expédition
@@ -111,7 +108,7 @@ public class MainActivity extends BaseActivity {
                         break;
 
                     case R.id.nav_setting:
-                        Intent intent3 = new Intent(MainActivity.this, SettingsActivity.class);
+                        Intent intent3 = new Intent(MainActivity.this, settings.class);
                         startActivity(intent3);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -139,19 +136,7 @@ public class MainActivity extends BaseActivity {
         super.onResume();
     }
 
-    public void changeLanguage(String lang){
-        Locale myLocale = new Locale(lang);
-        Locale.setDefault(myLocale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.locale = myLocale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
-        TextView welcome = (TextView) findViewById(R.id.textPresentation);
-        welcome.setText(R.string.presentation);
-
-        TextView titrePresentation = (TextView) findViewById(R.id.titrePresentation);
-        titrePresentation.setText(R.string.titrePresentation);
-    }
 
     @Override
     public void onBackPressed() {

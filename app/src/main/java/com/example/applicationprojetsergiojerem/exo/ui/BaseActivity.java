@@ -66,7 +66,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem){
         if (menuItem.getItemId() == R.id.nav_setting){
-            Intent intent = new Intent(this, SettingsActivity.class);
+            Intent intent = new Intent(this, settings.class);
             startActivity(intent);
         }
 
