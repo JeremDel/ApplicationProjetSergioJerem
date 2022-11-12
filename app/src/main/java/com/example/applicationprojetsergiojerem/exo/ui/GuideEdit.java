@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
 
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
@@ -28,7 +29,8 @@ public class GuideEdit extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_edit_guide, frameLayout);
+        setContentView(R.layout.activity_edit_guide);
+        //getLayoutInflater().inflate(R.layout.activity_edit_guide, frameLayout);
 
         // Get every EditText object from the layout
         etName = findViewById(R.id.etName);
@@ -67,7 +69,7 @@ public class GuideEdit extends BaseActivity {
         }
 
         GuideViewModel.Factory factory = new GuideViewModel.Factory(getApplication(), guideId);
-        viewModel = new ViewModelProvider(this).get(GuideViewModel.class);
+        viewModel = new ViewModelProvider(new ViewModelStore(), factory).get(GuideViewModel.class);
 
         // If we got a guide id, we assign the guide values to the edit text objects
         if(isEditMode){
@@ -78,7 +80,7 @@ public class GuideEdit extends BaseActivity {
                     etName.setText(guide.getName());
                     etLastName.setText(guide.getLastName());
                     etBirthDate.setText(guide.getBirthdate());
-                    etPhoneNumber.setText(guide.getPhoneNumber());
+                    etPhoneNumber.setText(String.valueOf(guide.getPhoneNumber()));
                     etEmail.setText(guide.getEmail());
                     etPicPath.setText(guide.getPicPath());
                     etAddress.setText(guide.getAddress());
@@ -100,7 +102,7 @@ public class GuideEdit extends BaseActivity {
             guide.setEmail(email);
             //guide.setPicPath(picPath);
             guide.setPhoneNumber(Integer.parseInt(phoneNumber));
-            guide.setBirthdate(birthDate);
+            guide.setBirthdate(birthDate);;
 
             viewModel.updateGuide(guide, new OnAsyncEventListener(){
                @Override
@@ -112,6 +114,24 @@ public class GuideEdit extends BaseActivity {
                 public void onFailure(Exception e){
                    Log.d("EDIT GUIDE", "Update guide failure", e);
                }
+            });
+        } else {
+            String phoneS = etPhoneNumber.getText().toString();
+            int phone = Integer.parseInt(phoneS);
+            guide = new Guide(phone, etBirthDate.getText().toString(),
+                    etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
+                    etAddress.getText().toString(), etEmail.getText().toString(), "");
+
+            viewModel.createGuide(guide, new OnAsyncEventListener() {
+                @Override
+                public void onSuccess() {
+
+                }
+
+                @Override
+                public void onFailure(Exception exception) {
+
+                }
             });
         }
     }

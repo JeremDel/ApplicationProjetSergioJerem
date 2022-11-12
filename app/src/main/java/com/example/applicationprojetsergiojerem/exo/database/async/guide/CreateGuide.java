@@ -4,6 +4,7 @@ import android.app.Application;
 import android.os.AsyncTask;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
+import com.example.applicationprojetsergiojerem.exo.database.AppDatabase;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
@@ -21,11 +22,12 @@ public class CreateGuide extends AsyncTask<Guide, Void, Void> {
     protected Void doInBackground(Guide... params){
         try{
             for(Guide guide : params){
-                ((BaseApp) application).getDatabase().guideDAO().insert(guide);
+                ((BaseApp)application).getDatabase().guideDAO().insert(guide);
             }
         }
         catch (Exception e){
             exception = e;
+            throw e;
         }
 
         return null;

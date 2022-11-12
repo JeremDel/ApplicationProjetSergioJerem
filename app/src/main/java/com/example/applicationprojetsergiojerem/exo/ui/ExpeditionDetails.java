@@ -1,5 +1,6 @@
 package com.example.applicationprojetsergiojerem.exo.ui;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -66,7 +67,6 @@ public class ExpeditionDetails extends BaseActivity {
             tvExcursionGuideEmail = findViewById(R.id.tvExcursionGuideEmail);
             tvExcursionGuidePhone = findViewById(R.id.tvExcursionGuidePhone);
         }
-
 
 
         GuideViewModel.Factory gFactory = new GuideViewModel.Factory(getApplication(), guideId);

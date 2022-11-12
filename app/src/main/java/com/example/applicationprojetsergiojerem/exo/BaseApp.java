@@ -8,7 +8,6 @@ import com.example.applicationprojetsergiojerem.exo.database.repository.GuideRep
 
 public class BaseApp extends Application {
     public BaseApp() {
-
         super();
     }
 
