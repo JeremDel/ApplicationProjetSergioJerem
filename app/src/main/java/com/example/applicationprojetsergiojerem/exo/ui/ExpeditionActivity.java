@@ -104,7 +104,11 @@ public class ExpeditionActivity extends BaseActivity {
 
             @Override
             public void onItemLongClick(View v, int position) {
-                // TODO
+                Intent intent = new Intent(ExpeditionActivity.this, EditExcursionActivity.class);
+                int expeditionID = excursions.get(position).getId();
+
+                intent.putExtra("excursionId", expeditionID);
+                startActivity(intent);
             }
         });
 

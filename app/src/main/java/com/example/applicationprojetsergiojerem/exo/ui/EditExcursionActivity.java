@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
 
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
@@ -27,7 +28,7 @@ public class EditExcursionActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_edit_expedition, frameLayout);
+        setContentView(R.layout.activity_edit_expedition);
 
         initiateView();
 
@@ -50,7 +51,7 @@ public class EditExcursionActivity extends BaseActivity {
         }
 
         ExcursionViewModel.Factory factory = new ExcursionViewModel.Factory(getApplication(), getIntent().getIntExtra("excursionId", -1));
-        viewModel = new ViewModelProvider(this).get(ExcursionViewModel.class);
+        viewModel = new ViewModelProvider(new ViewModelStore(), factory).get(ExcursionViewModel.class);
         if (isEditMode){
             viewModel.getExcursion().observe(this, excursionEntity -> {
                 if (excursionEntity != null){
@@ -73,8 +74,8 @@ public class EditExcursionActivity extends BaseActivity {
 
     private void updateContent(){
         if (excursion != null){
-            etPrice.setText(excursion.getPrice());
-            etDistance.setText("" + excursion.getDistance());
+            etPrice.setText(String.valueOf(excursion.getPrice()));
+            etDistance.setText(String.valueOf(excursion.getDistance()));
             etName.setText(excursion.getName());
             etLocations.setText(excursion.getLocations());
             etDiffculty.setText(excursion.getDifficulty());
@@ -101,7 +102,15 @@ public class EditExcursionActivity extends BaseActivity {
                 }
             });
         } else {
-            Excursion newExcursion = new Excursion(Integer.parseInt(price), Float.parseFloat(distance), name, locations, difficulty, "", 1); // TODO Change the hardcoded guide
+            String priceBase = price.toString();
+            double priceD = Double.parseDouble(priceBase);
+            int priceCorrected = (int) priceD;
+
+            String distanceBase = distance.toString();
+            double distanceD = Double.parseDouble(distanceBase);
+            int distanceRight = (int)distanceD;
+
+            Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, "", 1); // TODO Change the hardcoded guide
             viewModel.createExcursion(newExcursion, new OnAsyncEventListener() {
                 @Override
                 public void onSuccess() {
