@@ -1,11 +1,13 @@
 package com.example.applicationprojetsergiojerem.exo.ui;
 
+import android.app.AlertDialog;
 import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.lifecycle.ViewModelProvider;
@@ -27,6 +29,7 @@ public class GuideEdit extends BaseActivity {
     private GuideViewModel viewModel;
 
     private EditText etName, etLastName, etDescription, etAddress, etEmail, etPicPath, etBirthDate, etPhoneNumber;
+    private ImageButton btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -43,6 +46,8 @@ public class GuideEdit extends BaseActivity {
         //etPicPath = findViewById(R.id.etPicPath);
         etPhoneNumber = findViewById(R.id.etPhoneNumber);
         etBirthDate = findViewById(R.id.etBirthDate);
+
+        btnDelete = findViewById(R.id.btnDelete);
 
         Button btnSave = findViewById(R.id.btnSave);
 
@@ -70,6 +75,19 @@ public class GuideEdit extends BaseActivity {
             isEditMode = true;
         }
 
+        if (isEditMode){
+            btnDelete.setOnClickListener(view -> {
+                AlertDialog ad = new AlertDialog.Builder(this).create();
+                ad.setTitle("Are you sure you want to delete this guide?");
+                ad.setMessage("This action is not reversible. Once you deleted the guide there is no way to get it back.");
+                ad.setCancelable(false);
+                ad.setButton(AlertDialog.BUTTON_POSITIVE, "Yes", ((dialog, which) -> deleteGuide()));
+                ad.setButton(AlertDialog.BUTTON_NEGATIVE, "No", ((dialog, which) -> ad.dismiss()));
+
+                ad.show();
+            });
+        }
+
         GuideViewModel.Factory factory = new GuideViewModel.Factory(getApplication(), guideId);
         viewModel = new ViewModelProvider(new ViewModelStore(), factory).get(GuideViewModel.class);
 
@@ -92,6 +110,25 @@ public class GuideEdit extends BaseActivity {
         }
     }
 
+    private void deleteGuide(){
+        Toast deleteToast = Toast.makeText(this, "Guide deleted", Toast.LENGTH_LONG);
+
+        GuideListViewModel.Factory factory = new GuideListViewModel.Factory(getApplication());
+        GuideListViewModel guides = new ViewModelProvider(new ViewModelStore(), (ViewModelProvider.Factory) factory).get(GuideListViewModel.class);
+        guides.deleteGuide(guide, new OnAsyncEventListener() {
+            @Override
+            public void onSuccess() {
+                Log.i("EDIT GUIDE", "Guide deleted");
+                deleteToast.show();
+                onBackPressed();
+            }
+
+            @Override
+            public void onFailure(Exception exception) {
+                Log.i("EDIT GUIDE", "Error while deleting guide", exception);
+            }
+        });
+    }
 
     private void saveChanges(String name, String lastName, String description, String address,
                              String email, /*String picPath,*/ String phoneNumber,String birthDate){

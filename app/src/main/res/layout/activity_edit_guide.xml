@@ -100,4 +100,14 @@
         android:backgroundTint="@color/colorPrimary"
         />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/btnSave"
+        android:layout_toLeftOf="@id/btnSave"
+        android:id="@+id/btnDelete"
+        android:src="@drawable/ic_baseline_delete_forever_24"
+        android:layout_marginRight="10dp"
+        />
+
 </RelativeLayout>
