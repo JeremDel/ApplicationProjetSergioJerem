@@ -1,7 +1,9 @@
 package com.example.applicationprojetsergiojerem.exo.ui;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -82,7 +84,7 @@ public class GuideEdit extends BaseActivity {
                     etBirthDate.setText(guide.getBirthdate());
                     etPhoneNumber.setText(String.valueOf(guide.getPhoneNumber()));
                     etEmail.setText(guide.getEmail());
-                    etPicPath.setText(guide.getPicPath());
+                    //etPicPath.setText(guide.getPicPath());
                     etAddress.setText(guide.getAddress());
                     etDescription.setText(guide.getDescription());
                 }
@@ -102,7 +104,7 @@ public class GuideEdit extends BaseActivity {
             guide.setEmail(email);
             //guide.setPicPath(picPath);
             guide.setPhoneNumber(Integer.parseInt(phoneNumber));
-            guide.setBirthdate(birthDate);;
+            guide.setBirthdate(birthDate);
 
             viewModel.updateGuide(guide, new OnAsyncEventListener(){
                @Override
@@ -118,19 +120,20 @@ public class GuideEdit extends BaseActivity {
         } else {
             String phoneS = etPhoneNumber.getText().toString();
             int phone = Integer.parseInt(phoneS);
+
             guide = new Guide(phone, etBirthDate.getText().toString(),
                     etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
-                    etAddress.getText().toString(), etEmail.getText().toString(), "");
+                    etAddress.getText().toString(), etEmail.getText().toString(), "waitingToImplementIMGs.png");
 
             viewModel.createGuide(guide, new OnAsyncEventListener() {
                 @Override
                 public void onSuccess() {
-
+                    Log.d("CREATE GUIDE", "Guide creation success");
                 }
 
                 @Override
                 public void onFailure(Exception exception) {
-
+                    Log.d("CREATE GUIDE", "Guide creation failure", exception);
                 }
             });
         }

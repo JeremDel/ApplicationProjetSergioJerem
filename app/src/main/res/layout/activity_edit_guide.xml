@@ -11,6 +11,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="60dp"
         android:textSize="18sp"
+        android:maxLength="15"
         />
 
     <EditText
@@ -22,6 +23,7 @@
         android:layout_marginTop="10dp"
         android:layout_alignStart="@id/etName"
         android:textSize="18sp"
+        android:maxLength="20"
         />
 
     <EditText
@@ -34,6 +36,7 @@
         android:layout_marginTop="15dp"
         android:textSize="18sp"
         android:inputType="date"
+        android:maxLength="10"
         />
 
 
@@ -69,6 +72,7 @@
         android:layout_marginTop="25dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:maxLength="30"
         />
 
     <EditText
@@ -81,6 +85,7 @@
         android:layout_marginTop="10dp"
         android:textSize="18sp"
         android:hint="079 123 45 67"
+        android:maxLength="10"
         />
 
     <Button

@@ -72,7 +72,11 @@ public class GuideList extends BaseActivity {
                 Log.d(TAG, "longClicked position:" + position);
                 Log.d(TAG, "longClicked on: " + guides.get(position).getName());
 
-                // TODO Add a special option maybe?
+                Intent intent = new Intent(GuideList.this, GuideEdit.class);
+                int guideId = guides.get(position).getId();
+
+                intent.putExtra("guideID", guideId);
+                startActivity(intent);
             }
         });
 

@@ -26,7 +26,7 @@ public class GuideViewModel extends AndroidViewModel {
                             final int id, GuideRepository guideRepository){
         super(application);
 
-        //this.application = application;
+        this.application = application;
 
         repository = guideRepository;
 
