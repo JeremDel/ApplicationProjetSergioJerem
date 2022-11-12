@@ -11,5 +11,8 @@
     <color name="grau">#808080</color>
     <color name="lightBlue">#ADD8E6</color>
     <color name="lightRed">#FF7F7F</color>
-    <color name="colorPrimary">#22A4FF</color>
+    <color name="colorPrimary">#039BE5</color>
+    <color name="colorPrimaryDark">#1E88E5</color>
+    <color name="colorAccent">#D81B60</color>
+
 </resources>

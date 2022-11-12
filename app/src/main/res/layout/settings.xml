@@ -1,52 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+
+    android:background="?attr/bgc"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B0C4DE"
     >
 
     <include layout="@layout/toolbar"/>
 
     <TextView
-        android:id="@+id/titreSettings"
+        android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="18dp"
-        android:text="@string/menu_action"
-        android:textColor="#F2FFFFFF"
-        android:textSize="35dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Light Mode"
+        android:textColor="?attr/tC"
+        android:layout_marginLeft="15dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="105dp"
+        />
 
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/tC"
+        android:layout_marginLeft="15dp"
+        android:text="Click on the button below to change the lighting mode."
+        android:layout_below="@id/t1"
+        />
 
-        ></TextView>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t2"
+        android:layout_marginEnd="30dp"
+        android:layout_toLeftOf="@+id/mode"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="Button"
+        android:textColor="@android:color/white" />
 
-    <TableRow
-        android:layout_below="@id/titreSettings"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        >
+    <Switch
+        android:id="@+id/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="120dp"
+        android:layout_below="@+id/t2"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:text="@string/pref_select_language"
-            android:textColor="@color/white"
-            android:textSize="20dp" />
+        />
 
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:entries="@array/pref_lang_entries" />
-    </TableRow>
-
-</TableLayout>
+</RelativeLayout>
