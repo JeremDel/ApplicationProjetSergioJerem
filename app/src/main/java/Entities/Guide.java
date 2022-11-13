@@ -18,10 +18,20 @@ public class Guide {
     private String description;
     private String address;
     private String email;
+    private int telephone;
+
+    public int getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(int telephone) {
+        this.telephone = telephone;
+    }
+
     private String picPath;
 
     public Guide(int phoneNumber, Date birthdate, String name, String lastName, String description,
-                 String address, String email, String picPath){
+                 String address, String email, int telephone, String picPath){
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
         this.name = name;
@@ -29,6 +39,7 @@ public class Guide {
         this.description = description;
         this.address = address;
         this.email = email;
+        this.telephone = telephone;
         this.picPath = picPath;
     }
 

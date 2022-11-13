@@ -56,6 +56,7 @@ public class GuideList extends BaseActivity {
                 // Log
                 Log.d(TAG, "clicked position:" + position);
                 Log.d(TAG, "clicked on: " + guides.get(position).getName());
+                Log.d(TAG, "clicked on: " + guides.get(position).getEmail());
 
                 // Create new intent to the guide details and add the chosen guide id
                 Intent intent = new Intent(GuideList.this, GuideDetails.class);
@@ -71,6 +72,8 @@ public class GuideList extends BaseActivity {
                 // Log
                 Log.d(TAG, "longClicked position:" + position);
                 Log.d(TAG, "longClicked on: " + guides.get(position).getName());
+                Log.d(TAG, "longClicked on: " + guides.get(position).getEmail());
+
 
                 Intent intent = new Intent(GuideList.this, GuideEdit.class);
                 int guideId = guides.get(position).getId();

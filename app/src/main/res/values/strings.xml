@@ -32,24 +32,11 @@ Our credo is to make you live a strong reconnection with nature, and a unique ex
         <item>Michael Ritz</item>
     </string-array>
 
-    <string name="LieuxMuv">• Places: Bex to Ovronnaz
-    </string>
-    <string name="DistanceMuv">• Distance: 110 km</string>
-    <string name="DifficultéMuv">• Difficulty: Medium</string>
-    <string name="PrixMuv">• Price: 330.-</string>
-    <string name="GuideMuv">• Guide: Jean Bonvin</string>
+    <string name="aboutus">SnowShoes is a young and dynamic company whose goal is to open access to mountain excursions to as many people as possible. \n \n Present on the market for 3 years, we have quickly succeeded in making a place for ourselves in the sports world. \n \n Our guides are all recognized experts in the field.
+Thanks to this website, you will be able to consult our numerous excursions and make an appointment directly with the guide of your choice. \n \n
+Launch yourself now in an adventure from which you will not leave unscathed !</string>
 
-    <string name="LieuxWals">• Places: Conches</string>
-    <string name="DistanceWals">• Distance: 205km</string>
-    <string name="DifficultéWals">• Difficulty: Hard</string>
-    <string name="PrixWals">• Price: 615.-</string>
-    <string name="GuideWals">• Guide: Michael Ritz</string>
 
-    <string name="Lieux7lacs">• Place: Bellwald</string>
-    <string name="Distance7lacs">• Distance: 81km</string>
-    <string name="Difficulté7lacs">• Difficulty: Medium</string>
-    <string name="Prix7lacs">• Price: 425.-.-</string>
-    <string name="Guide7lacs">• Guide: George Derivaz</string>
 
     <string name="pref_select_language">Select your language</string>
     <string name="pref_summary">Define your preferred language</string>
