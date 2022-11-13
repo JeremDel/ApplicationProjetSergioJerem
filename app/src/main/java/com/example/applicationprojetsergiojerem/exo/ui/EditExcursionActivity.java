@@ -187,7 +187,7 @@ public class EditExcursionActivity extends BaseActivity {
                 guideSpinner.setAdapter(adapter1);
 
                 if (getIntent().getIntExtra("excursionId", -1) == -1)
-                    guideSpinner.setSelection(1);
+                    guideSpinner.setSelection(0);
 
                 guideSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override

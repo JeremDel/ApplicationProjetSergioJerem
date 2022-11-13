@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageItem"
+        tools:src="@tools:sample/avatars"
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNameDetail"
+        android:layout_toRightOf="@id/imageItem"
+        android:layout_alignTop="@id/imageItem"
+        android:layout_marginTop="15dp"
+        android:text="Jean luc Beuchat"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info1"
+        android:layout_below="@id/tvNameDetail"
+        android:layout_toRightOf="@id/imageItem"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:text="079519716"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info2"
+        android:layout_below="@id/info1"
+        android:layout_toRightOf="@id/imageItem"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:text="gomez.c.sergio@outlook.com"
+        />
+
+</RelativeLayout>
