@@ -42,20 +42,6 @@ public class RecyclerAdapter<G> extends RecyclerView.Adapter<RecyclerAdapter.Vie
         });
 
         return viewHolder;
-
-        /*
-
-        // create a new view
-        TextView v = (TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view, parent, false);
-        final ViewHolder viewHolder = new ViewHolder(v);
-        v.setOnClickListener(view -> listener.onItemClick(view, viewHolder.getAdapterPosition()));
-        v.setOnLongClickListener(view -> {
-            listener.onItemLongClick(view, viewHolder.getAdapterPosition());
-            return true;
-        });
-        return viewHolder;
-
-         */
     }
 
     @Override
