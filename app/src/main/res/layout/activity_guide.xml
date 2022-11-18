@@ -5,11 +5,20 @@
     android:background="#B0C4DE">
     <include layout="@layout/toolbar"/>
 
+    <ImageView
+        android:layout_width="350px"
+        android:layout_height="350px"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/imageGuide"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvNameGuideDetail"
-        android:layout_marginTop="105dp"
+        android:layout_below="@id/imageGuide"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="40dp"
         android:textSize="18sp"
         android:text="John"

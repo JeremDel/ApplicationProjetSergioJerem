@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
 import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
@@ -29,13 +31,14 @@ public class GuideEdit extends BaseActivity {
     private GuideViewModel viewModel;
 
     private EditText etName, etLastName, etDescription, etAddress, etEmail, etPicPath, etBirthDate, etPhoneNumber;
+    private ImageView imageGuide;
     private ImageButton btnDelete;
+    private Button btnTestImg, btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_guide);
-        //getLayoutInflater().inflate(R.layout.activity_edit_guide, frameLayout);
 
         // Get every EditText object from the layout
         etName = findViewById(R.id.etName);
@@ -43,21 +46,32 @@ public class GuideEdit extends BaseActivity {
         etDescription = findViewById(R.id.etDescription);
         etAddress = findViewById(R.id.etAddress);
         etEmail = findViewById(R.id.etEmail);
-        //etPicPath = findViewById(R.id.etPicPath);
+        etPicPath = findViewById(R.id.url);
         etPhoneNumber = findViewById(R.id.etPhoneNumber);
         etBirthDate = findViewById(R.id.etBirthDate);
 
+        imageGuide = findViewById(R.id.imageGuide);
+
         btnDelete = findViewById(R.id.btnDelete);
 
-        Button btnSave = findViewById(R.id.btnSave);
+        btnTestImg = findViewById(R.id.btnTestImg);
+        btnSave = findViewById(R.id.btnSave);
 
         // When clicking on Save button, save changes
         btnSave.setOnClickListener(View -> {
             saveChanges(etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
-                    etAddress.getText().toString(), etEmail.getText().toString(), /*etPicPath.getText().toString(),*/
+                    etAddress.getText().toString(), etEmail.getText().toString(), etPicPath.getText().toString(),
                     etPhoneNumber.getText().toString().replace(" ", ""), etBirthDate.getText().toString());
             onBackPressed();
             toast.show();
+        });
+
+        // When clicking on testImg button we set the url image to the imageview
+        btnTestImg.setOnClickListener(View -> {
+            if (! etPicPath.getText().toString().equals(""))
+                new ImageLoadTask(etPicPath.getText().toString(), imageGuide).execute();
+            else
+                Toast.makeText(this, "You need to insert an URL first!", Toast.LENGTH_LONG).show();
         });
 
         // Get guide id from the intent. If there is none, -1 is automatically assigned
@@ -102,9 +116,11 @@ public class GuideEdit extends BaseActivity {
                     etBirthDate.setText(guide.getBirthdate());
                     etPhoneNumber.setText(String.valueOf(guide.getPhoneNumber()));
                     etEmail.setText(guide.getEmail());
-                    //etPicPath.setText(guide.getPicPath());
+                    etPicPath.setText(guide.getPicPath());
                     etAddress.setText(guide.getAddress());
                     etDescription.setText(guide.getDescription());
+
+                    new ImageLoadTask(guide.getPicPath(), imageGuide).execute();
                 }
             });
         }
@@ -131,15 +147,14 @@ public class GuideEdit extends BaseActivity {
     }
 
     private void saveChanges(String name, String lastName, String description, String address,
-                             String email, /*String picPath,*/ String phoneNumber,String birthDate){
+                             String email, String picPath, String phoneNumber,String birthDate){
         if (isEditMode){
-            // TODO check that params aren't empty
             guide.setName(name);
             guide.setLastName(lastName);
             guide.setDescription(description);
             guide.setAddress(address);
             guide.setEmail(email);
-            //guide.setPicPath(picPath);
+            guide.setPicPath(picPath);
             guide.setPhoneNumber(Integer.parseInt(phoneNumber));
             guide.setBirthdate(birthDate);
 
@@ -160,7 +175,7 @@ public class GuideEdit extends BaseActivity {
 
             guide = new Guide(phone, etBirthDate.getText().toString(),
                     etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
-                    etAddress.getText().toString(), etEmail.getText().toString(), "waitingToImplementIMGs.png");
+                    etAddress.getText().toString(), etEmail.getText().toString(), picPath);
 
             viewModel.createGuide(guide, new OnAsyncEventListener() {
                 @Override
