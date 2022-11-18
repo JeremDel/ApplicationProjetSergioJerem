@@ -55,7 +55,7 @@ public class ExcursionRecycleAdapter extends RecyclerView.Adapter<ExcursionRecyc
 
         holder.tvTitle.setText(item.getName());
         holder.tvLocations.setText(item.getLocations());
-        holder.tvDistance.setText(String.valueOf(item.getDistance()));
+        holder.tvDistance.setText(String.valueOf(item.getDistance()) + " km");
         holder.tvDifficulty.setText(item.getDifficulty());
     }
 

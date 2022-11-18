@@ -24,55 +24,6 @@ import java.util.List;
 import viewmodel.excursion.ExcursionListViewModel;
 
 public class ExpeditionActivity extends BaseActivity {
-
-    /*
-    private ImageButton button;
-    private ImageView imageMuveran, image7lacs, imageWalser;
-    private TextView titreMuveran, textMuveran, titre7lacs, text7lacs, titreWalser, textWalser;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expedition);
-
-        button = (ImageButton) findViewById(R.id.ExpeditionAdd);
-        imageMuveran = (ImageView) findViewById(R.id.imageMuveran);
-        image7lacs = (ImageView) findViewById(R.id.image7lacs);
-        imageWalser = (ImageView) findViewById(R.id.imageWalser);
-        titreMuveran = (TextView) findViewById(R.id.titreMuveran);
-        titre7lacs = (TextView) findViewById(R.id.titre7lacs);
-        titreWalser = (TextView) findViewById(R.id.titreWalser);
-
-
-        imageMuveran.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
-                startActivity(intent);
-            }
-        });
-
-        titreMuveran.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, Muveran.class);
-                startActivity(intent);
-            }
-        });
-
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ExpeditionActivity.this, addexpedition.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-     */
-
     private List<Excursion> excursions;
     private ExcursionRecycleAdapter adapter;
     private ExcursionListViewModel viewModel;
@@ -80,7 +31,6 @@ public class ExpeditionActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        //getLayoutInflater().inflate(R.layout.activity_excursions, frameLayout); // TODO Check what does the frame layout do
         setContentView(R.layout.activity_excursions);
 
         setContentView(R.layout.activity_excursions);
