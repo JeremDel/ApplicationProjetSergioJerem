@@ -96,8 +96,9 @@ public class MainActivity extends BaseActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.nav_search:
-                        Log.i("MENU_DRAWER_TAG", "Search item is clicked");
+                    case R.id.about_us:
+                        Intent intent22 = new Intent(MainActivity.this, Aboutus.class);
+                        startActivity(intent22);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
