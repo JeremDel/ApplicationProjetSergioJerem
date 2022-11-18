@@ -36,16 +36,16 @@ public class DatabaseInitializer {
 
 
         addGuide(database, "Storm", "Front", "Il faut respecter l'opinion des autres ;)", "Route des Delphins 420",
-                "eineBierBitte@gmail.com", "meinestraSSe.png", 784825169, "24.12.1905");
+                "eineBierBitte@gmail.com", "https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:350/h:350/q:75/rt:fill/g:ce/https://bleedingcool.com/wp-content/uploads/2020/09/theboysstormfront-1-350x350.jpg", 784825169, "24.12.1905");
 
         addGuide(database, "Jean", "Néo-Skours", "Ma maman dit toujours que je suis très spécial :)", "Route de l'Avenir 123",
-                "3pecial@gmail.com", "special.png", 761857496, "11.12.2003");
+                "3pecial@gmail.com", "https://i.ytimg.com/vi/v1mxMtr8Mws/mqdefault.jpg", 761857496, "11.12.2003");
 
         addGuide(database, "Barry", "Not-Allen-Si-Jamais", "Ma maman dit toujours que je suis un bon garçon :))", "Avenue des doggos 455",
-                "woofPasUnChienWoof@outlook.com", "barryLeBG.png", 768125594, "23.2.1970");
+                "woofPasUnChienWoof@outlook.com", "https://www.dogzone.com/images/breeds/st-bernard.jpg", 768125594, "23.2.1970");
 
         addGuide(database, "Soldier", "Boy", "Si tu veux être heureux, ne te marie jamais à une belle femme", "Avenue de Lennil Boss 79",
-                "iEnjoyEatingCars@yahoo.com", "heroGsm.png", 792871056, "20.04.1875");
+                "iEnjoyEatingCars@yahoo.com", "https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:350/h:350/q:75/rt:fill/g:ce/https://bleedingcool.com/wp-content/uploads/2022/06/Soldier-Boy-_-Guest-Appearance-on-Solid-Gold-1-33-screenshot-350x350.jpg", 792871056, "20.04.1875");
 
 
         try{

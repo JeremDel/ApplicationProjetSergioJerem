@@ -1,5 +1,7 @@
 package com.example.applicationprojetsergiojerem.exo.adapter;
 
+import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.util.RecyclerViewItemClickListener;
 
+import java.net.URL;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,9 +27,11 @@ public class RecyclerAdapter<G> extends RecyclerView.Adapter<RecyclerAdapter.Vie
 
     private List<G> data;
     private RecyclerViewItemClickListener listener;
+    private Context context;
 
-    public RecyclerAdapter(RecyclerViewItemClickListener listener) {
+    public RecyclerAdapter(Context context, RecyclerViewItemClickListener listener) {
         this.listener = listener;
+        this.context = context;
     }
 
     @NonNull
@@ -52,6 +59,7 @@ public class RecyclerAdapter<G> extends RecyclerView.Adapter<RecyclerAdapter.Vie
             holder.tvNameDetail.setText(((Excursion) item).getName());
             holder.info1.setText(((Excursion) item).getLocations());
             holder.info2.setText(((Excursion) item).getDifficulty());
+
         }
 
 
@@ -59,6 +67,9 @@ public class RecyclerAdapter<G> extends RecyclerView.Adapter<RecyclerAdapter.Vie
             holder.tvNameDetail.setText(item.toString());
             holder.info1.setText(String.valueOf(((Guide) item).getPhoneNumber()));
             holder.info2.setText(((Guide) item).getEmail());
+
+            new ImageLoadTask(((Guide) item).getPicPath(), holder.imageItem).execute();
+
         }
     }
 

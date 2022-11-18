@@ -50,7 +50,7 @@ public class GuideList extends BaseActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         guides = new ArrayList<>();
-        adapter = new RecyclerAdapter<>(new RecyclerViewItemClickListener() {
+        adapter = new RecyclerAdapter<>(this.getApplicationContext(), new RecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 // Log

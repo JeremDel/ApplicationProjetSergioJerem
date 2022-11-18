@@ -90,7 +90,7 @@ public class ExpeditionActivity extends BaseActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         excursions = new ArrayList<>();
-        adapter = new RecyclerAdapter<>(new RecyclerViewItemClickListener() {
+        adapter = new RecyclerAdapter<>(getApplicationContext(), new RecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 // LOG
