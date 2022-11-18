@@ -60,7 +60,7 @@ public class ExpeditionDetails extends BaseActivity {
         if (excursion != null){
             setTitle(excursion.getName());
 
-            tvPrice.setText(String.valueOf(excursion.getPrice()));
+            tvPrice.setText(String.valueOf(excursion.getPrice()) + " CHF");
             tvDistance.setText(String.valueOf(excursion.getDistance()) + " km");
             tvName.setText(excursion.getName());
             tvLocations.setText(excursion.getLocations());
