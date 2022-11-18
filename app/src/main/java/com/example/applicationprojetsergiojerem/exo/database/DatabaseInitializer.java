@@ -54,21 +54,21 @@ public class DatabaseInitializer {
             e.printStackTrace();
         }
 
-        addExcursion(database, 45, 13.5f, "Tour du Mort D'or", "De Bex à Lavey (?)", "Difficile", "mortDor.png", 1);
+        addExcursion(database, 45, 13.5f, "Tour du Mort D'or", "De Bex à Lavey (?)", "Difficile", "https://www.mexicoescultura.com/galerias/actividades/principal/elretornoderey_900.jpg", 1);
 
-        addExcursion(database, 169, 50.2f, "Marathon à la Norwegian Regaetton", "Du Mont Blanc aux Alpes", "Difficile", "rega.png", 2);
+        addExcursion(database, 169, 50.2f, "Marathon à la Norwegian Regaetton", "Du Mont Blanc aux Alpes", "Difficile", "https://images.fineartamerica.com/images-medium-large-5/on-the-innominata-ridge-mont-blanc-jonathan-griffith.jpg", 2);
 
-        addExcursion(database, 25, 5.9f, "Tour des monarques", "De Sierre à... Sierre aussi", "Facile", "filetmignons.png", 4);
+        addExcursion(database, 25, 5.9f, "Tour des monarques", "De Sierre à... Sierre aussi", "Facile", "https://myalpx.com/user/pages/blog/secrets-de-sommelier-8-vins-suisses-dexception-a-moins-de-50-chf/alpx-valais-secrets-de-sommelier-8-vins-suisses-dexception-a-moins-de-50-chf.jpg", 4);
 
-        addExcursion(database, 0, 350.0f, "Promenade Germanique", "Tournée par Zurich centre ville. En raquettes, oui.", "Facile", "doucheRelaxante.png", 3);
+        addExcursion(database, 0, 350.0f, "Promenade Germanique", "Tournée par Zurich centre ville. En raquettes, oui.", "Facile", "https://cheapfirstclass.com/wp-content/uploads/2014/06/CheapbusinessclassflightstoZurich.jpg", 3);
 
-        addExcursion(database, 70, 20.0f, "Marche du Saint-Bernard", "Du Petit Saint-Bernard au Grand Saint-Bernard", "Moyenne", "bethoven.png", 2);
+        addExcursion(database, 70, 20.0f, "Marche du Saint-Bernard", "Du Petit Saint-Bernard au Grand Saint-Bernard", "Moyenne", "https://www.nolimitsexperience.ch/images/activites/Hospice_St-Bernard.jpg", 2);
 
-        addExcursion(database, 35, 136.25f, "Marche Boréale ou jsp", "Du Simplon au Singleton", "Difficile", "badPun.png", 1);
+        addExcursion(database, 35, 136.25f, "Marche Boréale ou jsp", "Du Simplon au Singleton", "Difficile", "https://dziedava.lv/daba/rucavas_pag/ziemelblazma1_251011.jpg", 1);
 
-        addExcursion(database, 10, 10.7f, "Tour des déceptions", "", "Moyenne", "mirror.png", 4);
+        addExcursion(database, 10, 10.7f, "Tour des déceptions", "", "Moyenne", "https://rabbitsblack.com/wp-content/uploads/2012/02/logo-900x350.jpg", 4);
 
-        addExcursion(database, 60, 35.0f, "Marche des loups", "Du Mont Blanc au Mont Noir ou jsp", "Moyenne", "garouCLoup.png", 3);
+        addExcursion(database, 60, 35.0f, "Marche des loups", "Du Mont Blanc au Mont Noir ou jsp", "Moyenne", "https://www.dangerousroads.org/images/stories/__Roads00000bt/Col%20du%20Pillon0.jpg", 3);
     }
 
 

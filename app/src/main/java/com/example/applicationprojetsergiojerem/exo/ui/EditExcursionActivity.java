@@ -1,6 +1,7 @@
 package com.example.applicationprojetsergiojerem.exo.ui;
 
 import android.app.AlertDialog;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
 import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
@@ -35,10 +38,11 @@ public class EditExcursionActivity extends BaseActivity {
     private boolean isEditMode;
     private Toast toast;
 
-    private EditText etPrice, etDistance, etName, etLocations;
+    private EditText etPrice, etDistance, etName, etLocations, etUrl;
     private TextView tvCurrentGuide;
-    private Button btnSave;
+    private Button btnSave, btnTestImg;
     private ImageButton ibtnDelete;
+    private ImageView ivImage;
 
     private Spinner guideSpinner, difficultySpinner;
 
@@ -58,7 +62,7 @@ public class EditExcursionActivity extends BaseActivity {
 
         btnSave.setOnClickListener(view -> {
             saveChanges(etPrice.getText().toString(), etDistance.getText().toString(), etName.getText().toString(),
-                    etLocations.getText().toString(), difficultySpinner.getSelectedItem().toString());
+                    etLocations.getText().toString(), difficultySpinner.getSelectedItem().toString(), etUrl.getText().toString());
             onBackPressed();
             toast.show();
         });
@@ -124,6 +128,7 @@ public class EditExcursionActivity extends BaseActivity {
         etDistance = findViewById(R.id.etDistance);
         etName = findViewById(R.id.etName);
         etLocations = findViewById(R.id.etLocations);
+        etUrl = findViewById(R.id.etUrl);
 
         difficultySpinner = findViewById(R.id.spinDifficulty);
         guideSpinner = findViewById(R.id.spGuideSelection);
@@ -135,9 +140,19 @@ public class EditExcursionActivity extends BaseActivity {
         tvCurrentGuide = findViewById(R.id.tvCurrentGuide);
 
         btnSave = findViewById(R.id.btnSave);
+        btnTestImg = findViewById(R.id.btnTestImg);
         ibtnDelete = findViewById(R.id.btnDelete);
 
+        ivImage = findViewById(R.id.ivImage);
+
         addSpinner();
+
+        btnTestImg.setOnClickListener(View -> {
+            if (! etUrl.getText().toString().equals(""))
+                new ImageLoadTask(etUrl.getText().toString(), ivImage).execute();
+            else
+                Toast.makeText(this, "First you have to specify an URL!!", Toast.LENGTH_LONG).show();
+        });
     }
 
     private void updateContent(){
@@ -146,6 +161,9 @@ public class EditExcursionActivity extends BaseActivity {
             etDistance.setText(String.valueOf(excursion.getDistance()));
             etName.setText(excursion.getName());
             etLocations.setText(excursion.getLocations());
+            etUrl.setText(excursion.getPicPath());
+
+            new ImageLoadTask(excursion.getPicPath(), ivImage).execute();
 
             int position = -1;
             switch (excursion.getDifficulty()){
@@ -215,13 +233,14 @@ public class EditExcursionActivity extends BaseActivity {
         tvCurrentGuide.setText("Current guide: " + chosenGuide);
     }
 
-    private void saveChanges(String price, String distance, String name, String locations, String difficulty){
+    private void saveChanges(String price, String distance, String name, String locations, String difficulty, String picPath){
         if (isEditMode){
             excursion.setPrice(Integer.parseInt(price));
             excursion.setDistance(Float.parseFloat(distance));
             excursion.setName(name);
             excursion.setLocations(locations);
             excursion.setDifficulty(difficulty);
+            excursion.setPicPath(picPath);
 
             viewModel.updateAccount(excursion, new OnAsyncEventListener() {
                 @Override
@@ -239,9 +258,9 @@ public class EditExcursionActivity extends BaseActivity {
             int priceCorrected = (int) priceD;
 
             double distanceD = Double.parseDouble(distance);
-            int distanceRight = (int)distanceD;
+            float distanceRight = (float)distanceD;
 
-            Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, "", creationGuideId); // TODO Change the hardcoded guide
+            Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, picPath, creationGuideId);
             viewModel.createExcursion(newExcursion, new OnAsyncEventListener() {
                 @Override
                 public void onSuccess() {

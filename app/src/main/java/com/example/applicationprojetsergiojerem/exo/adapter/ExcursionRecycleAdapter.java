@@ -1,7 +1,6 @@
 package com.example.applicationprojetsergiojerem.exo.adapter;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,19 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
-import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.util.RecyclerViewItemClickListener;
 
 import java.util.List;
 import java.util.Objects;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class ExcursionRecycleAdapter extends RecyclerView.Adapter<ExcursionRecycleAdapter.ViewHolder>{
 
-    private List<Guide> data;
+    private List<Excursion> data;
     private RecyclerViewItemClickListener listener;
     private Context context;
 
-    public RecyclerAdapter(Context context, RecyclerViewItemClickListener listener) {
+    public ExcursionRecycleAdapter(Context context, RecyclerViewItemClickListener listener) {
         this.listener = listener;
         this.context = context;
     }
@@ -36,7 +35,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_recycler_view, parent, false);
+        View view = inflater.inflate(R.layout.excursion_recycle_view, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
         view.setOnClickListener(v -> listener.onItemClick(v, viewHolder.getAdapterPosition()));
@@ -49,14 +48,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(RecyclerAdapter.ViewHolder holder, int position) {
-        Guide item = data.get(position);
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Excursion item = data.get(position);
 
-        holder.tvNameDetail.setText(item.toString());
-        holder.info1.setText(String.valueOf(((Guide) item).getPhoneNumber()));
-        holder.info2.setText(((Guide) item).getEmail());
+        new ImageLoadTask(item.getPicPath(), holder.ivImage).execute();
 
-        new ImageLoadTask(((Guide) item).getPicPath(), holder.imageItem).execute();
+        holder.tvTitle.setText(item.getName());
+        holder.tvLocations.setText(item.getLocations());
+        holder.tvDistance.setText(String.valueOf(item.getDistance()));
+        holder.tvDifficulty.setText(item.getDifficulty());
     }
 
     @Override
@@ -64,7 +64,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return (data == null) ? 0 : data.size();
     }
 
-    public void setData(final List<Guide> data) {
+    public void setData(final List<Excursion> data) {
         if (this.data == null) {
             this.data = data;
             notifyItemRangeInserted(0, this.data.size());
@@ -72,7 +72,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             DiffUtil.DiffResult result = DiffUtil.calculateDiff(new DiffUtil.Callback() {
                 @Override
                 public int getOldListSize() {
-                    return RecyclerAdapter.this.data.size();
+                    return ExcursionRecycleAdapter.this.data.size();
                 }
 
                 @Override
@@ -82,18 +82,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
                 @Override
                 public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-                        return RecyclerAdapter.this.data.get(oldItemPosition).getId() == data.get(newItemPosition).getId();
+                    return ExcursionRecycleAdapter.this.data.get(oldItemPosition).getId() == data.get(newItemPosition).getId();
                 }
 
                 @Override
                 public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-                    Guide newGuide = (Guide) data.get(newItemPosition);
-                    Guide oldGuide = (Guide) RecyclerAdapter.this.data.get(newItemPosition);
+                    Excursion newExcursion = (Excursion) data.get(newItemPosition);
+                    Excursion oldExcursion = (Excursion) ExcursionRecycleAdapter.this.data.get(newItemPosition);
 
-                    return Objects.equals(newGuide.getEmail(), oldGuide.getEmail())
-                            && Objects.equals(newGuide.getName(), oldGuide.getName())
-                            && Objects.equals(newGuide.getLastName(), oldGuide.getLastName())
-                            && (newGuide.getId() == oldGuide.getId());
+                    return newExcursion.getId() == (oldExcursion.getId())
+                            && Objects.equals(newExcursion.getName(), oldExcursion.getName())
+                            && Objects.equals(newExcursion.getDistance(), oldExcursion.getDistance())
+                            && newExcursion.getLocations().equals(oldExcursion.getLocations());
                 }
             });
 
@@ -105,16 +105,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView tvNameDetail, info1, info2;
-        private final ImageView imageItem;
+        private final TextView tvTitle, tvLocations, tvDistance, tvDifficulty;
+        private final ImageView ivImage;
 
         ViewHolder(View viewItem) {
             super(viewItem);
 
-            this.tvNameDetail = viewItem.findViewById(R.id.tvNameDetail);
-            this.info1 = viewItem.findViewById(R.id.info1);
-            this.info2 = viewItem.findViewById(R.id.info2);
-            this.imageItem = viewItem.findViewById(R.id.imageItem);
+            this.tvTitle = viewItem.findViewById(R.id.tvTitle);
+            this.tvLocations = viewItem.findViewById(R.id.tvLocations);
+            this.tvDistance = viewItem.findViewById(R.id.tvDistance);
+            this.tvDifficulty = viewItem.findViewById(R.id.tvDifficulty);
+
+            this.ivImage = viewItem.findViewById(R.id.ivImage);
         }
     }
 }

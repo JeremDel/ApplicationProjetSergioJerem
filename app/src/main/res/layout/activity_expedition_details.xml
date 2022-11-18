@@ -6,13 +6,21 @@
     <include layout="@layout/toolbar"/>
 
 
+    <ImageView
+        android:layout_width="900px"
+        android:layout_height="350px"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ivImage"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvName"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/ivImage"
         android:textSize="30sp"
         android:text="Tour des fourmies géantes"
         />
@@ -64,23 +72,34 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvExcursionGuideName"
-        android:layout_below="@+id/tvExcursionGuideDetails"
+        android:textSize="25sp"
+        android:id="@+id/tvExcursionGuideDetails"
+        android:layout_below="@id/tvDistance"
+        android:layout_alignStart="@id/tvDistance"
+        android:layout_marginTop="70dp"
+        android:text="Le guide"
+        />
+
+    <ImageView
+        android:layout_width="350px"
+        android:layout_height="350px"
+        android:layout_below="@id/tvExcursionGuideDetails"
         android:layout_alignStart="@id/tvExcursionGuideDetails"
-        android:layout_marginTop="15dp"
-        android:textSize="20sp"
-        android:text="Sergio"
+        android:layout_marginTop="5dp"
+        android:id="@+id/ivGuide"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:id="@+id/tvExcursionGuideDetails"
-        android:layout_below="@id/tvDistance"
-        android:layout_alignStart="@id/tvDistance"
-        android:layout_marginTop="80dp"
-        android:text="Le guide"
+        android:id="@+id/tvExcursionGuideName"
+        android:layout_below="@+id/tvExcursionGuideDetails"
+        android:layout_toRightOf="@id/ivGuide"
+        android:layout_alignTop="@id/ivGuide"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        android:text="Sergio"
         />
 
     <TextView

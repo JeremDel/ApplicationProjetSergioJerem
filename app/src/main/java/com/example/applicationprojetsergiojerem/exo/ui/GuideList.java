@@ -35,13 +35,12 @@ public class GuideList extends BaseActivity {
     private static final String TAG = "GuidesList";
 
     private List<Guide> guides;
-    private RecyclerAdapter<Guide> adapter;
+    private RecyclerAdapter adapter;
     private GuideListViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getLayoutInflater().inflate(R.layout.activity_guides, frameLayout);
         setContentView(R.layout.activity_guides);
         setTitle("Guides");
 
@@ -50,7 +49,7 @@ public class GuideList extends BaseActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         guides = new ArrayList<>();
-        adapter = new RecyclerAdapter<>(this.getApplicationContext(), new RecyclerViewItemClickListener() {
+        adapter = new RecyclerAdapter(this.getApplicationContext(), new RecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 // Log

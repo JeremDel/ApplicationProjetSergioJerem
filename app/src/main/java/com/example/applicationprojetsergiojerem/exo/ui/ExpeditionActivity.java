@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.exo.adapter.ExcursionRecycleAdapter;
 import com.example.applicationprojetsergiojerem.exo.adapter.RecyclerAdapter;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.util.RecyclerViewItemClickListener;
@@ -73,7 +74,7 @@ public class ExpeditionActivity extends BaseActivity {
      */
 
     private List<Excursion> excursions;
-    private RecyclerAdapter<Excursion> adapter;
+    private ExcursionRecycleAdapter adapter;
     private ExcursionListViewModel viewModel;
 
     @Override
@@ -90,7 +91,7 @@ public class ExpeditionActivity extends BaseActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         excursions = new ArrayList<>();
-        adapter = new RecyclerAdapter<>(getApplicationContext(), new RecyclerViewItemClickListener() {
+        adapter = new ExcursionRecycleAdapter(getApplicationContext(), new RecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 // LOG

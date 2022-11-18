@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:layout_width="900px"
+        android:layout_height="350px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ivImage"
+        />
+
+    <TextView
+        android:layout_width="900px"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/ivImage"
+        android:layout_below="@id/ivImage"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/tvTitle"
+        />
+
+    <TextView
+        android:layout_width="900px"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tvTitle"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:id="@+id/tvLocations"
+        />
+
+    <TextView
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLocations"
+        android:layout_alignStart="@id/tvLocations"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:id="@+id/tvDistance"
+        />
+
+    <TextView
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tvDistance"
+        android:layout_alignEnd="@id/tvLocations"
+        android:textSize="15sp"
+        android:id="@+id/tvDifficulty"
+        />
+
+</RelativeLayout>

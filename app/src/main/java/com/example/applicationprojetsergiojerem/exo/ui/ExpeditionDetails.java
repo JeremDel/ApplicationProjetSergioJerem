@@ -2,12 +2,14 @@ package com.example.applicationprojetsergiojerem.exo.ui;
 
 import android.app.Application;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
 import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 
@@ -20,6 +22,7 @@ public class ExpeditionDetails extends BaseActivity {
     private int guideId;
     private TextView tvPrice, tvDistance, tvName, tvLocations, tvDifficulty;
     private TextView tvExcursionGuideName, tvExcursionGuideLastName, tvExcursionGuideEmail, tvExcursionGuidePhone;
+    private ImageView ivImage, ivGuide;
 
     private ExcursionViewModel viewModel;
     private GuideViewModel gViewModel;
@@ -27,7 +30,6 @@ public class ExpeditionDetails extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        //getLayoutInflater().inflate(R.layout.activity_expedition_details, frameLayout);
         setContentView(R.layout.activity_expedition_details);
 
         int id = getIntent().getIntExtra("excursionID", -1);
@@ -50,6 +52,8 @@ public class ExpeditionDetails extends BaseActivity {
         tvName = findViewById(R.id.tvName);
         tvLocations = findViewById(R.id.tvLocations);
         tvDifficulty = findViewById(R.id.tvDifficulty);
+        ivImage = findViewById(R.id.ivImage);
+        ivGuide = findViewById(R.id.ivGuide);
     }
 
     private void updateContent(){
@@ -61,6 +65,8 @@ public class ExpeditionDetails extends BaseActivity {
             tvName.setText(excursion.getName());
             tvLocations.setText(excursion.getLocations());
             tvDifficulty.setText(excursion.getDifficulty());
+
+            new ImageLoadTask(excursion.getPicPath(), ivImage).execute();
 
             tvExcursionGuideName = findViewById(R.id.tvExcursionGuideName);
             tvExcursionGuideLastName = findViewById(R.id.tvExcursionGuideLastName);
@@ -85,6 +91,8 @@ public class ExpeditionDetails extends BaseActivity {
             tvExcursionGuideLastName.setText(guide.getLastName());
             tvExcursionGuideEmail.setText(guide.getEmail());
             tvExcursionGuidePhone.setText(String.valueOf(guide.getPhoneNumber()));
+
+            new ImageLoadTask(guide.getPicPath(), ivGuide).execute();
         }
     }
 }

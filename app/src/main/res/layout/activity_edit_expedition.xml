@@ -3,12 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="900px"
+        android:layout_height="350px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:id="@+id/ivImage"
+        />
+
+    <EditText
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:hint="Image URL"
+        android:layout_below="@id/ivImage"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/etUrl"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test img"
+        android:layout_alignTop="@id/etUrl"
+        android:layout_alignEnd="@id/ivImage"
+        android:id="@+id/btnTestImg"
+        />
+
     <EditText
         android:layout_width="50mm"
         android:layout_height="wrap_content"
         android:id="@+id/etName"
+        android:layout_below="@+id/etUrl"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:hint="Excursion name"
         />
 
@@ -26,7 +54,7 @@
         android:id="@+id/etLocations"
         android:layout_below="@id/spinDifficulty"
         android:layout_alignStart="@id/spinDifficulty"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:hint="Locations"
         />
 
@@ -36,7 +64,7 @@
         android:id="@+id/etDistance"
         android:layout_below="@id/etLocations"
         android:layout_alignStart="@id/etLocations"
-        android:hint="Distance"
+        android:hint="Distance (km)"
         android:layout_marginTop="10dp"
         />
 
@@ -57,7 +85,7 @@
         android:layout_below="@id/etDistance"
         android:layout_alignStart="@id/etDistance"
         android:text="Current guide: None"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:textSize="18sp"
         />
 
