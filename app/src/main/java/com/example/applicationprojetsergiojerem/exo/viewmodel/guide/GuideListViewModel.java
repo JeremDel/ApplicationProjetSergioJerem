@@ -22,6 +22,11 @@ public class GuideListViewModel extends AndroidViewModel {
     private GuideRepository repository;
     private final MediatorLiveData<List<Guide>> observableGuides;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param guideRepository
+     */
     public GuideListViewModel(@NonNull Application application,
                                   GuideRepository guideRepository) {
 
@@ -39,6 +44,9 @@ public class GuideListViewModel extends AndroidViewModel {
         observableGuides.addSource(guides, observableGuides::setValue);
     }
 
+    /**
+     * Constructeur de la Factory
+     */
     public static class Factory extends ViewModelProvider.NewInstanceFactory {
         @NonNull
         private final Application application;
@@ -58,10 +66,19 @@ public class GuideListViewModel extends AndroidViewModel {
         }
     }
 
+    /**
+     * Recupère tous les guides de la db
+     * @return
+     */
     public LiveData<List<Guide>> getGuides() {
         return observableGuides;
     }
 
+    /**
+     * Efface un guide de la db
+     * @param guide Guide à effacer
+     * @param callback
+     */
     public void deleteGuide(Guide guide, OnAsyncEventListener callback) {
         repository.delete(guide, callback, application);
     }

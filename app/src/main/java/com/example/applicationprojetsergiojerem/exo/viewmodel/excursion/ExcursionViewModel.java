@@ -22,6 +22,12 @@ public class ExcursionViewModel extends AndroidViewModel {
 
     private final MediatorLiveData<Excursion> observableExcursion;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param id Excursion à recupérer
+     * @param excursionRepository
+     */
     public ExcursionViewModel(@NonNull Application application,
                               final int id, ExcursionRepository excursionRepository )
     {
@@ -49,6 +55,11 @@ public class ExcursionViewModel extends AndroidViewModel {
         private final int excursionId;
         private final ExcursionRepository repository;
 
+        /**
+         * Constructeur de la Factory
+         * @param application
+         * @param excursionId Excursion à recupérer
+         */
         public Factory(@NonNull Application application, int excursionId) {
             this.application = application;
             this.excursionId = excursionId;
@@ -62,16 +73,30 @@ public class ExcursionViewModel extends AndroidViewModel {
         }
     }
 
-        public LiveData<Excursion> getExcursion() {
-            return observableExcursion;
-        }
+    /**
+     * Recupère toutes les excursions
+     * @return
+     */
+    public LiveData<Excursion> getExcursion() {
+        return observableExcursion;
+    }
 
-        public void createExcursion(Excursion account, OnAsyncEventListener callback) {
-            repository.insert(account, callback, application);
-        }
+    /**
+     * Crée une excursion
+     * @param excursion Excursion à insérer dans la db
+     * @param callback
+     */
+    public void createExcursion(Excursion excursion, OnAsyncEventListener callback) {
+        repository.insert(excursion, callback, application);
+    }
 
-        public void updateAccount(Excursion excursion, OnAsyncEventListener callback) {
-            repository.update(excursion, callback, application);
-        }
+    /**
+     * Met une excursion à jour
+     * @param excursion Excursion à mettre à jour (objet excursion avec les données à jour)
+     * @param callback
+     */
+    public void updateAccount(Excursion excursion, OnAsyncEventListener callback) {
+        repository.update(excursion, callback, application);
+    }
 
 }

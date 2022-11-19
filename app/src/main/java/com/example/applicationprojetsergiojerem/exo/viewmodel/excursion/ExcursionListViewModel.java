@@ -26,6 +26,13 @@ public class ExcursionListViewModel extends AndroidViewModel {
     private final MediatorLiveData<List<Excursion>> observableExcursions;
     private final MediatorLiveData<List<Excursion>> observableOwnExcursion;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param guideId Guide à recupérer
+     * @param guideRepository
+     * @param excursionRepository
+     */
     public ExcursionListViewModel(@NonNull Application application,
                                   final int guideId,
                                   GuideRepository guideRepository,
@@ -60,6 +67,10 @@ public class ExcursionListViewModel extends AndroidViewModel {
 
         private final ExcursionRepository excursionRepository;
 
+        /**
+         * Constructeur de la Factory
+         * @param application
+         */
         public Factory(@NonNull Application application) {
             this.application = application;
             guideRepository = ((BaseApp) application).getGuideRepository();
@@ -73,15 +84,19 @@ public class ExcursionListViewModel extends AndroidViewModel {
         }
     }
 
+    /**
+     * Recupère toutes les excursions
+     * @return
+     */
     public LiveData<List<Excursion>> getAllExcursions() {
         return observableExcursions;
     }
 
-    public LiveData<List<Excursion>> getOwnExcursion() {
-
-        return observableOwnExcursion;
-    }
-
+    /**
+     * Efface une excursion de la db
+     * @param excursion Excursion à effacer
+     * @param callback
+     */
     public void deleteExcursion(Excursion excursion, OnAsyncEventListener callback) {
         repository.delete(excursion, callback, application);
     }
