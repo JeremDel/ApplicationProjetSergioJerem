@@ -18,11 +18,21 @@ public class ImageLoadTask extends AsyncTask<Void, Void, Bitmap> {
     private final String url;
     private final ImageView imageView;
 
+    /**
+     * Constructor
+     * @param url Url de l'image à obtenir
+     * @param imageView ImageView où insérer l'image convertie en BitMap
+     */
     public ImageLoadTask(String url, ImageView imageView) {
         this.url = url;
         this.imageView = imageView;
     }
 
+    /**
+     * Crée une connection à l'url passée en paramètre et le décode en bitmap
+     * @param params
+     * @return
+     */
     @Override
     protected Bitmap doInBackground(Void... params){
         try{
@@ -42,6 +52,10 @@ public class ImageLoadTask extends AsyncTask<Void, Void, Bitmap> {
         return null;
     }
 
+    /**
+     * Assigne l'image dans l'ImageView
+     * @param result Image en Bitmap
+     */
     @Override
     protected void onPostExecute(Bitmap result){
         super.onPostExecute(result);
