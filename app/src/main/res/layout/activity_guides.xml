@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".exo.ui.GuideList"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#B0C4DE">
+    android:background="?attr/bgc">
     <include layout="@layout/toolbar"/>
 
     <androidx.recyclerview.widget.RecyclerView

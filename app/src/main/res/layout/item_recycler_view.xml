@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/bgc"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
@@ -20,6 +21,7 @@
         android:id="@+id/tvNameDetail"
         android:layout_toRightOf="@id/imageItem"
         android:layout_alignTop="@id/imageItem"
+        android:textColor="@color/white"
         android:layout_marginTop="15dp"
         android:text="Jean luc Beuchat"
         android:textSize="18sp"
@@ -31,6 +33,7 @@
         android:id="@+id/info1"
         android:layout_below="@id/tvNameDetail"
         android:layout_toRightOf="@id/imageItem"
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:textSize="18sp"
         android:text="079519716"
@@ -40,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/info2"
+        android:textColor="@color/white"
         android:layout_below="@id/info1"
         android:layout_toRightOf="@id/imageItem"
         android:textSize="18sp"

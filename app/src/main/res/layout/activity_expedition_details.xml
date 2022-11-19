@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B0C4DE">
+    android:background="?attr/bgc">
     <include layout="@layout/toolbar"/>
 
 
@@ -22,6 +22,7 @@
         android:layout_marginTop="5dp"
         android:layout_below="@id/ivImage"
         android:textSize="30sp"
+        android:textColor="@color/white"
         android:text="Tour des fourmies géantes"
         />
 
@@ -33,6 +34,7 @@
         android:layout_toRightOf="@id/tvLocations"
         android:layout_alignTop="@id/tvLocations"
         android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
         android:text="15 CHF"
         />
 
@@ -44,6 +46,7 @@
         android:layout_below="@id/tvLocations"
         android:layout_alignStart="@id/tvLocations"
         android:layout_marginTop="10dp"
+        android:textColor="@color/white"
         android:text="17 km"
         />
 
@@ -56,6 +59,7 @@
         android:layout_alignStart="@id/tvDifficulty"
         android:layout_marginTop="20dp"
         android:text="De Vilars à Ollon"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -67,6 +71,7 @@
         android:textSize="18sp"
         android:layout_marginTop="3dp"
         android:text="Moyen"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -78,6 +83,7 @@
         android:layout_alignStart="@id/tvDistance"
         android:layout_marginTop="70dp"
         android:text="Le guide"
+        android:textColor="@color/white"
         />
 
     <ImageView
@@ -96,6 +102,7 @@
         android:layout_below="@+id/tvExcursionGuideDetails"
         android:layout_toRightOf="@id/ivGuide"
         android:layout_alignTop="@id/ivGuide"
+        android:textColor="@color/white"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:textSize="20sp"
@@ -110,6 +117,7 @@
         android:layout_alignTop="@id/tvExcursionGuideName"
         android:textSize="20sp"
         android:text="Gomez"
+        android:textColor="@color/white"
         android:layout_marginLeft="7dp"
         />
 
@@ -122,6 +130,7 @@
         android:layout_alignStart="@id/tvExcursionGuideName"
         android:layout_marginTop="15dp"
         android:text="gosermez@gmail.com"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -133,6 +142,7 @@
         android:layout_alignStart="@id/tvExcursionGuideEmail"
         android:layout_marginTop="5dp"
         android:text="0795197106"
+        android:textColor="@color/white"
         />
 
 </RelativeLayout>
