@@ -69,7 +69,7 @@ public class ExcursionListViewModel extends AndroidViewModel {
         @Override
         public <T extends ViewModel> T create(Class<T> modelClass) {
 
-            return (T) new ExcursionListViewModel(application, 1, guideRepository, excursionRepository); // TODO Replace the hardcoded 1...
+            return (T) new ExcursionListViewModel(application, 1, guideRepository, excursionRepository);
         }
     }
 
