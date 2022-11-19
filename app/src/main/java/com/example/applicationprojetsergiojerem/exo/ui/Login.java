@@ -14,6 +14,10 @@ public class Login extends AppCompatActivity {
 
     private Button Aregister_button, Bsign_in_button;
 
+    /**
+     * Création de la page permettant au guide de se connecter à son compte.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -32,6 +36,10 @@ public class Login extends AppCompatActivity {
         Bsign_in_button = (Button) findViewById(R.id.sign_in_button);
 
         Aregister_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Gère le bouton amenant sur la page permettant d'enregistrer un nouveau compte
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Login.this, Register.class);
@@ -39,6 +47,9 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        /**
+         * Permet de se connecter
+         */
         Bsign_in_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

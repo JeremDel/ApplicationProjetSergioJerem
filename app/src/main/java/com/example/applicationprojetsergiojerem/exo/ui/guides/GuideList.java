@@ -40,6 +40,10 @@ public class GuideList extends BaseActivity {
     private RecyclerAdapter adapter;
     private GuideListViewModel viewModel;
 
+    /**
+     * Affiche la page présentant les différents guide.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -76,6 +80,11 @@ public class GuideList extends BaseActivity {
                 startActivity(intent);
             }
 
+            /**
+             * Paramètre les différentes réactions en cas de clique sur un guide de la liste.
+             * @param v
+             * @param position
+             */
             @Override
             public void onItemLongClick(View v, int position) {
                 // Log

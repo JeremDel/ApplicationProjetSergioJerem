@@ -34,6 +34,11 @@ public class MainActivity extends BaseActivity {
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
+    /**
+     * Déploiement du menu latéral en cas de sélection.
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -44,6 +49,10 @@ public class MainActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Création de la page principale de l'application.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -66,6 +75,10 @@ public class MainActivity extends BaseActivity {
         btnGuides = (Button)findViewById(R.id.guides_button);
 
         bton_expedition.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Permet d'aller sur la page de la liste des expéditions.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ExpeditionActivity.class);
@@ -75,6 +88,9 @@ public class MainActivity extends BaseActivity {
 
         //passer du menu principal à la page des guides
 
+        /**
+         * Permet d'aller sur la page de la liste de guides.
+         */
         btnGuides.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +108,11 @@ public class MainActivity extends BaseActivity {
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            /**
+             * Gère la réaction des différents boutons présents dans le menu latéral.
+             * @param item
+             * @return
+             */
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -144,7 +165,9 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
+    /**
+     * Permet de quitter l'application.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

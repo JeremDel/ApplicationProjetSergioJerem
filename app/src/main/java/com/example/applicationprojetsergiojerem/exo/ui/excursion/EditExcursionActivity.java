@@ -54,6 +54,10 @@ public class EditExcursionActivity extends BaseActivity {
 
     private int creationGuideId = -1;
 
+    /**
+     * Création de la page d'édition (ou d'ajout) d'excursion.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -112,6 +116,9 @@ public class EditExcursionActivity extends BaseActivity {
         }
     }
 
+    /**
+     * Suppression de l'excursion précédente.
+     */
     private void deleteExcursion(){
         Toast deleteToast = Toast.makeText(this, "Excursion deleted", Toast.LENGTH_LONG);
 
@@ -132,6 +139,9 @@ public class EditExcursionActivity extends BaseActivity {
         });
     }
 
+    /**
+     * Récupération des informations de l'excursion de base.
+     */
     private void initiateView(){
         etPrice = findViewById(R.id.etPrice);
         etDistance = findViewById(R.id.etDistance);
@@ -164,6 +174,9 @@ public class EditExcursionActivity extends BaseActivity {
         });
     }
 
+    /**
+     * Possibilité de modifier les infos du formulaire.
+     */
     private void updateContent(){
         if (excursion != null){
             etPrice.setText(String.valueOf(excursion.getPrice()));
@@ -202,6 +215,9 @@ public class EditExcursionActivity extends BaseActivity {
         }
     }
 
+    /**
+     * Ajout des menus déroulants
+     */
     private void addSpinner(){
         GuideListViewModel.Factory factory1 = new GuideListViewModel.Factory(getApplication());
         GuideListViewModel guidesVM = new ViewModelProvider(new ViewModelStore(), (ViewModelProvider.Factory) factory1).get(GuideListViewModel.class);
@@ -231,6 +247,9 @@ public class EditExcursionActivity extends BaseActivity {
         });
     }
 
+    /**
+     * Mise en place de nouveaux guides
+     */
     private void updateExcursionGuide(){
         Guide chosenGuide = (Guide) guideSpinner.getSelectedItem();
 
@@ -242,6 +261,15 @@ public class EditExcursionActivity extends BaseActivity {
         tvCurrentGuide.setText("Current guide: " + chosenGuide);
     }
 
+    /**
+     * Enregistrer toutes les nouvelles informations.
+     * @param price
+     * @param distance
+     * @param name
+     * @param locations
+     * @param difficulty
+     * @param picPath
+     */
     private void saveChanges(String price, String distance, String name, String locations, String difficulty, String picPath){
         if (isEditMode){
             excursion.setPrice(Integer.parseInt(price));

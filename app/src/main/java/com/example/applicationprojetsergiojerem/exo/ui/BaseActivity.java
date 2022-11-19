@@ -28,6 +28,10 @@ public class BaseActivity extends AppCompatActivity {
 
     protected static int position;
 
+    /**
+     * Affiche le menu latéral déployable.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -54,6 +58,9 @@ public class BaseActivity extends AppCompatActivity {
         super.onResume();
     }
 
+    /**
+     * Permet de fermer le menu.
+     */
     @Override
     public void onBackPressed(){
         // If menu is open, close it and return
@@ -67,12 +74,22 @@ public class BaseActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
+    /**
+     * Appel le menu via le menu principal.
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_principal, menu);
         return true;
     }
 
+    /**
+     * Gère la sélection des éléments présents dans le menu.
+     * @param menuItem
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem){
         if (menuItem.getItemId() == R.id.nav_setting){
