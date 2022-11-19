@@ -19,7 +19,6 @@ import com.example.applicationprojetsergiojerem.exo.ui.settings.settings;
 
 public class BaseActivity extends AppCompatActivity {
 
-    // TODO A voir si on le garde
     public static final String PREFS_NAME = "SharedPrefs";
     public static final String PREFS_USER = "LoggedIn";
 
