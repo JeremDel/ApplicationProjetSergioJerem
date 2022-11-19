@@ -21,6 +21,10 @@ public class GuideRepository {
 
     }
 
+    /**
+     * Méthode de base des singleton
+     * @return
+     */
     public static GuideRepository getInstance(){
         if (instance == null){
             synchronized (GuideRepository.class){
@@ -32,22 +36,51 @@ public class GuideRepository {
         return instance;
     }
 
+    /**
+     * Recupère tous les guides de la db
+     * @param application
+     * @return Liste de guides en LiveData
+     */
     public LiveData<List<Guide>> getAllGuides(Application application){
         return ((BaseApp) application).getDatabase().guideDAO().getAllGuides();
     }
 
+    /**
+     * Recupère un guide de la db
+     * @param id Id du guide à recupérer
+     * @param application
+     * @return Guide en LiveData
+     */
     public LiveData<Guide> getGuideById(final int id, Application application){
         return ((BaseApp) application).getDatabase().guideDAO().getGuideById(id);
     }
 
+    /**
+     * Insère un guide dans la db
+     * @param guide Guide à insérer
+     * @param callback
+     * @param application
+     */
     public void insert(final Guide guide, OnAsyncEventListener callback, Application application){
         new CreateGuide(application, callback).execute(guide);
     }
 
+    /**
+     * Met un guide à jour dans la db
+     * @param guide Objet guide avec les infos à jour
+     * @param callback
+     * @param application
+     */
     public void update(final Guide guide, OnAsyncEventListener callback, Application application){
         new UpdateGuide(application, callback).execute(guide);
     }
 
+    /**
+     * Efface un guide de la db
+     * @param guide Guide à effacer
+     * @param callback
+     * @param application
+     */
     public void delete(final Guide guide, OnAsyncEventListener callback, Application application){
         new DeleteGuide(application, callback).execute(guide);
     }
