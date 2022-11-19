@@ -12,11 +12,21 @@ public class CreateExcursion extends AsyncTask<Excursion, Void, Void> {
     private OnAsyncEventListener callback;
     private Exception exception;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param callback
+     */
     public CreateExcursion(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
+    /**
+     * Insère les excursions passées en paramètres dans la base de données
+     * @param params Excursions à insérer dans la db
+     * @return
+     */
     @Override
     protected Void doInBackground(Excursion... params){
         try{
@@ -32,6 +42,10 @@ public class CreateExcursion extends AsyncTask<Excursion, Void, Void> {
     }
 
 
+    /**
+     * Log en fonction de si tout s'est bien passé ou pas
+     * @param aVoid
+     */
     @Override
     protected void onPostExecute(Void aVoid){
         if(callback != null){

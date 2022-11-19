@@ -12,11 +12,21 @@ public class UpdateExcursion extends AsyncTask<Excursion, Void, Void> {
     private Exception exception;
     private OnAsyncEventListener callback;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param callback
+     */
     public UpdateExcursion(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
+    /**
+     * Mise à jour des excursions passées en paramètres dans la base de données
+     * @param params Excursions à mettre à jour
+     * @return
+     */
     @Override
     protected Void doInBackground(Excursion... params){
         try{
@@ -30,7 +40,10 @@ public class UpdateExcursion extends AsyncTask<Excursion, Void, Void> {
         return null;
     }
 
-
+    /**
+     * Log en fonction de si tout s'est bien passé ou pas
+     * @param aVoid
+     */
     @Override
     protected void onPostExecute(Void aVoid){
         if (callback != null){

@@ -12,11 +12,21 @@ public class DeleteExcursion extends AsyncTask<Excursion, Void, Void> {
     private Exception exception;
     private OnAsyncEventListener callback;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param callback
+     */
     public DeleteExcursion(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
+    /**
+     * Éfface les excursions passées en paramètres de la base de données
+     * @param params Excursions à éffacer de la db
+     * @return
+     */
     @Override
     protected Void doInBackground(Excursion... params){
         try {
@@ -31,6 +41,10 @@ public class DeleteExcursion extends AsyncTask<Excursion, Void, Void> {
     }
 
 
+    /**
+     * Log en fonction de si tout s'est bien passé ou pas
+     * @param aVoid
+     */
     @Override
     protected void onPostExecute(Void aVoid){
         if(callback != null){
