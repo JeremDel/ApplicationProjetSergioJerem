@@ -11,18 +11,45 @@ import java.util.Date;
 public class DatabaseInitializer {
     public static final String TAG = "DatabaseInitilizer";
 
+    /**
+     * Log + appel de la méthode qui insère des données démo dans la db
+     * @param database
+     */
     public static void populateDatabase(final AppDatabase database){
         Log.i(TAG, "Insert demo data");
         PopulateDbAsync task = new PopulateDbAsync(database);
         task.execute();
     }
 
+    /**
+     * Ajoute un guide dans la db
+     * @param database Database où insérer le guide
+     * @param name Nom du guide
+     * @param lastName Nom de famille du guide
+     * @param description Description du guide
+     * @param address Adresse du guide
+     * @param email Email du guide
+     * @param picPath URL de l'image choisie pour le guide
+     * @param phoneNumber Numéro de natel du guide
+     * @param birthDate Date de naissance du guide
+     */
     private static void addGuide(final AppDatabase database, final String name, final String lastName, final String description, final String address, final String email,
                                  final String picPath, final int phoneNumber, final String birthDate){
         Guide guide = new Guide(phoneNumber, birthDate, name, lastName, description, address, email, picPath);
         database.guideDAO().insert(guide);
     }
 
+    /**
+     * Ajoute une excursion dans la db
+     * @param database Database où insérer le guide
+     * @param price Prix de l'excursion
+     * @param distance Distance de l'excursion EN KM
+     * @param name Nom de l'excursion
+     * @param locations Emplacements de l'excursion (FROM ... TO ...)
+     * @param difficulty Difficulté de l'excursion (pas du tout subjectif...)
+     * @param picPath URL de l'image choisie pour l'excursion
+     * @param guideId Id du guide responsable de l'excursion
+     */
     private static void addExcursion(final AppDatabase database, final int price, final float distance, final String name, final String locations, final String difficulty,
                                      final String picPath, final int guideId){
         Excursion excursion = new Excursion(price, distance, name, locations, difficulty, picPath, guideId);
@@ -30,6 +57,10 @@ public class DatabaseInitializer {
     }
 
 
+    /**
+     * Efface tout le contenu de la db, puis ajoute des données demo
+     * @param database Database à gérer
+     */
     private static void populateWithTestData(AppDatabase database){
         database.excursionDAO().deleteAll();
         database.guideDAO().deleteAll();
@@ -75,10 +106,19 @@ public class DatabaseInitializer {
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
         private final AppDatabase database;
 
+        /**
+         * Constructeur
+         * @param database Database à gérer
+         */
         PopulateDbAsync(AppDatabase database){
             this.database = database;
         }
 
+        /**
+         * Appelle les méthodes pour insérer les données démo
+         * @param params
+         * @return
+         */
         @Override
         protected Void doInBackground(final Void... params){
             populateWithTestData(database);
