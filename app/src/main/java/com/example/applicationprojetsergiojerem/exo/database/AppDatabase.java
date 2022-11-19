@@ -31,6 +31,11 @@ public abstract class  AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase instance;
 
+    /**
+     * Méthode de base des singleton
+     * @param context
+     * @return
+     */
     public static AppDatabase getInstance(final Context context){
         if (instance == null){
             synchronized (AppDatabase.class){
@@ -45,6 +50,11 @@ public abstract class  AppDatabase extends RoomDatabase {
     }
 
 
+    /**
+     * Crée la base de données avec Google Room
+     * @param context
+     * @return
+     */
     private static AppDatabase buildDatabase(final Context context){
         Log.i(TAG, "Database will be initialized");
         return Room.databaseBuilder(context, AppDatabase.class, DATABASE_NAME).addCallback(new Callback() {
@@ -62,7 +72,10 @@ public abstract class  AppDatabase extends RoomDatabase {
         }).build();
     }
 
-
+    /**
+     * Insére des données demo dans la base de données qu'on vient de créer
+     * @param database
+     */
     public static void initializeDemoData(final AppDatabase database){
         Executors.newSingleThreadExecutor().execute(() -> {
             database.runInTransaction(() -> {
@@ -71,7 +84,10 @@ public abstract class  AppDatabase extends RoomDatabase {
         });
     }
 
-
+    /**
+     * On indique juste que la db est créé avec des données
+     * @param context
+     */
     private void updateDatabaseCreated(final Context context){
         if (context.getDatabasePath(DATABASE_NAME).exists()){
             Log.i(TAG, "Database initialized");
@@ -79,11 +95,17 @@ public abstract class  AppDatabase extends RoomDatabase {
         }
     }
 
-
+    /**
+     * Change une variable en true pour indiquer que la db est créée
+     */
     private void setDatabaseCreated(){
         mIsDatabaseCreated.postValue(true);
     }
 
+    /**
+     * Retourne la valeur de la variable qui checke si la db est créée
+     * @return true si la db est créée, false sinon
+     */
     private LiveData<Boolean> getDatabaseCreated(){
         return mIsDatabaseCreated;
     }
