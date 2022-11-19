@@ -72,9 +72,11 @@ public class GuideDetails extends BaseActivity {
         tvPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:"));
-                intent.putExtra(Intent.EXTRA_PHONE_NUMBER, tvPhone.getText().toString());
+                String data = "tel:" + tvPhone.getText().toString();
+
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(data));
+                //intent.putExtra(Intent.EXTRA_PHONE_NUMBER, tvPhone.getText().toString());
                 startActivity(intent);
             }
         });
