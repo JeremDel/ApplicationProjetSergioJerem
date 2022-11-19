@@ -13,11 +13,21 @@ public class CreateGuide extends AsyncTask<Guide, Void, Void> {
     private OnAsyncEventListener callback;
     private Exception exception;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param callback
+     */
     public CreateGuide(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
+    /**
+     * Insère les guides passées en paramètres dans la base de données
+     * @param params Guides à insérer dans la db
+     * @return
+     */
     @Override
     protected Void doInBackground(Guide... params){
         try{
@@ -33,7 +43,10 @@ public class CreateGuide extends AsyncTask<Guide, Void, Void> {
         return null;
     }
 
-
+    /**
+     * Log en fonction de si tout s'est bien passé ou pas
+     * @param aVoid
+     */
     @Override
     protected void onPostExecute(Void aVoid){
         if(callback != null){

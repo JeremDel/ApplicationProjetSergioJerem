@@ -12,11 +12,21 @@ public class UpdateGuide extends AsyncTask<Guide, Void, Void> {
     private Exception exception;
     private OnAsyncEventListener callback;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param callback
+     */
     public UpdateGuide(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
+    /**
+     * Mise à jour des guides passées en paramètres dans la base de données
+     * @param params Guides à mettre à jour
+     * @return
+     */
     @Override
     protected Void doInBackground(Guide... params){
         try{
@@ -30,7 +40,10 @@ public class UpdateGuide extends AsyncTask<Guide, Void, Void> {
         return null;
     }
 
-
+    /**
+     * Log en fonction de si tout s'est bien passé ou pas
+     * @param aVoid
+     */
     @Override
     protected void onPostExecute(Void aVoid){
         if (callback != null){

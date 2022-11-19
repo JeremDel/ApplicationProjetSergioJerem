@@ -12,11 +12,21 @@ public class DeleteGuide extends AsyncTask<Guide, Void, Void> {
     private OnAsyncEventListener callback;
     private Exception exception;
 
+    /**
+     * Constructeur
+     * @param application
+     * @param callback
+     */
     public DeleteGuide(Application application, OnAsyncEventListener callback){
         this.application = application;
         this.callback = callback;
     }
 
+    /**
+     * Éfface les guides passées en paramètres de la base de données
+     * @param params Guides à éffacer de la db
+     * @return
+     */
     @Override
     protected Void doInBackground(Guide... params){
         try {
@@ -30,7 +40,10 @@ public class DeleteGuide extends AsyncTask<Guide, Void, Void> {
         return null;
     }
 
-
+    /**
+     * Log en fonction de si tout s'est bien passé ou pas
+     * @param aVoid
+     */
     @Override
     protected void onPostExecute(Void aVoid){
         if(callback != null){
