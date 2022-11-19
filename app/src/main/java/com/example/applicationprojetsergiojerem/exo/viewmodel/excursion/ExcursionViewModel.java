@@ -1,4 +1,4 @@
-package viewmodel.excursion;
+package com.example.applicationprojetsergiojerem.exo.viewmodel.excursion;
 
 import android.app.Application;
 
@@ -13,8 +13,6 @@ import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.repository.ExcursionRepository;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
-
-import viewmodel.guide.GuideViewModel;
 
 public class ExcursionViewModel extends AndroidViewModel {
 

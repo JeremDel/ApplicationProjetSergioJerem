@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
@@ -17,9 +16,7 @@ import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.w3c.dom.Text;
-
-import viewmodel.guide.GuideViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideViewModel;
 
 public class GuideDetails extends BaseActivity {
     private Guide guide;

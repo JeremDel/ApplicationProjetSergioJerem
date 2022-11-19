@@ -1,4 +1,4 @@
-package viewmodel.excursion;
+package com.example.applicationprojetsergiojerem.exo.viewmodel.excursion;
 
 import android.app.Application;
 

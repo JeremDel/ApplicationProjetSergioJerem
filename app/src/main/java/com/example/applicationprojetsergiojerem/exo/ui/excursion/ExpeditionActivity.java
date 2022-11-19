@@ -21,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-import viewmodel.excursion.ExcursionListViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.excursion.ExcursionListViewModel;
 
 public class ExpeditionActivity extends BaseActivity {
     private List<Excursion> excursions;

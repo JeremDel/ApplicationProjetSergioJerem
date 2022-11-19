@@ -23,7 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-import viewmodel.guide.GuideListViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideListViewModel;
 
 public class GuideList extends BaseActivity {
 

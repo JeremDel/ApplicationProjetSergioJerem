@@ -1,4 +1,4 @@
-package viewmodel.guide;
+package com.example.applicationprojetsergiojerem.exo.viewmodel.guide;
 
 import android.app.Application;
 
@@ -10,10 +10,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
-import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
-import com.example.applicationprojetsergiojerem.exo.database.peugeot.GuideWithExcursions;
-import com.example.applicationprojetsergiojerem.exo.database.repository.ExcursionRepository;
 import com.example.applicationprojetsergiojerem.exo.database.repository.GuideRepository;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 

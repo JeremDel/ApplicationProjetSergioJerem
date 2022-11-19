@@ -1,7 +1,6 @@
 package com.example.applicationprojetsergiojerem.exo.ui.excursion;
 
 import android.app.AlertDialog;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
@@ -26,13 +24,12 @@ import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import viewmodel.excursion.ExcursionListViewModel;
-import viewmodel.excursion.ExcursionViewModel;
-import viewmodel.guide.GuideListViewModel;
-import viewmodel.guide.GuideViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.excursion.ExcursionListViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.excursion.ExcursionViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideListViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideViewModel;
 
 public class EditExcursionActivity extends BaseActivity {
     private Excursion excursion;

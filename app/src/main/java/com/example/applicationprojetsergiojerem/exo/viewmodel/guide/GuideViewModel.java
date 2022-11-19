@@ -1,4 +1,4 @@
-package viewmodel.guide;
+package com.example.applicationprojetsergiojerem.exo.viewmodel.guide;
 
 import android.app.Application;
 

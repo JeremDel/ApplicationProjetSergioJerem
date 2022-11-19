@@ -1,6 +1,5 @@
 package com.example.applicationprojetsergiojerem.exo.ui.excursion;
 
-import android.app.Application;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,8 +13,8 @@ import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 
-import viewmodel.excursion.ExcursionViewModel;
-import viewmodel.guide.GuideViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.excursion.ExcursionViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideViewModel;
 
 public class ExpeditionDetails extends BaseActivity {
     private Excursion excursion;

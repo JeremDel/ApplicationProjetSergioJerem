@@ -1,10 +1,8 @@
 package com.example.applicationprojetsergiojerem.exo.ui.guides;
 
 import android.app.AlertDialog;
-import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,8 +18,8 @@ import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
-import viewmodel.guide.GuideListViewModel;
-import viewmodel.guide.GuideViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideListViewModel;
+import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideViewModel;
 
 public class GuideEdit extends BaseActivity {
 
