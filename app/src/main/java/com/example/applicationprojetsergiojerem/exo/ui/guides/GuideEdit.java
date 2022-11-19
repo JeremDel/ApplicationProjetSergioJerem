@@ -35,6 +35,11 @@ public class GuideEdit extends BaseActivity {
     private ImageButton btnDelete;
     private Button btnTestImg, btnSave;
 
+    /**
+     * Création de la page permettant d'éditer ou d'ajouter un guide. R
+     *Récupération et affichage des informations de celui-ci.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -134,6 +139,9 @@ public class GuideEdit extends BaseActivity {
         }
     }
 
+    /**
+     * Efface le guide précédent.
+     */
     private void deleteGuide(){
         Toast deleteToast = Toast.makeText(this, "Guide deleted", Toast.LENGTH_LONG);
 
@@ -154,6 +162,17 @@ public class GuideEdit extends BaseActivity {
         });
     }
 
+    /**
+     * Enregistre les nouvelles informations éditées du guide.
+     * @param name
+     * @param lastName
+     * @param description
+     * @param address
+     * @param email
+     * @param picPath
+     * @param phoneNumber
+     * @param birthDate
+     */
     private void saveChanges(String name, String lastName, String description, String address,
                              String email, String picPath, String phoneNumber,String birthDate){
         if (isEditMode){

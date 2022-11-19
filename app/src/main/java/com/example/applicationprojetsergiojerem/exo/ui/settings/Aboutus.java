@@ -9,6 +9,10 @@ import com.example.applicationprojetsergiojerem.R;
 
 public class Aboutus extends AppCompatActivity {
 
+    /**
+     * Création de la page présentant l'entreprise.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

@@ -28,6 +28,11 @@ public class ExpeditionDetails extends BaseActivity {
     private ExcursionViewModel viewModel;
     private GuideViewModel gViewModel;
 
+
+    /**
+     * Création de la page détaillant les infos précises de l'expédition.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -55,6 +60,9 @@ public class ExpeditionDetails extends BaseActivity {
         });
     }
 
+    /**
+     * Mise en place des containers pour les infos.
+     */
     private void initiateView(){
         tvPrice = findViewById(R.id.tvPrice);
         tvDistance = findViewById(R.id.tvDistance);
@@ -65,6 +73,9 @@ public class ExpeditionDetails extends BaseActivity {
         ivGuide = findViewById(R.id.ivGuide);
     }
 
+    /**
+     * Récupération des informations de l'expédition.
+     */
     private void updateContent(){
         if (excursion != null){
             setTitle(excursion.getName());
@@ -94,6 +105,9 @@ public class ExpeditionDetails extends BaseActivity {
         });
     }
 
+    /**
+     * Récupération des infos du guide lié à l'expédition.
+     */
     private void updateGuide(){
         if (guide != null){
             tvExcursionGuideName.setText(guide.getName());

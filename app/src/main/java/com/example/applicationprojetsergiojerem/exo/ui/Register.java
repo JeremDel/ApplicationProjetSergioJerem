@@ -14,6 +14,10 @@ public class Register extends AppCompatActivity {
 
     private Button AregisterNewAccompte;
 
+    /**
+     * Création de la page pour enregistrer nouveau utilisateur.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -31,6 +35,10 @@ public class Register extends AppCompatActivity {
         AregisterNewAccompte = (Button) findViewById(R.id.registerNewAccompte);
 
         AregisterNewAccompte.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Permet de revenir à la page login.
+             * @param view
+             */
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(Register.this, Login.class);

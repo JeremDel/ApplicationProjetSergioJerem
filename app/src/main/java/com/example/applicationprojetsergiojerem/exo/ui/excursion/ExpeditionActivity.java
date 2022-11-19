@@ -29,6 +29,10 @@ public class ExpeditionActivity extends BaseActivity {
     private ExcursionRecycleAdapter adapter;
     private ExcursionListViewModel viewModel;
 
+    /**
+     * Création de la page affichant la liste des différentes expéditions.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -51,6 +55,12 @@ public class ExpeditionActivity extends BaseActivity {
 
         excursions = new ArrayList<>();
         adapter = new ExcursionRecycleAdapter(getApplicationContext(), new RecyclerViewItemClickListener() {
+
+            /**
+             * Un clique sur l'expédition permet de passer à la page détail de celle-ci.
+             * @param v
+             * @param position
+             */
             @Override
             public void onItemClick(View v, int position) {
                 // LOG
@@ -62,6 +72,11 @@ public class ExpeditionActivity extends BaseActivity {
                 startActivity(intent);
             }
 
+            /**
+             * Appuyer longuement sur une expédition permet d'aller à la page d'édition de celle-ci.
+             * @param v
+             * @param position
+             */
             @Override
             public void onItemLongClick(View v, int position) {
                 Intent intent = new Intent(ExpeditionActivity.this, EditExcursionActivity.class);
@@ -75,6 +90,11 @@ public class ExpeditionActivity extends BaseActivity {
 
         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * Permet, en cliquant sur le bouton +, d'aller à page d'édition pour ajouter une nouvelle expédition.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ExpeditionActivity.this, EditExcursionActivity.class);

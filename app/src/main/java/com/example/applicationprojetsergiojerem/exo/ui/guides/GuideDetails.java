@@ -29,6 +29,10 @@ public class GuideDetails extends BaseActivity {
 
     private GuideViewModel viewModel;
 
+    /**
+     * Création de la page détaillant les infos d'un guide.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -68,6 +72,10 @@ public class GuideDetails extends BaseActivity {
         });
 
         tvEmail.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Permet d'ouvrir une fenêtre spéciale permettant de contacter le guide via email.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -78,6 +86,10 @@ public class GuideDetails extends BaseActivity {
         });
 
         tvPhone.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Permet d'ouvrir une fenêtre spéciale permettant de téléphoner au guide.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 String data = "tel:" + tvPhone.getText().toString();
@@ -106,6 +118,9 @@ public class GuideDetails extends BaseActivity {
         }
     }
 
+    /**
+     * Récupération des infos du guide.
+     */
     private void initiateView(){
         tvBirthDate = findViewById(R.id.tvBirthDateGuideDetail);
         tvName = findViewById(R.id.tvNameGuideDetail);

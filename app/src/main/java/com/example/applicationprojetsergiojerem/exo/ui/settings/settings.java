@@ -17,6 +17,10 @@ public class settings extends AppCompatActivity {
     private Switch aSwitch;
     private TextView textView;
 
+    /**
+     * Création de la page paramètre.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,6 +41,12 @@ public class settings extends AppCompatActivity {
         }
 
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            /**
+             * Permet d'activer le bouton permettant de changer le light theme en dark theme
+             * et vice-versa.
+             * @param buttonView
+             * @param isChecked
+             */
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 

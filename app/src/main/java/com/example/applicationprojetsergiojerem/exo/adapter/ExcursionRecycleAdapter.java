@@ -30,6 +30,7 @@ public class ExcursionRecycleAdapter extends RecyclerView.Adapter<ExcursionRecyc
         this.context = context;
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
