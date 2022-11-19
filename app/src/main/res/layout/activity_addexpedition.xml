@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B0C4DE"
+    android:background="?attr/bgc"
     >
 
     <include layout="@layout/toolbar"/>
@@ -137,6 +137,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:entries="@array/Difficulté"
             android:layout_weight="1"
             />
@@ -161,6 +162,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:entries="@array/Guide"
             android:layout_weight="1"
             />

@@ -14,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
@@ -32,6 +34,7 @@ import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideListVie
 import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideViewModel;
 
 public class EditExcursionActivity extends BaseActivity {
+
     private Excursion excursion;
     private boolean isEditMode;
     private Toast toast;
@@ -53,6 +56,14 @@ public class EditExcursionActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+
+        }else{
+            setTheme(R.style.AppTheme);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_expedition);
 
