@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem.exo.ui;
+package com.example.applicationprojetsergiojerem.exo.ui.guides;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelStore;
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;

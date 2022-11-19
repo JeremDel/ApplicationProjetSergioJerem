@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem.exo.ui;
+package com.example.applicationprojetsergiojerem.exo.ui.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.exo.ui.MainActivity;
 
 public class settings extends AppCompatActivity {
 

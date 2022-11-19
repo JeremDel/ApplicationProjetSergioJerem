@@ -3,28 +3,24 @@ package com.example.applicationprojetsergiojerem.exo.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.applicationprojetsergiojerem.R;
 
-import android.widget.TextView;
 import android.widget.Toolbar;
 
+import com.example.applicationprojetsergiojerem.exo.ui.excursion.ExpeditionActivity;
+import com.example.applicationprojetsergiojerem.exo.ui.guides.GuideList;
+import com.example.applicationprojetsergiojerem.exo.ui.settings.Aboutus;
+import com.example.applicationprojetsergiojerem.exo.ui.settings.settings;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.Locale;
 
 public class MainActivity extends BaseActivity {
 

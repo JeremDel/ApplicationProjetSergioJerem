@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem.exo.ui;
+package com.example.applicationprojetsergiojerem.exo.ui.excursion;
 
 import android.app.AlertDialog;
 import android.media.Image;
@@ -23,6 +23,7 @@ import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
 import java.util.ArrayList;

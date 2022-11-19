@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem.exo.ui;
+package com.example.applicationprojetsergiojerem.exo.ui.excursion;
 
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
@@ -13,8 +13,8 @@ import android.view.View;
 
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.adapter.ExcursionRecycleAdapter;
-import com.example.applicationprojetsergiojerem.exo.adapter.RecyclerAdapter;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
+import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.example.applicationprojetsergiojerem.exo.util.RecyclerViewItemClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

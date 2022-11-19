@@ -17,7 +17,7 @@
         android:theme="@style/Theme.ApplicationProjetSergioJerem"
         tools:targetApi="31">
         <activity
-            android:name=".exo.ui.ExpeditionActivity"
+            android:name=".exo.ui.excursion.ExpeditionActivity"
 
             android:usesCleartextTraffic="true"
 
@@ -34,35 +34,35 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.settings"
+            android:name=".exo.ui.settings.settings"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.EditExcursionActivity"
+            android:name=".exo.ui.excursion.EditExcursionActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.ExpeditionDetails"
+            android:name=".exo.ui.excursion.ExpeditionDetails"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.GuideEdit"
+            android:name=".exo.ui.guides.GuideEdit"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.GuideList"
+            android:name=".exo.ui.guides.GuideList"
 
             android:usesCleartextTraffic="true"
 
@@ -79,7 +79,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.GuideDetails"
+            android:name=".exo.ui.guides.GuideDetails"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -115,7 +115,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".exo.ui.Aboutus"
+            android:name=".exo.ui.settings.Aboutus"
             android:exported="false"
             >
             <meta-data

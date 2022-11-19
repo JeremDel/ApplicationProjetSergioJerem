@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem.exo.ui;
+package com.example.applicationprojetsergiojerem.exo.ui.guides;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -18,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.adapter.RecyclerAdapter;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.example.applicationprojetsergiojerem.exo.util.RecyclerViewItemClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

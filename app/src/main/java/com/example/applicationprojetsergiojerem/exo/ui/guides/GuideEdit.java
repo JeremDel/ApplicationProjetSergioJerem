@@ -1,4 +1,4 @@
-package com.example.applicationprojetsergiojerem.exo.ui;
+package com.example.applicationprojetsergiojerem.exo.ui.guides;
 
 import android.app.AlertDialog;
 import android.app.Application;
@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelStore;
 import com.example.applicationprojetsergiojerem.R;
 import com.example.applicationprojetsergiojerem.exo.database.async.ImageLoadTask;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.ui.BaseActivity;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
 import viewmodel.guide.GuideListViewModel;

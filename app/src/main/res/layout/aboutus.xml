@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B0C4DE"
-    tools:context=".exo.ui.ExpeditionActivity">
+    tools:context=".exo.ui.excursion.ExpeditionActivity">
     <include layout="@layout/toolbar"/>
 
 

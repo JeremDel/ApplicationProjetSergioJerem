@@ -14,6 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 //import com.example.applicationprojetsergiojerem.Login;
 import com.example.applicationprojetsergiojerem.R;
+import com.example.applicationprojetsergiojerem.exo.ui.settings.settings;
 
 public class BaseActivity extends AppCompatActivity {
 
