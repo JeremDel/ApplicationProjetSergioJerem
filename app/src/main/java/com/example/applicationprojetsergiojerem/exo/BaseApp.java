@@ -26,5 +26,6 @@ public class BaseApp extends Application {
 
     public ExcursionRepository getExcursionRepository(){
         return ExcursionRepository.getInstance();
+        // Start firebase
     }
 }
