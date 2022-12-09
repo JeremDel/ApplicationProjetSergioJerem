@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "190784157912",
+    "project_id": "snowshoestouring",
+    "storage_bucket": "snowshoestouring.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190784157912:android:216336939788a66aa33fad",
+        "android_client_info": {
+          "package_name": "com.example.applicationprojetsergiojerem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190784157912-m9caku3jk6eva9jarbh4nsohklggc05j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF2IIQtpLCIhy9Wj5iXZtqKUIhNAMZBLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190784157912-m9caku3jk6eva9jarbh4nsohklggc05j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
