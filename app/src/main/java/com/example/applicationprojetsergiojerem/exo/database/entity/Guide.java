@@ -3,12 +3,14 @@ package com.example.applicationprojetsergiojerem.exo.database.entity;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.Date;
+import com.google.firebase.database.Exclude;
 
-@Entity //manque tablename + primaryKey
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Guide {
-    @PrimaryKey(autoGenerate = true)
-    public int id;
+    public String id;
     public int phoneNumber;
 
     public String birthdate;
@@ -19,12 +21,10 @@ public class Guide {
     public String address;
     public String email;
     public String picPath;
+    public String guide;
 
-    //Guide vide ?
-
-    //obliger certaines valeures à être non null ?
     public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
-                 String address, String email, String picPath){
+                 String address, String email, String picPath, String guide){
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
         this.name = name;
@@ -33,12 +33,12 @@ public class Guide {
         this.address = address;
         this.email = email;
         this.picPath = picPath;
+        this.guide = guide;
     }
 
-    //pas de setter ?
-
     // -- Getters --
-    public int getId() {
+    @Exclude
+    public String getId() {
         return id;
     }
 
@@ -106,8 +106,33 @@ public class Guide {
         return picPath;
     }
 
+    @Exclude
+    public String getGuide() {
+        return guide;
+    }
+
+    public void setGuide(String guide) {
+        this.guide = guide;
+    }
+
     @Override
     public String toString(){
         return name + " " + lastName;
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+
+        result.put("phoneNumber", phoneNumber);
+        result.put("birthdate", birthdate);
+        result.put("name", name);
+        result.put("lastName", lastName);
+        result.put("description", description);
+        result.put("address", address);
+        result.put("email", email);
+        result.put("picPath", picPath);
+
+        return result;
     }
 }
