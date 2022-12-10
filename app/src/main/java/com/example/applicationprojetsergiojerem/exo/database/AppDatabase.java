@@ -19,7 +19,7 @@ import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 
 import java.util.concurrent.Executors;
 
-@Database(entities = {Excursion.class, Guide.class}, version = 1)
+
 public abstract class  AppDatabase extends RoomDatabase {
     private static final String TAG = "AppDatabase";
     private static final String DATABASE_NAME = "ExcursionsDB";

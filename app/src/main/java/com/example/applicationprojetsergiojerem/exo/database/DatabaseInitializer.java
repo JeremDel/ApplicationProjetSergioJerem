@@ -35,7 +35,7 @@ public class DatabaseInitializer {
      */
     private static void addGuide(final AppDatabase database, final String name, final String lastName, final String description, final String address, final String email,
                                  final String picPath, final int phoneNumber, final String birthDate){
-        Guide guide = new Guide(phoneNumber, birthDate, name, lastName, description, address, email, picPath);
+        Guide guide = new Guide(phoneNumber, birthDate, name, lastName, description, address, email, picPath, 0);
         database.guideDAO().insert(guide);
     }
 
