@@ -1,16 +1,12 @@
 package com.example.applicationprojetsergiojerem.exo.database.entity;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import com.google.firebase.database.Exclude;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Guide {
-    public int id;
+    public String id;
     public int phoneNumber;
 
     public String birthdate;
@@ -21,8 +17,8 @@ public class Guide {
     public String address;
     public String email;
     public String picPath;
-    public int guide;
 
+    public Guide(){}
     public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
                  String address, String email, String picPath){
         this.phoneNumber = phoneNumber;
@@ -37,7 +33,7 @@ public class Guide {
 
     // -- Getters --
     @Exclude
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -69,7 +65,7 @@ public class Guide {
         return email;
     }
 
-    public void setId(int id){
+    public void setId(String id){
         this.id = id;
     }
 
@@ -107,15 +103,6 @@ public class Guide {
 
     public String getPicPath() {
         return picPath;
-    }
-
-    @Exclude
-    public int getGuide() {
-        return guide;
-    }
-
-    public void setGuide(int guide) {
-        this.guide = guide;
     }
 
     @Override

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
@@ -48,7 +47,7 @@ public class GuideDetails extends BaseActivity {
 
         setContentView(R.layout.activity_guide);
 
-        int guideId = getIntent().getIntExtra("guideID", -1);
+        String guideId = getIntent().getStringExtra("guideID");
         initiateView();
 
 

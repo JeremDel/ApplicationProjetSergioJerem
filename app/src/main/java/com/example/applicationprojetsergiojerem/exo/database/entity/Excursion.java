@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Excursion {
-    public int id;
+    public String id;
     public int price;
 
     public float distance;
@@ -22,10 +22,10 @@ public class Excursion {
     public String picPath;
 
     @NonNull
-    public int guide;
+    public String guide;
 
 
-    public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, int guide){
+    public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, String guide){
         this.price = price;
         this.distance = distance;
         this.name = name;
@@ -37,7 +37,7 @@ public class Excursion {
 
     // -- Getters --
     @Exclude
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -57,7 +57,7 @@ public class Excursion {
         return locations;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -85,7 +85,7 @@ public class Excursion {
         this.picPath = picPath;
     }
 
-    public void setGuide(int guide) {
+    public void setGuide(String guide) {
         this.guide = guide;
     }
 
@@ -97,7 +97,7 @@ public class Excursion {
         return picPath;
     }
 
-    public int getGuide() {
+    public String getGuide() {
         return guide;
     }
 

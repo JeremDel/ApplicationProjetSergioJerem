@@ -73,7 +73,7 @@ public class GuideList extends BaseActivity {
 
                 // Create new intent to the guide details and add the chosen guide id
                 Intent intent = new Intent(GuideList.this, GuideDetails.class);
-                int guideId = guides.get(position).getId();
+                Guide chosenOne = guides.get(position);
                 intent.putExtra("guideID", guides.get(position).getId());
 
                 // Launch the activity
@@ -94,7 +94,7 @@ public class GuideList extends BaseActivity {
 
 
                 Intent intent = new Intent(GuideList.this, GuideEdit.class);
-                int guideId = guides.get(position).getId();
+                String guideId = guides.get(position).getId();
 
                 intent.putExtra("guideID", guideId);
                 startActivity(intent);

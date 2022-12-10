@@ -80,7 +80,7 @@ public class ExpeditionActivity extends BaseActivity {
             @Override
             public void onItemLongClick(View v, int position) {
                 Intent intent = new Intent(ExpeditionActivity.this, EditExcursionActivity.class);
-                int expeditionID = excursions.get(position).getId();
+                String expeditionID = excursions.get(position).getId();
 
                 intent.putExtra("excursionId", expeditionID);
                 startActivity(intent);

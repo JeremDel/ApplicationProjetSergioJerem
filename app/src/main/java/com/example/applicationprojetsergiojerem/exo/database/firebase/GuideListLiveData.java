@@ -11,13 +11,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-public class GuideLiveData extends LiveData<Guide> {
-    private static final String TAG = "GuideLiveData";
+import java.util.ArrayList;
+import java.util.List;
 
+public class GuideListLiveData extends LiveData<List<Guide>> {
+    private final String TAG = "GuideListLiveData";
     private final DatabaseReference dbReference;
     private final MyValueEventListener listener = new MyValueEventListener();
 
-    public GuideLiveData(DatabaseReference dbReference){
+    public GuideListLiveData(DatabaseReference dbReference){
         this.dbReference = dbReference;
     }
 
@@ -32,18 +34,30 @@ public class GuideLiveData extends LiveData<Guide> {
         Log.d(TAG, "onInactive");
     }
 
-    private class MyValueEventListener implements ValueEventListener {
+    private class MyValueEventListener implements ValueEventListener{
 
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
-            Guide guide = snapshot.getValue(Guide.class);
-            guide.setId(dbReference.getParent().getKey());
-            setValue(guide);
+            setValue(toGuides(snapshot));
         }
 
         @Override
         public void onCancelled(@NonNull DatabaseError error) {
-            Log.e(TAG, "Can't listen to query " + dbReference, error.toException());
+            Log.e(TAG, "Cannot listen to query " + dbReference, error.toException());
         }
+    }
+
+    private List<Guide> toGuides(DataSnapshot snapshot){
+        List<Guide> result = new ArrayList<>();
+        DataSnapshot guideSnap = snapshot.child("guides");
+
+        for (DataSnapshot ds : snapshot.getChildren()){
+            if (ds.getKey() != null){
+                Guide guide = (Guide) ds.getValue(Guide.class);
+                result.add(guide);
+            }
+        }
+
+        return result;
     }
 }

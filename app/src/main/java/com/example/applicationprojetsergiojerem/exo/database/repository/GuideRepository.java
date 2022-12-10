@@ -3,6 +3,7 @@ package com.example.applicationprojetsergiojerem.exo.database.repository;
 import androidx.lifecycle.LiveData;
 
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.database.firebase.GuideListLiveData;
 import com.example.applicationprojetsergiojerem.exo.database.firebase.GuideLiveData;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 import com.google.firebase.database.DatabaseReference;
@@ -38,8 +39,8 @@ public class GuideRepository {
      * @return Liste de guides en LiveData
      */
     public LiveData<List<Guide>> getAllGuides(){
-        // TODO Add Jeremie's code
-        return null; //((BaseApp) application).getDatabase().guideDAO().getAllGuides();
+        DatabaseReference dbReference = FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides");
+        return new GuideListLiveData(dbReference);
     }
 
     /**
@@ -47,8 +48,8 @@ public class GuideRepository {
      * @param id Id du guide à recupérer
      * @return Guide en LiveData
      */
-    public LiveData<Guide> getGuideById(final int id){
-        DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("guides").child(String.valueOf(id));
+    public LiveData<Guide> getGuideById(final String id){
+        DatabaseReference dbReference = FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").child(String.valueOf(id));
         return new GuideLiveData(dbReference);
     }
 
@@ -58,7 +59,7 @@ public class GuideRepository {
      * @param callback
      */
     public void insert(final Guide guide, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance().getReference("guides").push().setValue(guide, (dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").push().setValue(guide, (dbErr, dbRef) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
            else
@@ -72,7 +73,7 @@ public class GuideRepository {
      * @param callback
      */
     public void update(final Guide guide, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance().getReference("guides").updateChildren(guide.toMap(), (dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").updateChildren(guide.toMap(), (dbErr, dbRef) -> {
             if (dbErr != null)
                 callback.onFailure(dbErr.toException());
             else
@@ -84,10 +85,9 @@ public class GuideRepository {
      * Efface un guide de la db
      * @param guide Guide à effacer
      * @param callback
-     * @param application
      */
     public void delete(final Guide guide, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance().getReference("guides").child(String.valueOf(guide.getId())).removeValue((dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").child(String.valueOf(guide.getId())).removeValue((dbErr, dbRef) -> {
             if (dbErr != null)
                 callback.onFailure(dbErr.toException());
             else

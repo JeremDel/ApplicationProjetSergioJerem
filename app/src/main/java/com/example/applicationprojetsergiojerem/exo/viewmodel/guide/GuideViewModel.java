@@ -29,7 +29,7 @@ public class GuideViewModel extends AndroidViewModel {
      * @param guideRepository
      */
     public GuideViewModel(@NonNull Application application,
-                            final int id, GuideRepository guideRepository){
+                            final String id, GuideRepository guideRepository){
         super(application);
 
         this.application = application;
@@ -49,7 +49,7 @@ public class GuideViewModel extends AndroidViewModel {
         @NonNull
         private Application applicationBase;
 
-        private final int id;
+        private final String id;
         private Application application;
 
         private final GuideRepository repository;
@@ -59,7 +59,7 @@ public class GuideViewModel extends AndroidViewModel {
          * @param application
          * @param id Guide à recupérer
          */
-        public Factory(@NonNull Application application, int id) {
+        public Factory(@NonNull Application application, String id) {
             this.application = application;
             this.id = id;
             repository = ((BaseApp) application).getGuideRepository();

@@ -27,7 +27,7 @@ public class ExcursionViewModel extends AndroidViewModel {
      * @param excursionRepository
      */
     public ExcursionViewModel(@NonNull Application application,
-                              final int id, ExcursionRepository excursionRepository )
+                              final String id, ExcursionRepository excursionRepository )
     {
 
         super(application);
@@ -48,7 +48,7 @@ public class ExcursionViewModel extends AndroidViewModel {
         @NonNull
         private final Application application;
 
-        private final int excursionId;
+        private final String excursionId;
         private final ExcursionRepository repository;
 
         /**
@@ -56,7 +56,7 @@ public class ExcursionViewModel extends AndroidViewModel {
          * @param application
          * @param excursionId Excursion à recupérer
          */
-        public Factory(@NonNull Application application, int excursionId) {
+        public Factory(@NonNull Application application, String excursionId) {
             this.application = application;
             this.excursionId = excursionId;
             repository = ((BaseApp) application).getExcursionRepository();

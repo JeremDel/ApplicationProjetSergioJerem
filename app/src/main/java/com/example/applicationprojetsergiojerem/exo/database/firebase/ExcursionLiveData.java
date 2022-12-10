@@ -15,12 +15,12 @@ public class ExcursionLiveData extends LiveData<Excursion> {
     private static final String TAG = "ExcursionLiveData";
 
     private final DatabaseReference dbReference;
-    private final int guide;
+    private final String guide;
     private final MyValueEventListener listener = new MyValueEventListener();
 
     public ExcursionLiveData(DatabaseReference dbReference){
         this.dbReference = dbReference;
-        guide = Integer.parseInt(dbReference.getParent().getParent().getKey());
+        guide = dbReference.getParent().getParent().getKey();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ExcursionLiveData extends LiveData<Excursion> {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             Excursion entity = snapshot.getValue(Excursion.class);
-            entity.setId(Integer.parseInt(snapshot.getKey()));
+            entity.setId(snapshot.getKey());
             setValue(entity);
         }
 

@@ -52,7 +52,7 @@ public class EditExcursionActivity extends BaseActivity {
 
     private List<Guide> guides;
 
-    private int creationGuideId = -1;
+    private String creationGuideId = "-1";
 
     /**
      * Création de la page d'édition (ou d'ajout) d'excursion.
@@ -80,8 +80,8 @@ public class EditExcursionActivity extends BaseActivity {
             toast.show();
         });
 
-        int id = getIntent().getIntExtra("excursionId", -1);
-        if (id == -1){
+        String id = getIntent().getStringExtra("excursionId");
+        if (id == null){
             setTitle(getString(R.string.title_activity_create_excursion));
             toast = Toast.makeText(this, getString(R.string.excursion_created), Toast.LENGTH_LONG);
             isEditMode = false;
@@ -104,8 +104,9 @@ public class EditExcursionActivity extends BaseActivity {
             });
         }
 
-        ExcursionViewModel.Factory factory = new ExcursionViewModel.Factory(getApplication(), getIntent().getIntExtra("excursionId", -1));
+        ExcursionViewModel.Factory factory = new ExcursionViewModel.Factory(getApplication(), id);
         viewModel = new ViewModelProvider(new ViewModelStore(), factory).get(ExcursionViewModel.class);
+
         if (isEditMode){
             viewModel.getExcursion().observe(this, excursionEntity -> {
                 if (excursionEntity != null){
@@ -114,6 +115,7 @@ public class EditExcursionActivity extends BaseActivity {
                 }
             });
         }
+
     }
 
     /**

@@ -55,7 +55,6 @@ public class GuideListViewModel extends AndroidViewModel {
         public Factory(@NonNull Application application) {
             this.application = application;
 
-            //guideRepository = new BaseApp().getGuideRepository();
             guideRepository = ((BaseApp) application).getGuideRepository();
         }
 

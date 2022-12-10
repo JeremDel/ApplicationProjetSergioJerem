@@ -20,7 +20,7 @@ import com.example.applicationprojetsergiojerem.exo.viewmodel.guide.GuideViewMod
 public class ExpeditionDetails extends BaseActivity {
     private Excursion excursion;
     private Guide guide;
-    private int guideId;
+    private String guideId;
     private TextView tvPrice, tvDistance, tvName, tvLocations, tvDifficulty;
     private TextView tvExcursionGuideName, tvExcursionGuideLastName, tvExcursionGuideEmail, tvExcursionGuidePhone;
     private ImageView ivImage, ivGuide;
@@ -46,7 +46,7 @@ public class ExpeditionDetails extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expedition_details);
 
-        int id = getIntent().getIntExtra("excursionID", -1);
+        String id = getIntent().getStringExtra("excursionID");
         initiateView();
 
         ExcursionViewModel.Factory factory = new ExcursionViewModel.Factory(getApplication(), id);

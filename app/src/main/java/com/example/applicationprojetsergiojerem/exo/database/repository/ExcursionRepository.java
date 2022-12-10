@@ -40,8 +40,8 @@ public class ExcursionRepository {
      * @param id Id de l'excursion à recupérer
      * @return Excursion en LiveData
      */
-    public LiveData<Excursion> getExcursion(final int id){
-        DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(id));
+    public LiveData<Excursion> getExcursion(final String id){
+        DatabaseReference dbReference = FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("excursions").child(id);
         return new ExcursionLiveData(dbReference);
     }
 
@@ -50,7 +50,7 @@ public class ExcursionRepository {
      * @return Liste d'excursions de la db en LiveData
      */
     public LiveData<List<Excursion>> getAllExcursions(){
-        DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("excursions");
+        DatabaseReference dbReference = FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("excursions");
         return new ExcursionListLiveData(dbReference);
     }
 
@@ -60,7 +60,7 @@ public class ExcursionRepository {
      * @param callback
      */
     public void insert(final Excursion excursion, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance().getReference("excursions").push().setValue(excursion, (dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("excursions").push().setValue(excursion, (dbErr, dbRef) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
            else
@@ -74,7 +74,7 @@ public class ExcursionRepository {
      * @param callback
      */
     public void update(final Excursion excursion, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(excursion.getId())).updateChildren(excursion.toMap(), (dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("excursions").child(String.valueOf(excursion.getId())).updateChildren(excursion.toMap(), (dbErr, dbRef) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
            else
@@ -88,7 +88,7 @@ public class ExcursionRepository {
      * @param callback
      */
     public void delete(final Excursion excursion, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(excursion.getId())).removeValue((dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("excursions").child(String.valueOf(excursion.getId())).removeValue((dbErr, dbRef) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
            else

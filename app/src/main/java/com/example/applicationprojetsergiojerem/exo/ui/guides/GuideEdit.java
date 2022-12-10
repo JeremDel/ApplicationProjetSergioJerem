@@ -88,10 +88,10 @@ public class GuideEdit extends BaseActivity {
         });
 
         // Get guide id from the intent. If there is none, -1 is automatically assigned
-        int guideId = getIntent().getIntExtra("guideID", -1);
+        String guideId = getIntent().getStringExtra("guideID");
 
         // If there was no guide id in the intent, we're in create new guide mode, else we're in edit guide mode
-        if (guideId == -1){
+        if (guideId == null){
             setTitle(getString(R.string.title_activity_create_guide));
             toast = Toast.makeText(this, getString(R.string.guide_created), Toast.LENGTH_LONG);
             isEditMode = false;
