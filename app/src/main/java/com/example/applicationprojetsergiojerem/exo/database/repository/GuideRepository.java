@@ -9,7 +9,10 @@ import com.example.applicationprojetsergiojerem.exo.database.async.guide.CreateG
 import com.example.applicationprojetsergiojerem.exo.database.async.guide.DeleteGuide;
 import com.example.applicationprojetsergiojerem.exo.database.async.guide.UpdateGuide;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
+import com.example.applicationprojetsergiojerem.exo.database.firebase.GuideLiveData;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -52,7 +55,8 @@ public class GuideRepository {
      * @return Guide en LiveData
      */
     public LiveData<Guide> getGuideById(final int id, Application application){
-        return ((BaseApp) application).getDatabase().guideDAO().getGuideById(id);
+        DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("guides").child(String.valueOf(id));
+        return new GuideLiveData(dbReference);
     }
 
     /**
@@ -62,7 +66,12 @@ public class GuideRepository {
      * @param application
      */
     public void insert(final Guide guide, OnAsyncEventListener callback, Application application){
-        new CreateGuide(application, callback).execute(guide);
+        FirebaseDatabase.getInstance().getReference("guides").push().setValue(guide, (dbErr, dbRef) -> {
+           if (dbErr != null)
+               callback.onFailure(dbErr.toException());
+           else
+               callback.onSuccess();
+        });
     }
 
     /**
@@ -72,7 +81,12 @@ public class GuideRepository {
      * @param application
      */
     public void update(final Guide guide, OnAsyncEventListener callback, Application application){
-        new UpdateGuide(application, callback).execute(guide);
+        FirebaseDatabase.getInstance().getReference("guides").updateChildren(guide.toMap(), (dbErr, dbRef) -> {
+            if (dbErr != null)
+                callback.onFailure(dbErr.toException());
+            else
+                callback.onSuccess();
+        });
     }
 
     /**
@@ -82,6 +96,11 @@ public class GuideRepository {
      * @param application
      */
     public void delete(final Guide guide, OnAsyncEventListener callback, Application application){
-        new DeleteGuide(application, callback).execute(guide);
+        FirebaseDatabase.getInstance().getReference("guides").child(String.valueOf(guide.getId())).removeValue((dbErr, dbRef) -> {
+            if (dbErr != null)
+                callback.onFailure(dbErr.toException());
+            else
+                callback.onSuccess();
+        });
     }
 }

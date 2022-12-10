@@ -79,7 +79,12 @@ public class ExcursionRepository {
      * @param application
      */
     public void insert(final Excursion excursion, OnAsyncEventListener callback, Application application){
-        new CreateExcursion(application, callback).execute(excursion);
+        FirebaseDatabase.getInstance().getReference("excursions").push().setValue(excursion, (dbErr, dbRef) -> {
+           if (dbErr != null)
+               callback.onFailure(dbErr.toException());
+           else
+               callback.onSuccess();
+        });
     }
 
     /**
@@ -89,7 +94,12 @@ public class ExcursionRepository {
      * @param application
      */
     public void update(final Excursion excursion, OnAsyncEventListener callback, Application application){
-        new UpdateExcursion(application, callback).execute(excursion);
+        FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(excursion.getId())).updateChildren(excursion.toMap(), (dbErr, dbRef) -> {
+           if (dbErr != null)
+               callback.onFailure(dbErr.toException());
+           else
+               callback.onSuccess();
+        });
     }
 
     /**
@@ -99,6 +109,11 @@ public class ExcursionRepository {
      * @param application
      */
     public void delete(final Excursion excursion, OnAsyncEventListener callback, Application application){
-        new DeleteExcursion(application, callback).execute(excursion);
+        FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(excursion.getId())).removeValue((dbErr, dbRef) -> {
+           if (dbErr != null)
+               callback.onFailure(dbErr.toException());
+           else
+               callback.onSuccess();
+        });
     }
 }
