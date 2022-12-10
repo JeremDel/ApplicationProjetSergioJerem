@@ -60,16 +60,6 @@ public class ExcursionRepository {
     }
 
     /**
-     * Recupère toutes les excursions d'un guide de la db
-     * @param guideId Id du guide dont on veut recupérer les excursions
-     * @param application
-     * @return Liste des excursions d'un guide en LiveData
-     */
-    public LiveData<List<Excursion>> getExcursionsByGuide(final int guideId, Application application){
-        return ((BaseApp) application).getDatabase().excursionDAO().getExcursionsByGuide(guideId);
-    }
-
-    /**
      * Insère une excursion dans la db
      * @param excursion Excursion à insérer dans la db
      * @param callback

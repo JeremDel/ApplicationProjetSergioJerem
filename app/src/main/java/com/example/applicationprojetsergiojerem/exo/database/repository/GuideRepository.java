@@ -4,7 +4,6 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.database.firebase.GuideLiveData;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
@@ -42,7 +41,8 @@ public class GuideRepository {
      * @return Liste de guides en LiveData
      */
     public LiveData<List<Guide>> getAllGuides(Application application){
-        return ((BaseApp) application).getDatabase().guideDAO().getAllGuides();
+        // TODO Add Jeremie's code
+        return null; //((BaseApp) application).getDatabase().guideDAO().getAllGuides();
     }
 
     /**
