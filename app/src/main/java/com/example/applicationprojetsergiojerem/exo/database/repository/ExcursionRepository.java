@@ -9,7 +9,11 @@ import com.example.applicationprojetsergiojerem.exo.database.async.excursion.Cre
 import com.example.applicationprojetsergiojerem.exo.database.async.excursion.DeleteExcursion;
 import com.example.applicationprojetsergiojerem.exo.database.async.excursion.UpdateExcursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
+import com.example.applicationprojetsergiojerem.exo.database.firebase.ExcursionListLiveData;
+import com.example.applicationprojetsergiojerem.exo.database.firebase.ExcursionLiveData;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -44,7 +48,8 @@ public class ExcursionRepository {
      * @return Excursion en LiveData
      */
     public LiveData<Excursion> getExcursion(final int id, Application application){
-        return ((BaseApp) application).getDatabase().excursionDAO().getExcursionById(id);
+        DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(id));
+        return new ExcursionLiveData(dbReference);
     }
 
     /**
@@ -53,7 +58,8 @@ public class ExcursionRepository {
      * @return Liste d'excursions de la db en LiveData
      */
     public LiveData<List<Excursion>> getAllExcursions(Application application){
-        return ((BaseApp) application).getDatabase().excursionDAO().getAllExcursions();
+        DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("excursions");
+        return new ExcursionListLiveData(dbReference);
     }
 
     /**

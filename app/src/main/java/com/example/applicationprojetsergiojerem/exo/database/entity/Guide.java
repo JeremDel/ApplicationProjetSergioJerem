@@ -70,6 +70,10 @@ public class Guide {
         return email;
     }
 
+    public void setId(int id){
+        this.id = id;
+    }
+
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
