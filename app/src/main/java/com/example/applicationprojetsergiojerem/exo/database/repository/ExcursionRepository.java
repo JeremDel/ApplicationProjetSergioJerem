@@ -1,10 +1,7 @@
 package com.example.applicationprojetsergiojerem.exo.database.repository;
 
-import android.app.Application;
-
 import androidx.lifecycle.LiveData;
 
-import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.firebase.ExcursionListLiveData;
 import com.example.applicationprojetsergiojerem.exo.database.firebase.ExcursionLiveData;
@@ -41,20 +38,18 @@ public class ExcursionRepository {
     /**
      * Recupère une excursion de la db
      * @param id Id de l'excursion à recupérer
-     * @param application
      * @return Excursion en LiveData
      */
-    public LiveData<Excursion> getExcursion(final int id, Application application){
+    public LiveData<Excursion> getExcursion(final int id){
         DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(id));
         return new ExcursionLiveData(dbReference);
     }
 
     /**
      * Recupère toutes les excursions de la db
-     * @param application
      * @return Liste d'excursions de la db en LiveData
      */
-    public LiveData<List<Excursion>> getAllExcursions(Application application){
+    public LiveData<List<Excursion>> getAllExcursions(){
         DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference("excursions");
         return new ExcursionListLiveData(dbReference);
     }
@@ -63,9 +58,8 @@ public class ExcursionRepository {
      * Insère une excursion dans la db
      * @param excursion Excursion à insérer dans la db
      * @param callback
-     * @param application
      */
-    public void insert(final Excursion excursion, OnAsyncEventListener callback, Application application){
+    public void insert(final Excursion excursion, OnAsyncEventListener callback){
         FirebaseDatabase.getInstance().getReference("excursions").push().setValue(excursion, (dbErr, dbRef) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
@@ -78,9 +72,8 @@ public class ExcursionRepository {
      * Met une excursion à jour dans la db
      * @param excursion Objet excursion avec les infos à jour
      * @param callback
-     * @param application
      */
-    public void update(final Excursion excursion, OnAsyncEventListener callback, Application application){
+    public void update(final Excursion excursion, OnAsyncEventListener callback){
         FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(excursion.getId())).updateChildren(excursion.toMap(), (dbErr, dbRef) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
@@ -93,9 +86,8 @@ public class ExcursionRepository {
      * Efface une excursion de la db
      * @param excursion Excursion à effacer
      * @param callback
-     * @param application
      */
-    public void delete(final Excursion excursion, OnAsyncEventListener callback, Application application){
+    public void delete(final Excursion excursion, OnAsyncEventListener callback){
         FirebaseDatabase.getInstance().getReference("excursions").child(String.valueOf(excursion.getId())).removeValue((dbErr, dbRef) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
