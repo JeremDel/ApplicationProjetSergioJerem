@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Guide {
-    public String id;
+    public int id;
     public int phoneNumber;
 
     public String birthdate;
@@ -21,10 +21,10 @@ public class Guide {
     public String address;
     public String email;
     public String picPath;
-    public String guide;
+    public int guide;
 
     public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
-                 String address, String email, String picPath, String guide){
+                 String address, String email, String picPath, int guide){
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
         this.name = name;
@@ -38,7 +38,7 @@ public class Guide {
 
     // -- Getters --
     @Exclude
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -107,11 +107,11 @@ public class Guide {
     }
 
     @Exclude
-    public String getGuide() {
+    public int getGuide() {
         return guide;
     }
 
-    public void setGuide(String guide) {
+    public void setGuide(int guide) {
         this.guide = guide;
     }
 
