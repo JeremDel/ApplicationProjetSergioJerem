@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 
@@ -231,7 +230,7 @@ public class EditExcursionActivity extends BaseActivity {
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 guideSpinner.setAdapter(adapter1);
 
-                if (getIntent().getIntExtra("excursionId", -1) == -1)
+                if (getIntent().getStringExtra("excursionId") == null)
                     guideSpinner.setSelection(0);
 
                 guideSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

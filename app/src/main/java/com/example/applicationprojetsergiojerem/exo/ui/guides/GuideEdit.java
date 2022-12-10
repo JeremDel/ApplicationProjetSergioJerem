@@ -202,7 +202,7 @@ public class GuideEdit extends BaseActivity {
 
             guide = new Guide(phone, etBirthDate.getText().toString(),
                     etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
-                    etAddress.getText().toString(), etEmail.getText().toString(), picPath, 0);
+                    etAddress.getText().toString(), etEmail.getText().toString(), picPath);
 
             viewModel.createGuide(guide, new OnAsyncEventListener() {
                 @Override

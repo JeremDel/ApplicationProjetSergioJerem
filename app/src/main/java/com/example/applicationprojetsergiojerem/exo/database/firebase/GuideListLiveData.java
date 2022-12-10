@@ -49,11 +49,10 @@ public class GuideListLiveData extends LiveData<List<Guide>> {
 
     private List<Guide> toGuides(DataSnapshot snapshot){
         List<Guide> result = new ArrayList<>();
-        DataSnapshot guideSnap = snapshot.child("guides");
 
         for (DataSnapshot ds : snapshot.getChildren()){
             if (ds.getKey() != null){
-                Guide guide = (Guide) ds.getValue(Guide.class);
+                Guide guide = ds.getValue(Guide.class);
                 result.add(guide);
             }
         }

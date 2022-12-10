@@ -24,7 +24,7 @@ public class Excursion {
     @NonNull
     public String guide;
 
-
+    public Excursion(){}
     public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, String guide){
         this.price = price;
         this.distance = distance;

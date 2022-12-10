@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
+import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.database.repository.ExcursionRepository;
 import com.example.applicationprojetsergiojerem.exo.database.repository.GuideRepository;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
@@ -51,7 +52,7 @@ public class ExcursionListViewModel extends AndroidViewModel {
         observableExcursions.setValue(null);
         observableOwnExcursion.setValue(null);
 
-        LiveData<List<Excursion>> allExcursions = repository.getAllExcursions();
+        LiveData<List<Excursion>> allExcursions = (LiveData<List<Excursion>>) repository.getAllExcursions();
 
         // observe the changes of the entities from the database and forward them
         observableExcursions.addSource(allExcursions, observableExcursions::setValue);

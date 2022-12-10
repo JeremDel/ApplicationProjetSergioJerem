@@ -46,16 +46,15 @@ public class ExcursionListLiveData extends LiveData<List<Excursion>> {
     }
 
     private List<Excursion> toExcursions(DataSnapshot snapshot){
-        List<Excursion> excursions = new ArrayList<>();
-        DataSnapshot excursionsSnap = snapshot.child("excursions");
+        List<Excursion> result = new ArrayList<>();
 
-        for(DataSnapshot ds : excursionsSnap.getChildren()){
+        for(DataSnapshot ds : snapshot.getChildren()){
             if (ds.getKey() != null){
-                Excursion excursion = (Excursion) ds.getValue();
-                excursions.add(excursion);
+                Excursion excursion = ds.getValue(Excursion.class);
+                result.add(excursion);
             }
         }
 
-        return excursions;
+        return result;
     }
 }

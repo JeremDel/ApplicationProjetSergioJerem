@@ -41,7 +41,7 @@ public class ExcursionRepository {
      * @return Excursion en LiveData
      */
     public LiveData<Excursion> getExcursion(final String id){
-        DatabaseReference dbReference = FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("excursions").child(id);
+        DatabaseReference dbReference = FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("excursions").child(String.valueOf(id));
         return new ExcursionLiveData(dbReference);
     }
 
