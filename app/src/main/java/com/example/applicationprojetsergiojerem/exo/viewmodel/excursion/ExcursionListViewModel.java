@@ -51,11 +51,9 @@ public class ExcursionListViewModel extends AndroidViewModel {
         observableExcursions.setValue(null);
         observableOwnExcursion.setValue(null);
 
-        LiveData<List<Excursion>> guideExcursions = repository.getExcursionsByGuide(guideId, application);
-        LiveData<List<Excursion>> allExcursions = repository.getAllExcursions(application);
+        LiveData<List<Excursion>> allExcursions = repository.getAllExcursions();
 
         // observe the changes of the entities from the database and forward them
-        observableOwnExcursion.addSource(guideExcursions, observableOwnExcursion::setValue);
         observableExcursions.addSource(allExcursions, observableExcursions::setValue);
     }
 
@@ -98,7 +96,7 @@ public class ExcursionListViewModel extends AndroidViewModel {
      * @param callback
      */
     public void deleteExcursion(Excursion excursion, OnAsyncEventListener callback) {
-        repository.delete(excursion, callback, application);
+        repository.delete(excursion, callback);
     }
 
     }

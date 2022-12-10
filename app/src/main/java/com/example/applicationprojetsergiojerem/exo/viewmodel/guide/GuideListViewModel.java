@@ -39,7 +39,7 @@ public class GuideListViewModel extends AndroidViewModel {
         observableGuides = new MediatorLiveData<>();
         observableGuides.setValue(null);
 
-        LiveData<List<Guide>> guides = (LiveData<List<Guide>>) guideRepository.getAllGuides(application);
+        LiveData<List<Guide>> guides = (LiveData<List<Guide>>) guideRepository.getAllGuides();
 
         observableGuides.addSource(guides, observableGuides::setValue);
     }
@@ -80,7 +80,7 @@ public class GuideListViewModel extends AndroidViewModel {
      * @param callback
      */
     public void deleteGuide(Guide guide, OnAsyncEventListener callback) {
-        repository.delete(guide, callback, application);
+        repository.delete(guide, callback);
     }
 
 }

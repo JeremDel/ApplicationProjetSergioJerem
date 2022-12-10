@@ -24,7 +24,7 @@ public class Guide {
     public int guide;
 
     public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
-                 String address, String email, String picPath, int guide){
+                 String address, String email, String picPath){
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
         this.name = name;
@@ -33,7 +33,6 @@ public class Guide {
         this.address = address;
         this.email = email;
         this.picPath = picPath;
-        this.guide = guide;
     }
 
     // -- Getters --

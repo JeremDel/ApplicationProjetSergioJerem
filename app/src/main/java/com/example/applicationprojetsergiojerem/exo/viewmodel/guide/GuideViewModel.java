@@ -40,7 +40,7 @@ public class GuideViewModel extends AndroidViewModel {
 
         observableGuide.setValue(null);
 
-        LiveData<Guide> guide = repository.getGuideById(id, application);
+        LiveData<Guide> guide = repository.getGuideById(id);
 
         observableGuide.addSource(guide, observableGuide::setValue);
     }
@@ -86,7 +86,7 @@ public class GuideViewModel extends AndroidViewModel {
      * @param callback
      */
     public void createGuide(Guide guide, OnAsyncEventListener callback) {
-        repository.insert(guide, callback, application);
+        repository.insert(guide, callback);
     }
 
     /**
@@ -95,7 +95,7 @@ public class GuideViewModel extends AndroidViewModel {
      * @param callback
      */
     public void updateGuide(Guide guide, OnAsyncEventListener callback) {
-        repository.update(guide, callback, application);
+        repository.update(guide, callback);
     }
 
     /**
@@ -104,7 +104,7 @@ public class GuideViewModel extends AndroidViewModel {
      * @param callback
      */
     public void deleteGuide(Guide guide, OnAsyncEventListener callback) {
-        repository.delete(guide, callback, application);
+        repository.delete(guide, callback);
 
     }
 }

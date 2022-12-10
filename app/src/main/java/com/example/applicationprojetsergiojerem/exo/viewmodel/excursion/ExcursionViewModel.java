@@ -16,8 +16,6 @@ import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;
 
 public class ExcursionViewModel extends AndroidViewModel {
 
-    private Application application;
-
     private ExcursionRepository repository;
 
     private final MediatorLiveData<Excursion> observableExcursion;
@@ -34,15 +32,13 @@ public class ExcursionViewModel extends AndroidViewModel {
 
         super(application);
 
-        this.application = application;
-
         repository = excursionRepository;
 
         observableExcursion = new MediatorLiveData<>();
 
         observableExcursion.setValue(null);
 
-        LiveData<Excursion> excursion = repository.getExcursion(id, application);
+        LiveData<Excursion> excursion = repository.getExcursion(id);
 
         observableExcursion.addSource(excursion, observableExcursion::setValue);
     }
@@ -87,7 +83,7 @@ public class ExcursionViewModel extends AndroidViewModel {
      * @param callback
      */
     public void createExcursion(Excursion excursion, OnAsyncEventListener callback) {
-        repository.insert(excursion, callback, application);
+        repository.insert(excursion, callback);
     }
 
     /**
@@ -96,7 +92,7 @@ public class ExcursionViewModel extends AndroidViewModel {
      * @param callback
      */
     public void updateAccount(Excursion excursion, OnAsyncEventListener callback) {
-        repository.update(excursion, callback, application);
+        repository.update(excursion, callback);
     }
 
 }
