@@ -5,9 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
-import com.example.applicationprojetsergiojerem.exo.database.async.guide.CreateGuide;
-import com.example.applicationprojetsergiojerem.exo.database.async.guide.DeleteGuide;
-import com.example.applicationprojetsergiojerem.exo.database.async.guide.UpdateGuide;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Guide;
 import com.example.applicationprojetsergiojerem.exo.database.firebase.GuideLiveData;
 import com.example.applicationprojetsergiojerem.exo.util.OnAsyncEventListener;

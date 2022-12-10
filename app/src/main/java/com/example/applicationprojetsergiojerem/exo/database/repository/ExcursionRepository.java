@@ -5,9 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import com.example.applicationprojetsergiojerem.exo.BaseApp;
-import com.example.applicationprojetsergiojerem.exo.database.async.excursion.CreateExcursion;
-import com.example.applicationprojetsergiojerem.exo.database.async.excursion.DeleteExcursion;
-import com.example.applicationprojetsergiojerem.exo.database.async.excursion.UpdateExcursion;
 import com.example.applicationprojetsergiojerem.exo.database.entity.Excursion;
 import com.example.applicationprojetsergiojerem.exo.database.firebase.ExcursionListLiveData;
 import com.example.applicationprojetsergiojerem.exo.database.firebase.ExcursionLiveData;
