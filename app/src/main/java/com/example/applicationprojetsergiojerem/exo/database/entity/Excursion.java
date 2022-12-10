@@ -41,6 +41,7 @@ public class Excursion {
         return id;
     }
 
+
     public int getPrice() {
         return price;
     }
