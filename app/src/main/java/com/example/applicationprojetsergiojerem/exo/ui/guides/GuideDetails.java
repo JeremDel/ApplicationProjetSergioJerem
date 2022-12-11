@@ -43,7 +43,6 @@ public class GuideDetails extends BaseActivity {
         }
 
         super.onCreate(savedInstanceState);
-        //getLayoutInflater().inflate(R.layout.activity_guide, frameLayout);
 
         setContentView(R.layout.activity_guide);
 
@@ -95,7 +94,6 @@ public class GuideDetails extends BaseActivity {
 
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse(data));
-                //intent.putExtra(Intent.EXTRA_PHONE_NUMBER, tvPhone.getText().toString());
                 startActivity(intent);
             }
         });

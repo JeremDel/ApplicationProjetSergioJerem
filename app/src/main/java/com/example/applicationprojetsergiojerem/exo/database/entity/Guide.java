@@ -4,19 +4,20 @@ import com.google.firebase.database.Exclude;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Guide {
-    public String id;
-    public int phoneNumber;
+    private String id;
+    private int phoneNumber;
 
-    public String birthdate;
+    private String birthdate;
 
-    public String name;
-    public String lastName;
-    public String description;
-    public String address;
-    public String email;
-    public String picPath;
+    private String name;
+    private String lastName;
+    private String description;
+    private String address;
+    private String email;
+    private String picPath;
 
     public Guide(){}
     public Guide(int phoneNumber, String birthdate, String name, String lastName, String description,
@@ -108,6 +109,14 @@ public class Guide {
     @Override
     public String toString(){
         return name + " " + lastName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Guide guide = (Guide) o;
+        return id.equals(guide.id);
     }
 
     @Exclude

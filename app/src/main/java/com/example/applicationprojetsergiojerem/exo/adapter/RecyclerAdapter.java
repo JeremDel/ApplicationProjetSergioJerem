@@ -23,16 +23,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     private List<Guide> data;
     private RecyclerViewItemClickListener listener;
-    private Context context;
 
     /**
      * Constructeur
-     * @param context
      * @param listener
      */
-    public RecyclerAdapter(Context context, RecyclerViewItemClickListener listener) {
+    public RecyclerAdapter(RecyclerViewItemClickListener listener) {
         this.listener = listener;
-        this.context = context;
     }
 
     /**

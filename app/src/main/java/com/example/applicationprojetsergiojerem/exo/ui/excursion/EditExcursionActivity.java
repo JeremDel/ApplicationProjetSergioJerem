@@ -255,9 +255,9 @@ public class EditExcursionActivity extends BaseActivity {
         Guide chosenGuide = (Guide) guideSpinner.getSelectedItem();
 
         if (isEditMode)
-            excursion.setGuide(chosenGuide.id);
+            excursion.setGuide(chosenGuide.getId());
         else
-            creationGuideId = chosenGuide.id;
+            creationGuideId = chosenGuide.getId();
 
         tvCurrentGuide.setText("Current guide: " + chosenGuide);
     }

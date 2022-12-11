@@ -63,7 +63,7 @@ public class GuideList extends BaseActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         guides = new ArrayList<>();
-        adapter = new RecyclerAdapter(this.getApplicationContext(), new RecyclerViewItemClickListener() {
+        adapter = new RecyclerAdapter(new RecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 // Log
@@ -73,7 +73,6 @@ public class GuideList extends BaseActivity {
 
                 // Create new intent to the guide details and add the chosen guide id
                 Intent intent = new Intent(GuideList.this, GuideDetails.class);
-                Guide chosenOne = guides.get(position);
                 intent.putExtra("guideID", guides.get(position).getId());
 
                 // Launch the activity

@@ -53,6 +53,7 @@ public class GuideListLiveData extends LiveData<List<Guide>> {
         for (DataSnapshot ds : snapshot.getChildren()){
             if (ds.getKey() != null){
                 Guide guide = ds.getValue(Guide.class);
+                guide.setId(ds.getKey());
                 result.add(guide);
             }
         }

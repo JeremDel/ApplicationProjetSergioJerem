@@ -59,7 +59,9 @@ public class GuideRepository {
      * @param callback
      */
     public void insert(final Guide guide, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").push().setValue(guide, (dbErr, dbRef) -> {
+        DatabaseReference dbRef = FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides");
+        String key = dbRef.push().getKey();
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").child(key).setValue(guide, (dbErr, dbReference) -> {
            if (dbErr != null)
                callback.onFailure(dbErr.toException());
            else
