@@ -75,7 +75,7 @@ public class GuideRepository {
      * @param callback
      */
     public void update(final Guide guide, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").updateChildren(guide.toMap(), (dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").child(guide.getId()).updateChildren(guide.toMap(), (dbErr, dbRef) -> {
             if (dbErr != null)
                 callback.onFailure(dbErr.toException());
             else

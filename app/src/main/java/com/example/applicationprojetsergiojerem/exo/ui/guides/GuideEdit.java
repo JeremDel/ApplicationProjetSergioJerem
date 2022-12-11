@@ -70,6 +70,9 @@ public class GuideEdit extends BaseActivity {
         btnTestImg = findViewById(R.id.btnTestImg);
         btnSave = findViewById(R.id.btnSave);
 
+        // Get guide id from the intent.
+        String guideId = getIntent().getStringExtra("guideID");
+
         // When clicking on Save button, save changes
         btnSave.setOnClickListener(View -> {
             saveChanges(etName.getText().toString(), etLastName.getText().toString(), etDescription.getText().toString(),
@@ -86,9 +89,6 @@ public class GuideEdit extends BaseActivity {
             else
                 Toast.makeText(this, "You need to insert an URL first!", Toast.LENGTH_LONG).show();
         });
-
-        // Get guide id from the intent. If there is none, -1 is automatically assigned
-        String guideId = getIntent().getStringExtra("guideID");
 
         // If there was no guide id in the intent, we're in create new guide mode, else we're in edit guide mode
         if (guideId == null){
