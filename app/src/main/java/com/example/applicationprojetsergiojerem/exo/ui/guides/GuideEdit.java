@@ -123,6 +123,7 @@ public class GuideEdit extends BaseActivity {
             viewModel.getGuide().observe(this, guideEntity -> {
                 if (guideEntity != null){
                     guide = guideEntity;
+                    guide.setId(guideId);
 
                     etName.setText(guide.getName());
                     etLastName.setText(guide.getLastName());

@@ -89,7 +89,7 @@ public class GuideRepository {
      * @param callback
      */
     public void delete(final Guide guide, OnAsyncEventListener callback){
-        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").child(String.valueOf(guide.getId())).removeValue((dbErr, dbRef) -> {
+        FirebaseDatabase.getInstance("https://snowshoestouring-default-rtdb.europe-west1.firebasedatabase.app/").getReference("guides").child(guide.getId()).removeValue((dbErr, dbRef) -> {
             if (dbErr != null)
                 callback.onFailure(dbErr.toException());
             else
