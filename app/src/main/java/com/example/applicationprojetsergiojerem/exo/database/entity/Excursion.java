@@ -25,7 +25,7 @@ public class Excursion {
     public String guide;
 
     public Excursion(){}
-    public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath, String guide){
+    public Excursion(int price, float distance, String name, String locations, String difficulty, String picPath){
         this.price = price;
         this.distance = distance;
         this.name = name;

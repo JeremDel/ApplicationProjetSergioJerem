@@ -298,7 +298,7 @@ public class EditExcursionActivity extends BaseActivity {
             double distanceD = Double.parseDouble(distance);
             float distanceRight = (float)distanceD;
 
-            Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, picPath, creationGuideId);
+            Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, picPath);
             viewModel.createExcursion(newExcursion, new OnAsyncEventListener() {
                 @Override
                 public void onSuccess() {
