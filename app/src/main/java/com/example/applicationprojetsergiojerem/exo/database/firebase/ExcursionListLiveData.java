@@ -51,6 +51,7 @@ public class ExcursionListLiveData extends LiveData<List<Excursion>> {
         for(DataSnapshot ds : snapshot.getChildren()){
             if (ds.getKey() != null){
                 Excursion excursion = ds.getValue(Excursion.class);
+                excursion.setId(ds.getKey());
                 result.add(excursion);
             }
         }

@@ -38,8 +38,10 @@ public class ExcursionLiveData extends LiveData<Excursion> {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             Excursion entity = snapshot.getValue(Excursion.class);
-            entity.setId(snapshot.getKey());
-            setValue(entity);
+            if (entity != null){
+                entity.setId(snapshot.getKey());
+                setValue(entity);
+            }
         }
 
         @Override

@@ -71,6 +71,7 @@ public class EditExcursionActivity extends BaseActivity {
         setContentView(R.layout.activity_edit_expedition);
 
         initiateView();
+        String id = getIntent().getStringExtra("excursionId");
 
         btnSave.setOnClickListener(view -> {
             saveChanges(etPrice.getText().toString(), etDistance.getText().toString(), etName.getText().toString(),
@@ -79,7 +80,6 @@ public class EditExcursionActivity extends BaseActivity {
             toast.show();
         });
 
-        String id = getIntent().getStringExtra("excursionId");
         if (id == null){
             setTitle(getString(R.string.title_activity_create_excursion));
             toast = Toast.makeText(this, getString(R.string.excursion_created), Toast.LENGTH_LONG);
@@ -110,6 +110,7 @@ public class EditExcursionActivity extends BaseActivity {
             viewModel.getExcursion().observe(this, excursionEntity -> {
                 if (excursionEntity != null){
                     excursion = excursionEntity;
+                    excursion.setId(id);
                     updateContent();
                 }
             });
@@ -298,7 +299,7 @@ public class EditExcursionActivity extends BaseActivity {
             double distanceD = Double.parseDouble(distance);
             float distanceRight = (float)distanceD;
 
-            Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, picPath);
+            Excursion newExcursion = new Excursion(priceCorrected, distanceRight, name, locations, difficulty, picPath, creationGuideId);
             viewModel.createExcursion(newExcursion, new OnAsyncEventListener() {
                 @Override
                 public void onSuccess() {
